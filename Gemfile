@@ -16,9 +16,11 @@ group :jekyll_plugins do
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
-    gem 'mini_racer'
+    # gem 'mini_racer', '~> 0.6.2'
+    # gem 'mini_racer'
     gem 'unicode_utils'
     gem 'webrick'
+    gem 'jekyll-redirect-from'
 end
 group :other_plugins do
     gem 'feedjira'
