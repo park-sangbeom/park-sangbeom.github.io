@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://park-sangbeom.github.io//sitemap.xml
