@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://park-sangbeom.github.io/al-folio/sitemap.xml
+Sitemap: https://park-sangbeom.github.io//sitemap.xml
