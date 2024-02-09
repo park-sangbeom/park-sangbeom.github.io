@@ -13,7 +13,7 @@
       pdf={https://arxiv.org/pdf/2309.13937.pdf},
       code={https://github.com/joonhyung-lee/spots},
       website={https://joonhyung-lee.github.io/spots/},
-      abbr={ArXiv},
+      abbr={ICRA},
       primaryClass={cs.RO},
       preview={spots.gif},
       selected={true}
@@ -35,29 +35,18 @@
       selected={true}
 }
 
-@misc{10.1007/978-3-031-47634-1_2,
-author="Shin, Seungyoun
-and Lee, Joonhyung
-and Noh, Junhyug
-and Choi, Sungjoon",
-editor="Lu, Huimin
-and Blumenstein, Michael
-and Cho, Sung-Bae
-and Liu, Cheng-Lin
-and Yagi, Yasushi
-and Kamiya, Tohru",
-title="Robust Detection for Autonomous Elevator Boarding Using a Mobile Manipulator",
+@misc{park2022semiteleop,
+author={Sangbeom Park and Yoonbyung Chai and Sunghyun Park and Jeongeun Park and Kyungjae Lee and Sungjoon Choi},
+title="Semi-Autonomous Teleoperation via Learning Non-Prehensile Manipulation Skills",
 booktitle="Asian Conference on Pattern Recognition",
-year="2023",
-publisher="Springer Nature Switzerland",
-address="Cham",
-abstract={Indoor robots are becoming increasingly prevalent across a range of sectors, but the challenge of navigating multi-level structures through elevators remains largely uncharted. For a robot to operate successfully, it's pivotal to have an accurate perception of elevator states. This paper presents a robust robotic system, tailored to interact adeptly with elevators by discerning their status, actuating buttons, and boarding seamlessly. Given the inherent issues of class imbalance and limited data, we utilize the YOLOv7 model and adopt specific strategies to counteract the potential decline in object detection performance. Our method effectively confronts the class imbalance and label dependency observed in real-world datasets, Our method effectively confronts the class imbalance and label dependency observed in real-world datasets, offering a promising approach to improve indoor robotic navigation systems.},
-pdf={https://link.springer.com/chapter/10.1007/978-3-031-47634-1_2},
-code={https://github.com/joonhyung-lee/robust-detection-for-elevator-boarding},
+year="2022",
+archivePrefix={arXiv},
+abstract={In this paper, we present a semi-autonomous teleoperation framework for a pick-and-place task using an RGB-D sensor. In particular, we assume that the target object is located in a cluttered environment where both prehensile grasping and non-prehensile manipulation are combined for efficient teleoperation. A trajectory-based reinforcement learning is utilized for learning the non-prehensile manipulation to rearrange the objects for enabling direct grasping. From the depth image of the cluttered environment and the location of the goal object, the learned policy can provide multiple options of non-prehensile manipulation to the human operator. We carefully design a reward function for the rearranging task where the policy is trained in a simulational environment. Then, the trained policy is transferred to a real-world and evaluated in a number of real-world experiments with the varying number of objects where we show that the proposed method outperforms manual keyboard control in terms of the time duration for the grasping.},
+pdf={https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9811823&casa_token=mABguuXoPK8AAAAA:SOwXSqtMBL-cnRkkL57we6mWNDn5Gvu15AEOF0ZNp2wuiI2Br398nUK_aoQcc8HfF4u_m0CrTA&tag=1},
 website={https://joonhyung-lee.github.io/robust-detection-for-elevator-boarding/},
-abbr={ACPR},
+abbr={ICRA},
 pages="15--28",
-isbn="978-3-031-47634-1",
+isbn="978-1-7281-9681",
 preview={elevator-boarding.gif},
 selected={true}
 }
