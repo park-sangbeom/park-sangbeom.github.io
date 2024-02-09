@@ -21,6 +21,6 @@ social: true # includes social icons at the bottom of the page
 
 I am a MS-Ph.D student in AI at [Korea University](https://info.korea.edu/en_info/grad/ai_intro.do), advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi).
 
-My passion lies in researching a robot that can tackle complex and challenging tasks, much like the ones humans perform daily as a scalable way. To this end, I focus on the area of generalizable AI, with a fcous on reinforcement learning and generative model.
+My passion lies in enabling a robot to tackle complex and challenging tasks, much like the ones humans perform daily, in a scalable way. To this end, I'm interested in the area of generalizable AI, with a fcous on reinforcement learning and behavior generative model.
 
 Previously, I completed my B.S. in Electrical Engineering with a minor in Intelligent Robot Engineering at [Dongguk University](https://www.dongguk.edu/). My previous internship includes working on safe skill learning for legged robots and large vision-language models for robots in [NAVERLABS](https://www.naverlabs.com/)
