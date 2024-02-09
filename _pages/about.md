@@ -23,4 +23,4 @@ I am a MS-Ph.D student in in [Artificial Intelligence department at Korea Univer
 
 My passion lies in researching a robot that can tackle complex and challenging tasks, much like the ones humans perform daily as a scalable way. To this end, I focus on the area of generalizable AI, with a fcous on reinforcement learning and generative model.
 
-Previously, I completed my BS in Electronic and Electrical Engineering with a minor in Intelligent Robot Engineering from [Dongguk University](https://www.dongguk.edu/). My previous intership includes working on safe skill learning for legged robots and large vision-language model for robots in [Naverlabs](https://www.naverlabs.com/)
+Previously, I completed my B.S. in Electrical Engineering with a minor in Intelligent Robot Engineering from [Dongguk University](https://www.dongguk.edu/). My previous internship includes working on safe skill learning for legged robots and large vision-language models for robots in [Naverlabs](https://www.naverlabs.com/)
