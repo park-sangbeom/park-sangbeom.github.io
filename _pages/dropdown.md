@@ -1,16 +1,16 @@
 ---
 layout: page
-title: miscellaneous
+title: submenus
 nav: true
-nav_order: 4
+nav_order: 8
 dropdown: true
 children:
-  - title: repositories
-    permalink: /repositories/
+  - title: publications
+    permalink: /publications/
   - title: divider
-  - title: teaching
-    permalink: /teaching/
+  - title: projects
+    permalink: /projects/
   - title: divider
-  - title: gallery
-    permalink: /gallery/
+  - title: blog
+    permalink: /blog/
 ---
