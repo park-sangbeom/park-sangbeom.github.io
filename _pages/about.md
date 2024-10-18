@@ -23,4 +23,4 @@ I am a MS student in AI at [Korea University](https://info.korea.edu/en_info/gra
 
 My research goal is to enable robots to tackle complex and challenging tasks what humans do daily in a scalable way. To this end, I'm interested in the area of generalizable AI, with a fcous on reinforcement learning and generative models.
 
-Previously, I completed my B.S. in Electrical Engineering with a minor in Intelligent Robot Engineering at [Dongguk University](https://www.dongguk.edu/). My previous internship includes working on safe skill learning for legged robots and large vision-language models for robots in [NAVER LABS](https://www.naverlabs.com/)
+I completed my B.S. in Electrical Engineering with a minor in Intelligent Robot Engineering at [Dongguk University](https://www.dongguk.edu/). My professional experience includes internships at [NAVER LABS](https://www.naverlabs.com/) and [NAVER CLOUD](https://www.ncloud.com/) . At NAVER LABS, I worked on safe skill learning for legged robots and large vision-language models for robotics applications. At NAVER CLOUD, I implemented NewsBot, a news curation system utilizing [HyperCLOVA X](https://clova.ai/hyperclova).
