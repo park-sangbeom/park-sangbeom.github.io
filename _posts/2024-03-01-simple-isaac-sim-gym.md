@@ -7,8 +7,8 @@ categories:
 tags:
   - isaac sim
   - isaac gym
-  - ubuntu
   - setup
+  - ubuntu
   - robotics
 description: "A simplified guide for installing NVIDIA Isaac Sim and Isaac Gym on Ubuntu"
 ---
