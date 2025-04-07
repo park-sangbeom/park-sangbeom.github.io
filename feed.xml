@@ -1,4 +1,301 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-04-07T04:32:02+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">ROS Installation and Setup Guide for NVIDIA Jetson Nano</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/" rel="alternate" type="text/html" title="ROS Installation and Setup Guide for NVIDIA Jetson Nano"/><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>The NVIDIA Jetson Nano is a powerful embedded system that provides GPU acceleration for AI and robotics projects in a compact form factor. Installing the Robot Operating System (ROS) on this platform enables the development of advanced robotic applications such as computer vision, autonomous navigation, and object recognition. This guide will walk you through installing and optimizing ROS on the Jetson Nano step by step.</p> <h2 id="jetson-nano-hardware-requirements">Jetson Nano Hardware Requirements</h2> <ul> <li>NVIDIA Jetson Nano Developer Kit</li> <li>MicroSD card (64GB or larger, UHS-I or better speed recommended)</li> <li>Power supply (5V/4A barrel jack recommended for maximum performance)</li> <li>Cooling fan (strongly recommended)</li> <li>Optional: Camera module (CSI or USB), sensors, motor controllers</li> </ul> <h2 id="jetson-nano-basic-setup">Jetson Nano Basic Setup</h2> <h3 id="operating-system-installation">Operating System Installation</h3> <ol> <li>Download the Jetson Nano Developer Kit SD Card Image from NVIDIA’s website <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the latest JetPack image from https://developer.nvidia.com/embedded/downloads</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-04-07T04:35:31+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">Complete Guide to LangChain Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/simple-langchain/" rel="alternate" type="text/html" title="Complete Guide to LangChain Installation and Setup"/><published>2024-02-05T00:00:00+00:00</published><updated>2024-02-05T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-langchain</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-langchain/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>LangChain is a powerful framework designed to simplify the development of applications using large language models (LLMs). It provides a standardized interface for chains, integrations with other tools, and end-to-end chains for common applications. In this guide, we’ll walk through the installation process and basic setup of LangChain, enabling you to start building sophisticated LLM-powered applications.</p> <h2 id="prerequisites">Prerequisites</h2> <p>Before installing LangChain, ensure you have the following prerequisites:</p> <ul> <li>Python 3.8.1 or later</li> <li>pip (Python package installer)</li> <li>A virtual environment (recommended)</li> <li>API keys for LLM providers (e.g., OpenAI, Anthropic, etc.)</li> </ul> <h2 id="setting-up-a-virtual-environment">Setting Up a Virtual Environment</h2> <p>It’s always a good practice to create a dedicated virtual environment for your projects to avoid dependency conflicts.</p> <h3 id="using-venv-pythons-built-in-module">Using venv (Python’s built-in module)</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new virtual environment</span>
+python <span class="nt">-m</span> venv langchain-env
+
+<span class="c"># Activate the virtual environment</span>
+<span class="c"># On Windows</span>
+langchain-env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<span class="c"># On macOS/Linux</span>
+<span class="nb">source </span>langchain-env/bin/activate
+</code></pre></div></div> <h3 id="using-conda">Using conda</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new conda environment</span>
+conda create <span class="nt">-n</span> langchain-env <span class="nv">python</span><span class="o">=</span>3.10
+
+<span class="c"># Activate the conda environment</span>
+conda activate langchain-env
+</code></pre></div></div> <h2 id="installing-langchain">Installing LangChain</h2> <p>LangChain can be installed using pip. There are different installation options depending on your needs:</p> <h3 id="basic-installation">Basic Installation</h3> <p>For a minimal installation with core functionality:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain
+</code></pre></div></div> <h3 id="full-installation">Full Installation</h3> <p>For the complete package with all integrations:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-all
+</code></pre></div></div> <h3 id="specific-integrations">Specific Integrations</h3> <p>You can also install specific integrations based on your requirements:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># OpenAI integration</span>
+pip <span class="nb">install </span>langchain-openai
+
+<span class="c"># Anthropic integration</span>
+pip <span class="nb">install </span>langchain-anthropic
+
+<span class="c"># Community integration</span>
+pip <span class="nb">install </span>langchain-community
+
+<span class="c"># HuggingFace integration</span>
+pip <span class="nb">install </span>langchain-huggingface
+</code></pre></div></div> <h2 id="setting-up-api-keys">Setting Up API Keys</h2> <p>Most LLM providers require API keys for authentication. Here’s how to set them up:</p> <h3 id="environment-variables">Environment Variables</h3> <p>Create a <code class="language-plaintext highlighter-rouge">.env</code> file in your project root directory:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .env file
+OPENAI_API_KEY=your_openai_api_key
+ANTHROPIC_API_KEY=your_anthropic_api_key
+HUGGINGFACEHUB_API_TOKEN=your_huggingface_token
+</code></pre></div></div> <p>Then, install the python-dotenv package to load these variables:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>python-dotenv
+</code></pre></div></div> <h2 id="creating-a-simple-langchain-application">Creating a Simple LangChain Application</h2> <p>Let’s create a simple application using LangChain to ensure everything is set up correctly:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</span><span class="kn">from</span> <span class="n">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+<span class="kn">from</span> <span class="n">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+<span class="kn">from</span> <span class="n">langchain_core.output_parsers</span> <span class="kn">import</span> <span class="n">StrOutputParser</span>
+
+<span class="c1"># Load environment variables
+</span><span class="nf">load_dotenv</span><span class="p">()</span>
+
+<span class="c1"># Initialize the language model
+</span><span class="n">llm</span> <span class="o">=</span> <span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-3.5-turbo</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Create a prompt template
+</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="p">.</span><span class="nf">from_template</span><span class="p">(</span><span class="sh">"</span><span class="s">Tell me a short joke about {topic}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Create a simple chain
+</span><span class="n">chain</span> <span class="o">=</span> <span class="n">prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="nc">StrOutputParser</span><span class="p">()</span>
+
+<span class="c1"># Execute the chain
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="p">.</span><span class="nf">invoke</span><span class="p">({</span><span class="sh">"</span><span class="s">topic</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">programming</span><span class="sh">"</span><span class="p">})</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div></div> <p>Run the application:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
+</code></pre></div></div> <h2 id="setting-up-persistent-storage">Setting Up Persistent Storage</h2> <p>LangChain can use various databases for storing data like conversation histories, vector embeddings, etc.</p> <h3 id="using-a-vector-database-for-embeddings">Using a Vector Database for Embeddings</h3> <p>Here’s how to set up Chroma, a popular vector database:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-chroma
+</code></pre></div></div> <p>Example usage:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
+<span class="kn">from</span> <span class="n">langchain_chroma</span> <span class="kn">import</span> <span class="n">Chroma</span>
+
+<span class="c1"># Initialize the embedding model
+</span><span class="n">embeddings</span> <span class="o">=</span> <span class="nc">OpenAIEmbeddings</span><span class="p">()</span>
+
+<span class="c1"># Create a Chroma vector store
+</span><span class="n">db</span> <span class="o">=</span> <span class="nc">Chroma</span><span class="p">(</span>
+    <span class="n">collection_name</span><span class="o">=</span><span class="sh">"</span><span class="s">my_collection</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">embedding_function</span><span class="o">=</span><span class="n">embeddings</span><span class="p">,</span>
+    <span class="n">persist_directory</span><span class="o">=</span><span class="sh">"</span><span class="s">./chroma_db</span><span class="sh">"</span>
+<span class="p">)</span>
+
+<span class="c1"># Add documents to the vector store
+</span><span class="n">db</span><span class="p">.</span><span class="nf">add_texts</span><span class="p">(</span>
+    <span class="n">texts</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">LangChain is a framework for developing applications powered by language models.</span><span class="sh">"</span><span class="p">,</span> 
+           <span class="sh">"</span><span class="s">It enables applications that are context-aware and can reason.</span><span class="sh">"</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Search for similar documents
+</span><span class="n">results</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">similarity_search</span><span class="p">(</span><span class="sh">"</span><span class="s">What is LangChain?</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</code></pre></div></div> <h2 id="creating-a-document-question-answering-system">Creating a Document Question-Answering System</h2> <p>Let’s build a simple question-answering system using LangChain:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-openai langchain-community pypdf
+</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># qa_system.py
+</span><span class="kn">from</span> <span class="n">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span><span class="p">,</span> <span class="n">ChatOpenAI</span>
+<span class="kn">from</span> <span class="n">langchain_community.document_loaders</span> <span class="kn">import</span> <span class="n">PyPDFLoader</span>
+<span class="kn">from</span> <span class="n">langchain_text_splitters</span> <span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
+<span class="kn">from</span> <span class="n">langchain_chroma</span> <span class="kn">import</span> <span class="n">Chroma</span>
+<span class="kn">from</span> <span class="n">langchain.chains.combine_documents</span> <span class="kn">import</span> <span class="n">create_stuff_documents_chain</span>
+<span class="kn">from</span> <span class="n">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+<span class="kn">from</span> <span class="n">langchain.chains</span> <span class="kn">import</span> <span class="n">create_retrieval_chain</span>
+
+<span class="c1"># Load environment variables
+</span><span class="nf">load_dotenv</span><span class="p">()</span>
+
+<span class="c1"># Load and split the document
+</span><span class="n">loader</span> <span class="o">=</span> <span class="nc">PyPDFLoader</span><span class="p">(</span><span class="sh">"</span><span class="s">your_document.pdf</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">documents</span> <span class="o">=</span> <span class="n">loader</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+<span class="n">text_splitter</span> <span class="o">=</span> <span class="nc">RecursiveCharacterTextSplitter</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">splits</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="p">.</span><span class="nf">split_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+
+<span class="c1"># Create a vector store
+</span><span class="n">embedding</span> <span class="o">=</span> <span class="nc">OpenAIEmbeddings</span><span class="p">()</span>
+<span class="n">vectorstore</span> <span class="o">=</span> <span class="n">Chroma</span><span class="p">.</span><span class="nf">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="o">=</span><span class="n">splits</span><span class="p">,</span> <span class="n">embedding</span><span class="o">=</span><span class="n">embedding</span><span class="p">)</span>
+<span class="n">retriever</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="p">.</span><span class="nf">as_retriever</span><span class="p">()</span>
+
+<span class="c1"># Create a prompt
+</span><span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="p">.</span><span class="nf">from_template</span><span class="p">(</span><span class="sh">"""</span><span class="s">
+Answer the following question based only on the provided context:
+
+&lt;context&gt;
+{context}
+&lt;/context&gt;
+
+Question: {question}
+</span><span class="sh">"""</span><span class="p">)</span>
+
+<span class="c1"># Set up the LLM
+</span><span class="n">llm</span> <span class="o">=</span> <span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-3.5-turbo</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Create document chain
+</span><span class="n">document_chain</span> <span class="o">=</span> <span class="nf">create_stuff_documents_chain</span><span class="p">(</span><span class="n">llm</span><span class="p">,</span> <span class="n">prompt</span><span class="p">)</span>
+
+<span class="c1"># Create retrieval chain
+</span><span class="n">retrieval_chain</span> <span class="o">=</span> <span class="nf">create_retrieval_chain</span><span class="p">(</span><span class="n">retriever</span><span class="p">,</span> <span class="n">document_chain</span><span class="p">)</span>
+
+<span class="c1"># Query the system
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">retrieval_chain</span><span class="p">.</span><span class="nf">invoke</span><span class="p">({</span><span class="sh">"</span><span class="s">question</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">What is the main topic of this document?</span><span class="sh">"</span><span class="p">})</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="sh">"</span><span class="s">answer</span><span class="sh">"</span><span class="p">])</span>
+</code></pre></div></div> <h2 id="using-langchain-with-streamlit">Using LangChain with Streamlit</h2> <p>You can create interactive web applications with LangChain using Streamlit:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>streamlit
+</code></pre></div></div> <p>Create a simple Streamlit app (<code class="language-plaintext highlighter-rouge">app.py</code>):</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">streamlit</span> <span class="k">as</span> <span class="n">st</span>
+<span class="kn">from</span> <span class="n">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+<span class="kn">from</span> <span class="n">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+<span class="kn">from</span> <span class="n">langchain_core.output_parsers</span> <span class="kn">import</span> <span class="n">StrOutputParser</span>
+
+<span class="c1"># Load environment variables
+</span><span class="nf">load_dotenv</span><span class="p">()</span>
+
+<span class="c1"># Initialize the app
+</span><span class="n">st</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">🦜️🔗 LangChain AI Assistant</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Initialize session state for chat history
+</span><span class="k">if</span> <span class="sh">"</span><span class="s">messages</span><span class="sh">"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="p">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="p">.</span><span class="n">session_state</span><span class="p">.</span><span class="n">messages</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Display chat history
+</span><span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">st</span><span class="p">.</span><span class="n">session_state</span><span class="p">.</span><span class="n">messages</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">st</span><span class="p">.</span><span class="nf">chat_message</span><span class="p">(</span><span class="n">message</span><span class="p">[</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">]):</span>
+        <span class="n">st</span><span class="p">.</span><span class="nf">markdown</span><span class="p">(</span><span class="n">message</span><span class="p">[</span><span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">])</span>
+
+<span class="c1"># Get user input
+</span><span class="n">user_input</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="nf">chat_input</span><span class="p">(</span><span class="sh">"</span><span class="s">Ask me anything...</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Process user input
+</span><span class="k">if</span> <span class="n">user_input</span><span class="p">:</span>
+    <span class="c1"># Add user message to chat history
+</span>    <span class="n">st</span><span class="p">.</span><span class="n">session_state</span><span class="p">.</span><span class="n">messages</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">user_input</span><span class="p">})</span>
+    <span class="k">with</span> <span class="n">st</span><span class="p">.</span><span class="nf">chat_message</span><span class="p">(</span><span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">):</span>
+        <span class="n">st</span><span class="p">.</span><span class="nf">markdown</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+    
+    <span class="c1"># Setup LangChain components
+</span>    <span class="n">llm</span> <span class="o">=</span> <span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-3.5-turbo</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="p">.</span><span class="nf">from_template</span><span class="p">(</span><span class="sh">"</span><span class="s">Human: {human_input}</span><span class="se">\n</span><span class="s">AI: </span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">chain</span> <span class="o">=</span> <span class="n">prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="nc">StrOutputParser</span><span class="p">()</span>
+    
+    <span class="c1"># Generate AI response
+</span>    <span class="k">with</span> <span class="n">st</span><span class="p">.</span><span class="nf">chat_message</span><span class="p">(</span><span class="sh">"</span><span class="s">assistant</span><span class="sh">"</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">st</span><span class="p">.</span><span class="nf">spinner</span><span class="p">(</span><span class="sh">"</span><span class="s">Thinking...</span><span class="sh">"</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="p">.</span><span class="nf">invoke</span><span class="p">({</span><span class="sh">"</span><span class="s">human_input</span><span class="sh">"</span><span class="p">:</span> <span class="n">user_input</span><span class="p">})</span>
+            <span class="n">st</span><span class="p">.</span><span class="nf">markdown</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    
+    <span class="c1"># Add AI response to chat history
+</span>    <span class="n">st</span><span class="p">.</span><span class="n">session_state</span><span class="p">.</span><span class="n">messages</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">assistant</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">response</span><span class="p">})</span>
+</code></pre></div></div> <p>Run the Streamlit app:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>streamlit run app.py
+</code></pre></div></div> <h2 id="integration-with-other-services">Integration with Other Services</h2> <h3 id="langchain-with-llamaindex">LangChain with LlamaIndex</h3> <p>LlamaIndex is a data framework for LLM-based applications:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>llama-index
+</code></pre></div></div> <p>Example integration:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">llama_index</span> <span class="kn">import</span> <span class="n">VectorStoreIndex</span><span class="p">,</span> <span class="n">SimpleDirectoryReader</span>
+<span class="kn">from</span> <span class="n">llama_index.indices.query.query_transform</span> <span class="kn">import</span> <span class="n">LangchainQueryTransform</span>
+<span class="kn">from</span> <span class="n">langchain.chains</span> <span class="kn">import</span> <span class="n">LLMChain</span>
+<span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+<span class="kn">from</span> <span class="n">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">PromptTemplate</span>
+
+<span class="c1"># Load documents
+</span><span class="n">documents</span> <span class="o">=</span> <span class="nc">SimpleDirectoryReader</span><span class="p">(</span><span class="sh">'</span><span class="s">data</span><span class="sh">'</span><span class="p">).</span><span class="nf">load_data</span><span class="p">()</span>
+
+<span class="c1"># Create index
+</span><span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="p">.</span><span class="nf">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+
+<span class="c1"># Create LangChain query transform
+</span><span class="n">llm</span> <span class="o">=</span> <span class="nc">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-3.5-turbo</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="nc">PromptTemplate</span><span class="p">(</span>
+    <span class="n">input_variables</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">query</span><span class="sh">"</span><span class="p">],</span>
+    <span class="n">template</span><span class="o">=</span><span class="sh">"</span><span class="s">Reformulate this query to be more specific: {query}</span><span class="sh">"</span>
+<span class="p">)</span>
+<span class="n">llm_chain</span> <span class="o">=</span> <span class="nc">LLMChain</span><span class="p">(</span><span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
+<span class="n">query_transform</span> <span class="o">=</span> <span class="nc">LangchainQueryTransform</span><span class="p">(</span><span class="n">langchain_chain</span><span class="o">=</span><span class="n">llm_chain</span><span class="p">)</span>
+
+<span class="c1"># Query with transformed query
+</span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="p">.</span><span class="nf">as_query_engine</span><span class="p">(</span><span class="n">query_transform</span><span class="o">=</span><span class="n">query_transform</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="sh">"</span><span class="s">What are the main concepts?</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div></div> <h3 id="langchain-with-pinecone">LangChain with Pinecone</h3> <p>Pinecone is a vector database for storing and searching embeddings:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-pinecone
+</code></pre></div></div> <p>Example usage:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">pinecone</span>
+<span class="kn">from</span> <span class="n">langchain_pinecone</span> <span class="kn">import</span> <span class="n">PineconeVectorStore</span>
+<span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
+<span class="kn">from</span> <span class="n">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="c1"># Load environment variables
+</span><span class="nf">load_dotenv</span><span class="p">()</span>
+
+<span class="c1"># Initialize Pinecone
+</span><span class="n">pinecone</span><span class="p">.</span><span class="nf">init</span><span class="p">(</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="nf">getenv</span><span class="p">(</span><span class="sh">"</span><span class="s">PINECONE_API_KEY</span><span class="sh">"</span><span class="p">),</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="nf">getenv</span><span class="p">(</span><span class="sh">"</span><span class="s">PINECONE_ENVIRONMENT</span><span class="sh">"</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Create or connect to an index
+</span><span class="n">index_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">langchain-demo</span><span class="sh">"</span>
+<span class="k">if</span> <span class="n">index_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pinecone</span><span class="p">.</span><span class="nf">list_indexes</span><span class="p">():</span>
+    <span class="n">pinecone</span><span class="p">.</span><span class="nf">create_index</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">index_name</span><span class="p">,</span>
+        <span class="n">dimension</span><span class="o">=</span><span class="mi">1536</span><span class="p">,</span>  <span class="c1"># OpenAI embedding dimension
+</span>        <span class="n">metric</span><span class="o">=</span><span class="sh">"</span><span class="s">cosine</span><span class="sh">"</span>
+    <span class="p">)</span>
+
+<span class="c1"># Create vector store
+</span><span class="n">embeddings</span> <span class="o">=</span> <span class="nc">OpenAIEmbeddings</span><span class="p">()</span>
+<span class="n">vectorstore</span> <span class="o">=</span> <span class="nc">PineconeVectorStore</span><span class="p">(</span>
+    <span class="n">index_name</span><span class="o">=</span><span class="n">index_name</span><span class="p">,</span>
+    <span class="n">embedding</span><span class="o">=</span><span class="n">embeddings</span>
+<span class="p">)</span>
+
+<span class="c1"># Add texts
+</span><span class="n">vectorstore</span><span class="p">.</span><span class="nf">add_texts</span><span class="p">(</span>
+    <span class="n">texts</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">LangChain is a framework for LLM applications</span><span class="sh">"</span><span class="p">,</span>
+           <span class="sh">"</span><span class="s">Pinecone is a vector database for storing embeddings</span><span class="sh">"</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Search
+</span><span class="n">results</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="p">.</span><span class="nf">similarity_search</span><span class="p">(</span><span class="sh">"</span><span class="s">What is LangChain?</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</code></pre></div></div> <h2 id="automated-dependency-management">Automated Dependency Management</h2> <p>For proper dependency management, you can create a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># requirements.txt
+langchain==0.1.0
+langchain-openai==0.0.5
+langchain-anthropic==0.0.5
+langchain-community==0.0.10
+python-dotenv==1.0.0
+streamlit==1.29.0
+chroma-hnswlib==0.7.3
+chromadb==0.4.22
+pypdf==3.17.1
+</code></pre></div></div> <p>Install all dependencies at once:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div> <h2 id="project-structure">Project Structure</h2> <p>A well-organized LangChain project might have the following structure:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>langchain-project/
+├── .env                  # Environment variables
+├── requirements.txt      # Dependencies
+├── app.py                # Main application
+├── chains/               # Custom chains
+│   ├── __init__.py
+│   └── qa_chain.py
+├── prompts/              # Prompt templates
+│   ├── __init__.py
+│   └── chat_prompts.py
+├── utils/                # Utility functions
+│   ├── __init__.py
+│   └── helpers.py
+├── data/                 # Data files
+│   └── documents/
+└── chroma_db/            # Vector store data
+</code></pre></div></div> <h2 id="advanced-installation-and-configuration">Advanced Installation and Configuration</h2> <h3 id="installing-from-source">Installing from Source</h3> <p>For the latest features or contributing to LangChain:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/langchain-ai/langchain.git
+<span class="nb">cd </span>langchain
+pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
+</code></pre></div></div> <h3 id="gpu-acceleration">GPU Acceleration</h3> <p>To utilize GPU acceleration for local models:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For CUDA support</span>
+pip <span class="nb">install </span>torch torchvision torchaudio <span class="nt">--index-url</span> https://download.pytorch.org/whl/cu118
+
+<span class="c"># For MPS support on Apple Silicon</span>
+pip <span class="nb">install </span>torch torchvision torchaudio
+</code></pre></div></div> <h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2> <h3 id="api-key-issues">API Key Issues</h3> <p>If you encounter API key errors:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Verify your API key is correctly set
+</span><span class="kn">import</span> <span class="n">os</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">getenv</span><span class="p">(</span><span class="sh">"</span><span class="s">OPENAI_API_KEY</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Should print your API key, not None
+</span></code></pre></div></div> <h3 id="dependency-conflicts">Dependency Conflicts</h3> <p>If you have dependency conflicts:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a fresh virtual environment</span>
+python <span class="nt">-m</span> venv new_env
+<span class="nb">source </span>new_env/bin/activate
+
+<span class="c"># Install specific versions</span>
+pip <span class="nb">install </span><span class="nv">langchain</span><span class="o">==</span>0.1.0 langchain-openai<span class="o">==</span>0.0.5
+</code></pre></div></div> <h3 id="memory-issues">Memory Issues</h3> <p>If you encounter memory issues with large embeddings:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Process documents in batches
+</span><span class="kn">from</span> <span class="n">langchain_text_splitters</span> <span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
+
+<span class="n">text_splitter</span> <span class="o">=</span> <span class="nc">RecursiveCharacterTextSplitter</span><span class="p">(</span>
+    <span class="n">chunk_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">50</span>
+<span class="p">)</span>
+<span class="n">splits</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="p">.</span><span class="nf">split_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+
+<span class="c1"># Process in batches
+</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">splits</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">):</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">batch_size</span><span class="p">]</span>
+    <span class="n">vectorstore</span><span class="p">.</span><span class="nf">add_documents</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+</code></pre></div></div> <h2 id="one-line-installation-commands">One-Line Installation Commands</h2> <p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p> <h3 id="basic-development-setup">Basic Development Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain langchain-openai langchain-community python-dotenv <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env
+</code></pre></div></div> <h3 id="complete-development-environment">Complete Development Environment</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain-all python-dotenv streamlit pypdf langchain-chroma <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> chains prompts utils data chroma_db <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"from dotenv import load_dotenv</span><span class="se">\n</span><span class="s2">load_dotenv()</span><span class="se">\n\n</span><span class="s2"># Your code here"</span> <span class="o">&gt;</span> app.py
+</code></pre></div></div>]]></content><author><name></name></author><category term="python"/><category term="llm"/><category term="langchain"/><category term="installation"/><category term="setup"/><category term="ai"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide on installing and configuring LangChain for building LLM-powered applications]]></summary></entry><entry><title type="html">ROS Installation and Setup Guide for NVIDIA Jetson Nano</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/" rel="alternate" type="text/html" title="ROS Installation and Setup Guide for NVIDIA Jetson Nano"/><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>The NVIDIA Jetson Nano is a powerful embedded system that provides GPU acceleration for AI and robotics projects in a compact form factor. Installing the Robot Operating System (ROS) on this platform enables the development of advanced robotic applications such as computer vision, autonomous navigation, and object recognition. This guide will walk you through installing and optimizing ROS on the Jetson Nano step by step.</p> <h2 id="jetson-nano-hardware-requirements">Jetson Nano Hardware Requirements</h2> <ul> <li>NVIDIA Jetson Nano Developer Kit</li> <li>MicroSD card (64GB or larger, UHS-I or better speed recommended)</li> <li>Power supply (5V/4A barrel jack recommended for maximum performance)</li> <li>Cooling fan (strongly recommended)</li> <li>Optional: Camera module (CSI or USB), sensors, motor controllers</li> </ul> <h2 id="jetson-nano-basic-setup">Jetson Nano Basic Setup</h2> <h3 id="operating-system-installation">Operating System Installation</h3> <ol> <li>Download the Jetson Nano Developer Kit SD Card Image from NVIDIA’s website <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the latest JetPack image from https://developer.nvidia.com/embedded/downloads</span>
 </code></pre></div> </div> </li> <li> <p>Flash the image to your microSD card using SDK Manager or balenaEtcher</p> </li> <li> <p>Insert the microSD card into your Jetson Nano and power it on</p> </li> <li> <p>Complete the initial setup (create user, connect to WiFi, etc.)</p> </li> <li>Update the system: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt upgrade <span class="nt">-y</span>
 </code></pre></div> </div> </li> </ol> <h3 id="jetson-nano-performance-optimization">Jetson Nano Performance Optimization</h3> <ol> <li>Set the maximum performance mode: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvpmodel <span class="nt">-m</span> 0  <span class="c"># Sets to 10W mode</span>
