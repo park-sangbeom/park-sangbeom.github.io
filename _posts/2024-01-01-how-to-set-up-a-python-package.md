@@ -19,7 +19,7 @@ tags:
 description: "A comprehensive guide on creating and managing a Python package"
 use_math: true
 classes: wide
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 ---
 
