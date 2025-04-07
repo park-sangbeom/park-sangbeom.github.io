@@ -11,7 +11,7 @@ tags:
   - ros
   - setup
   - ubuntu
-  - '2024'
+  - robotics
 description: "A comprehensive guide on installing and configuring ROS (Robot Operating System) on Ubuntu"
 use_math: true
 classes: wide

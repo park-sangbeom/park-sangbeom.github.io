@@ -12,7 +12,7 @@ tags:
   - jetson nano
   - embedded
   - setup
-  - '2024'
+  - robotics
 description: "A comprehensive guide for installing and configuring ROS on NVIDIA Jetson Nano"
 use_math: true
 classes: wide

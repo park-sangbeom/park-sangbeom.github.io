@@ -10,9 +10,8 @@ categories:
   - ubuntu
 tags:
   - docker
-  - ubuntu
   - setup
-  - '2024'
+  - ubuntu
 description: "A comprehensive guide on setting up and using Ubuntu with Docker"
 classes: wide
 giscus_comments: false
