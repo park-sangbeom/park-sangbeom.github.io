@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-04-07T04:35:31+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">Complete Guide to LangChain Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/simple-langchain/" rel="alternate" type="text/html" title="Complete Guide to LangChain Installation and Setup"/><published>2024-02-05T00:00:00+00:00</published><updated>2024-02-05T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-langchain</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-langchain/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>LangChain is a powerful framework designed to simplify the development of applications using large language models (LLMs). It provides a standardized interface for chains, integrations with other tools, and end-to-end chains for common applications. In this guide, we’ll walk through the installation process and basic setup of LangChain, enabling you to start building sophisticated LLM-powered applications.</p> <h2 id="prerequisites">Prerequisites</h2> <p>Before installing LangChain, ensure you have the following prerequisites:</p> <ul> <li>Python 3.8.1 or later</li> <li>pip (Python package installer)</li> <li>A virtual environment (recommended)</li> <li>API keys for LLM providers (e.g., OpenAI, Anthropic, etc.)</li> </ul> <h2 id="setting-up-a-virtual-environment">Setting Up a Virtual Environment</h2> <p>It’s always a good practice to create a dedicated virtual environment for your projects to avoid dependency conflicts.</p> <h3 id="using-venv-pythons-built-in-module">Using venv (Python’s built-in module)</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new virtual environment</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-04-07T04:44:11+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">Docker Ubuntu Setup Guide</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-docker/" rel="alternate" type="text/html" title="Docker Ubuntu Setup Guide"/><published>2024-02-18T00:00:00+00:00</published><updated>2024-02-18T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-docker</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-docker/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Docker has revolutionized how we develop, package, and deploy applications by enabling consistent environments across different systems. This guide will walk you through setting up an Ubuntu-based Docker environment, from installation to advanced usage patterns. Whether you’re new to Docker or looking to optimize your containerized Ubuntu workflow, this guide has you covered.</p> <h2 id="installing-docker">Installing Docker</h2> <p>Before you can start working with Ubuntu containers, you need to install Docker on your system.</p> <h3 id="installing-docker-on-ubuntu-host">Installing Docker on Ubuntu Host</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update your package index</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Install prerequisites</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> apt-transport-https ca-certificates curl software-properties-common
+
+<span class="c"># Add Docker's official GPG key</span>
+curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>gpg <span class="nt">--dearmor</span> <span class="nt">-o</span> /usr/share/keyrings/docker-archive-keyring.gpg
+
+<span class="c"># Set up the stable repository</span>
+<span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> stable"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/docker.list <span class="o">&gt;</span> /dev/null
+
+<span class="c"># Update the package index again</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Install Docker Engine</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> docker-ce docker-ce-cli containerd.io
+
+<span class="c"># Add your user to the docker group to run Docker without sudo</span>
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
+
+<span class="c"># Apply the new group membership</span>
+newgrp docker
+</code></pre></div></div> <h3 id="installing-docker-on-macos">Installing Docker on macOS</h3> <ol> <li>Download and install Docker Desktop from the <a href="https://www.docker.com/products/docker-desktop">official website</a></li> <li>Open Docker Desktop and follow the setup wizard</li> </ol> <h2 id="basic-ubuntu-container-usage">Basic Ubuntu Container Usage</h2> <p>Once Docker is installed, you can start working with Ubuntu containers.</p> <h3 id="pulling-an-ubuntu-image">Pulling an Ubuntu Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull the latest Ubuntu image</span>
+docker pull ubuntu:latest
+
+<span class="c"># Pull a specific version (e.g., Ubuntu 22.04 LTS)</span>
+docker pull ubuntu:22.04
+</code></pre></div></div> <h3 id="running-an-ubuntu-container">Running an Ubuntu Container</h3> <h4 id="interactive-mode">Interactive Mode</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run a container interactively with a bash shell</span>
+docker run <span class="nt">-it</span> ubuntu:latest bash
+</code></pre></div></div> <p>This command:</p> <ul> <li><code class="language-plaintext highlighter-rouge">-i</code>: Keeps STDIN open</li> <li><code class="language-plaintext highlighter-rouge">-t</code>: Allocates a pseudo-TTY</li> <li><code class="language-plaintext highlighter-rouge">bash</code>: Runs the bash shell inside the container</li> </ul> <h4 id="accessing-a-running-container">Accessing a Running Container</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Access a running container with bash</span>
+docker <span class="nb">exec</span> <span class="nt">-it</span> my-ubuntu bash
+</code></pre></div></div> <h4 id="stopping-and-removing-containers">Stopping and Removing Containers</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Stop a running container</span>
+docker stop my-ubuntu
+
+<span class="c"># Remove a container</span>
+docker <span class="nb">rm </span>my-ubuntu
+
+<span class="c"># Force remove a running container</span>
+docker <span class="nb">rm</span> <span class="nt">-f</span> my-ubuntu
+</code></pre></div></div> <h2 id="creating-custom-ubuntu-images">Creating Custom Ubuntu Images</h2> <p>Creating custom Ubuntu images allows you to package your applications and dependencies for easier deployment.</p> <h3 id="basic-dockerfile-example">Basic Dockerfile Example</h3> <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use Ubuntu 22.04 as the base image</span>
+<span class="k">FROM</span><span class="s"> ubuntu:22.04</span>
+
+<span class="c"># Set non-interactive mode for apt</span>
+<span class="k">ENV</span><span class="s"> DEBIAN_FRONTEND=noninteractive</span>
+
+<span class="c"># Update and install packages</span>
+<span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> <span class="se">\
+</span>    python3 <span class="se">\
+</span>    python3-pip <span class="se">\
+</span>    nginx <span class="se">\
+</span>    vim <span class="se">\
+</span>    curl <span class="se">\
+</span>    <span class="o">&amp;&amp;</span> apt-get clean <span class="se">\
+</span>    <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span>
+
+<span class="c"># Set the working directory</span>
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+
+<span class="c"># Copy application files</span>
+<span class="k">COPY</span><span class="s"> . /app/</span>
+
+<span class="c"># Expose a port</span>
+<span class="k">EXPOSE</span><span class="s"> 80</span>
+
+<span class="c"># Define the command to run when the container starts</span>
+<span class="k">CMD</span><span class="s"> ["nginx", "-g", "daemon off;"]</span>
+</code></pre></div></div> <h3 id="building-the-image">Building the Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build an image from the Dockerfile in the current directory</span>
+docker build <span class="nt">-t</span> my-ubuntu-app <span class="nb">.</span>
+
+<span class="c"># Build with a specific tag</span>
+docker build <span class="nt">-t</span> my-ubuntu-app:1.0 <span class="nb">.</span>
+</code></pre></div></div> <h3 id="running-the-custom-image">Running the Custom Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the custom image</span>
+docker run <span class="nt">-d</span> <span class="nt">-p</span> 8080:80 <span class="nt">--name</span> my-webapp my-ubuntu-app
+</code></pre></div></div> <p>This command:</p> <ul> <li><code class="language-plaintext highlighter-rouge">-p 8080:80</code>: Maps port 8080 on the host to port 80 in the container</li> <li><code class="language-plaintext highlighter-rouge">--name my-webapp</code>: Names the container</li> </ul> <h2 id="persistent-data-with-volumes">Persistent Data with Volumes</h2> <p>Docker containers are ephemeral, meaning any data inside them is lost when they’re removed. Volumes solve this problem.</p> <h3 id="creating-and-using-volumes">Creating and Using Volumes</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a named volume</span>
+docker volume create my-data
+
+<span class="c"># Run a container with the volume mounted</span>
+docker run <span class="nt">-it</span> <span class="nt">-v</span> my-data:/data ubuntu:latest bash
+</code></pre></div></div> <p>Inside the container, any data written to <code class="language-plaintext highlighter-rouge">/data</code> will persist in the <code class="language-plaintext highlighter-rouge">my-data</code> volume.</p> <h3 id="bind-mounts">Bind Mounts</h3> <p>You can also mount host directories into containers:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Mount a host directory to a container directory</span>
+docker run <span class="nt">-it</span> <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/host-data:/container-data ubuntu:latest bash
+</code></pre></div></div> <h2 id="docker-compose-for-multi-container-applications">Docker Compose for Multi-Container Applications</h2> <p>Docker Compose simplifies managing multi-container applications.</p> <h3 id="example-docker-compose-file">Example Docker Compose File</h3> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="s">./web</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8080:80"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">web-data:/var/www/html</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">app-network</span>
+
+  <span class="na">db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mysql:8.0</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db-data:/var/lib/mysql</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="na">MYSQL_ROOT_PASSWORD</span><span class="pi">:</span> <span class="s">rootpassword</span>
+      <span class="na">MYSQL_DATABASE</span><span class="pi">:</span> <span class="s">mydb</span>
+      <span class="na">MYSQL_USER</span><span class="pi">:</span> <span class="s">user</span>
+      <span class="na">MYSQL_PASSWORD</span><span class="pi">:</span> <span class="s">password</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">app-network</span>
+
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">app-network</span><span class="pi">:</span>
+
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">web-data</span><span class="pi">:</span>
+  <span class="na">db-data</span><span class="pi">:</span>
+</code></pre></div></div> <h3 id="using-docker-compose">Using Docker Compose</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start all services defined in docker-compose.yml</span>
+docker-compose up
+
+<span class="c"># Run in detached mode</span>
+docker-compose up <span class="nt">-d</span>
+
+<span class="c"># Stop all services</span>
+docker-compose down
+
+<span class="c"># Stop services and remove volumes</span>
+docker-compose down <span class="nt">-v</span>
+</code></pre></div></div> <h2 id="one-line-setup-commands">One-Line Setup Commands</h2> <p>For quick setup, here are one-line commands combining multiple steps:</p> <h3 id="basic-ubuntu-container-setup">Basic Ubuntu Container Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ubuntu:22.04 <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> my-ubuntu <span class="nt">-v</span> my-data:/data ubuntu:22.04 <span class="nb">tail</span> <span class="nt">-f</span> /dev/null <span class="o">&amp;&amp;</span> docker <span class="nb">exec</span> <span class="nt">-it</span> my-ubuntu bash
+</code></pre></div></div> <h3 id="web-server-setup">Web Server Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello from Docker!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span> <span class="o">&gt;</span> index.html <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> nginx-ubuntu <span class="nt">-p</span> 8080:80 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/index.html:/var/www/html/index.html ubuntu:22.04 bash <span class="nt">-c</span> <span class="s2">"apt-get update &amp;&amp; apt-get install -y nginx &amp;&amp; nginx -g 'daemon off;'"</span>
+</code></pre></div></div> <h2 id="conclusion">Conclusion</h2> <p>This guide has covered everything you need to know about using Ubuntu with Docker, from basic container operations to advanced multi-container applications and optimization techniques. Docker provides a powerful way to create consistent, reproducible environments for development, testing, and production, and Ubuntu serves as an excellent base for containerized applications due to its widespread support and compatibility.</p> <p>By following the best practices outlined in this guide, you can create efficient, secure, and maintainable Docker images for your Ubuntu-based applications. As you become more comfortable with Docker, you’ll discover even more ways to leverage containerization to improve your development workflow and application deployment processes.</p>]]></content><author><name></name></author><category term="docker"/><category term="ubuntu"/><category term="docker"/><category term="ubuntu"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide on setting up and using Ubuntu with Docker]]></summary></entry><entry><title type="html">Complete Guide to LangChain Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/simple-langchain/" rel="alternate" type="text/html" title="Complete Guide to LangChain Installation and Setup"/><published>2024-02-05T00:00:00+00:00</published><updated>2024-02-05T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-langchain</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-langchain/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>LangChain is a powerful framework designed to simplify the development of applications using large language models (LLMs). It provides a standardized interface for chains, integrations with other tools, and end-to-end chains for common applications. In this guide, we’ll walk through the installation process and basic setup of LangChain, enabling you to start building sophisticated LLM-powered applications.</p> <h2 id="prerequisites">Prerequisites</h2> <p>Before installing LangChain, ensure you have the following prerequisites:</p> <ul> <li>Python 3.8.1 or later</li> <li>pip (Python package installer)</li> <li>A virtual environment (recommended)</li> <li>API keys for LLM providers (e.g., OpenAI, Anthropic, etc.)</li> </ul> <h2 id="setting-up-a-virtual-environment">Setting Up a Virtual Environment</h2> <p>It’s always a good practice to create a dedicated virtual environment for your projects to avoid dependency conflicts.</p> <h3 id="using-venv-pythons-built-in-module">Using venv (Python’s built-in module)</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new virtual environment</span>
 python <span class="nt">-m</span> venv langchain-env
 
 <span class="c"># Activate the virtual environment</span>
@@ -295,7 +422,7 @@ pip <span class="nb">install </span><span class="nv">langchain</span><span class
     <span class="n">vectorstore</span><span class="p">.</span><span class="nf">add_documents</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
 </code></pre></div></div> <h2 id="one-line-installation-commands">One-Line Installation Commands</h2> <p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p> <h3 id="basic-development-setup">Basic Development Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain langchain-openai langchain-community python-dotenv <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env
 </code></pre></div></div> <h3 id="complete-development-environment">Complete Development Environment</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain-all python-dotenv streamlit pypdf langchain-chroma <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> chains prompts utils data chroma_db <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"from dotenv import load_dotenv</span><span class="se">\n</span><span class="s2">load_dotenv()</span><span class="se">\n\n</span><span class="s2"># Your code here"</span> <span class="o">&gt;</span> app.py
-</code></pre></div></div>]]></content><author><name></name></author><category term="python"/><category term="llm"/><category term="langchain"/><category term="installation"/><category term="setup"/><category term="ai"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide on installing and configuring LangChain for building LLM-powered applications]]></summary></entry><entry><title type="html">ROS Installation and Setup Guide for NVIDIA Jetson Nano</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/" rel="alternate" type="text/html" title="ROS Installation and Setup Guide for NVIDIA Jetson Nano"/><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>The NVIDIA Jetson Nano is a powerful embedded system that provides GPU acceleration for AI and robotics projects in a compact form factor. Installing the Robot Operating System (ROS) on this platform enables the development of advanced robotic applications such as computer vision, autonomous navigation, and object recognition. This guide will walk you through installing and optimizing ROS on the Jetson Nano step by step.</p> <h2 id="jetson-nano-hardware-requirements">Jetson Nano Hardware Requirements</h2> <ul> <li>NVIDIA Jetson Nano Developer Kit</li> <li>MicroSD card (64GB or larger, UHS-I or better speed recommended)</li> <li>Power supply (5V/4A barrel jack recommended for maximum performance)</li> <li>Cooling fan (strongly recommended)</li> <li>Optional: Camera module (CSI or USB), sensors, motor controllers</li> </ul> <h2 id="jetson-nano-basic-setup">Jetson Nano Basic Setup</h2> <h3 id="operating-system-installation">Operating System Installation</h3> <ol> <li>Download the Jetson Nano Developer Kit SD Card Image from NVIDIA’s website <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the latest JetPack image from https://developer.nvidia.com/embedded/downloads</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="python"/><category term="llm"/><category term="langchain"/><category term="installation"/><category term="setup"/><category term="agent"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide on installing and configuring LangChain for building LLM-powered applications]]></summary></entry><entry><title type="html">ROS Installation and Setup Guide for NVIDIA Jetson Nano</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/" rel="alternate" type="text/html" title="ROS Installation and Setup Guide for NVIDIA Jetson Nano"/><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>The NVIDIA Jetson Nano is a powerful embedded system that provides GPU acceleration for AI and robotics projects in a compact form factor. Installing the Robot Operating System (ROS) on this platform enables the development of advanced robotic applications such as computer vision, autonomous navigation, and object recognition. This guide will walk you through installing and optimizing ROS on the Jetson Nano step by step.</p> <h2 id="jetson-nano-hardware-requirements">Jetson Nano Hardware Requirements</h2> <ul> <li>NVIDIA Jetson Nano Developer Kit</li> <li>MicroSD card (64GB or larger, UHS-I or better speed recommended)</li> <li>Power supply (5V/4A barrel jack recommended for maximum performance)</li> <li>Cooling fan (strongly recommended)</li> <li>Optional: Camera module (CSI or USB), sensors, motor controllers</li> </ul> <h2 id="jetson-nano-basic-setup">Jetson Nano Basic Setup</h2> <h3 id="operating-system-installation">Operating System Installation</h3> <ol> <li>Download the Jetson Nano Developer Kit SD Card Image from NVIDIA’s website <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the latest JetPack image from https://developer.nvidia.com/embedded/downloads</span>
 </code></pre></div> </div> </li> <li> <p>Flash the image to your microSD card using SDK Manager or balenaEtcher</p> </li> <li> <p>Insert the microSD card into your Jetson Nano and power it on</p> </li> <li> <p>Complete the initial setup (create user, connect to WiFi, etc.)</p> </li> <li>Update the system: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt upgrade <span class="nt">-y</span>
 </code></pre></div> </div> </li> </ol> <h3 id="jetson-nano-performance-optimization">Jetson Nano Performance Optimization</h3> <ol> <li>Set the maximum performance mode: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvpmodel <span class="nt">-m</span> 0  <span class="c"># Sets to 10W mode</span>

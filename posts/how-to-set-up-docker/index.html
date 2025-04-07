@@ -1,0 +1,128 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Docker Ubuntu Setup Guide | Sangbeom Park </title> <meta name="author" content="Sangbeom Park"> <meta name="description" content="A comprehensive guide on setting up and using Ubuntu with Docker"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css"> <link rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"> <link rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://park-sangbeom.github.io//posts/how-to-set-up-docker/"> <link rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script src="/assets/js/theme.js?bf50d6d9dd867d3e0f3b0add94449649"></script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Sangbeom Park </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="fa-solid fa-moon"></i> <i class="fa-solid fa-sun"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Docker Ubuntu Setup Guide</h1> <p class="post-meta"> February 18, 2024 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2024   ·   <i class="fa-solid fa-hashtag fa-sm"></i> docker   <i class="fa-solid fa-hashtag fa-sm"></i> ubuntu   <i class="fa-solid fa-hashtag fa-sm"></i> 2024     ·   <i class="fa-solid fa-tag fa-sm"></i> docker   <i class="fa-solid fa-tag fa-sm"></i> ubuntu   </p> </header> <article class="post-content"> <div id="markdown-content"> <h2 id="introduction">Introduction</h2> <p>Docker has revolutionized how we develop, package, and deploy applications by enabling consistent environments across different systems. This guide will walk you through setting up an Ubuntu-based Docker environment, from installation to advanced usage patterns. Whether you’re new to Docker or looking to optimize your containerized Ubuntu workflow, this guide has you covered.</p> <h2 id="installing-docker">Installing Docker</h2> <p>Before you can start working with Ubuntu containers, you need to install Docker on your system.</p> <h3 id="installing-docker-on-ubuntu-host">Installing Docker on Ubuntu Host</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update your package index</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Install prerequisites</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> apt-transport-https ca-certificates curl software-properties-common
+
+<span class="c"># Add Docker's official GPG key</span>
+curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>gpg <span class="nt">--dearmor</span> <span class="nt">-o</span> /usr/share/keyrings/docker-archive-keyring.gpg
+
+<span class="c"># Set up the stable repository</span>
+<span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> stable"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/docker.list <span class="o">&gt;</span> /dev/null
+
+<span class="c"># Update the package index again</span>
+<span class="nb">sudo </span>apt update
+
+<span class="c"># Install Docker Engine</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> docker-ce docker-ce-cli containerd.io
+
+<span class="c"># Add your user to the docker group to run Docker without sudo</span>
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
+
+<span class="c"># Apply the new group membership</span>
+newgrp docker
+</code></pre></div></div> <h3 id="installing-docker-on-macos">Installing Docker on macOS</h3> <ol> <li>Download and install Docker Desktop from the <a href="https://www.docker.com/products/docker-desktop" rel="external nofollow noopener" target="_blank">official website</a> </li> <li>Open Docker Desktop and follow the setup wizard</li> </ol> <h2 id="basic-ubuntu-container-usage">Basic Ubuntu Container Usage</h2> <p>Once Docker is installed, you can start working with Ubuntu containers.</p> <h3 id="pulling-an-ubuntu-image">Pulling an Ubuntu Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull the latest Ubuntu image</span>
+docker pull ubuntu:latest
+
+<span class="c"># Pull a specific version (e.g., Ubuntu 22.04 LTS)</span>
+docker pull ubuntu:22.04
+</code></pre></div></div> <h3 id="running-an-ubuntu-container">Running an Ubuntu Container</h3> <h4 id="interactive-mode">Interactive Mode</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run a container interactively with a bash shell</span>
+docker run <span class="nt">-it</span> ubuntu:latest bash
+</code></pre></div></div> <p>This command:</p> <ul> <li> <code class="language-plaintext highlighter-rouge">-i</code>: Keeps STDIN open</li> <li> <code class="language-plaintext highlighter-rouge">-t</code>: Allocates a pseudo-TTY</li> <li> <code class="language-plaintext highlighter-rouge">bash</code>: Runs the bash shell inside the container</li> </ul> <h4 id="accessing-a-running-container">Accessing a Running Container</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Access a running container with bash</span>
+docker <span class="nb">exec</span> <span class="nt">-it</span> my-ubuntu bash
+</code></pre></div></div> <h4 id="stopping-and-removing-containers">Stopping and Removing Containers</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Stop a running container</span>
+docker stop my-ubuntu
+
+<span class="c"># Remove a container</span>
+docker <span class="nb">rm </span>my-ubuntu
+
+<span class="c"># Force remove a running container</span>
+docker <span class="nb">rm</span> <span class="nt">-f</span> my-ubuntu
+</code></pre></div></div> <h2 id="creating-custom-ubuntu-images">Creating Custom Ubuntu Images</h2> <p>Creating custom Ubuntu images allows you to package your applications and dependencies for easier deployment.</p> <h3 id="basic-dockerfile-example">Basic Dockerfile Example</h3> <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use Ubuntu 22.04 as the base image</span>
+<span class="k">FROM</span><span class="s"> ubuntu:22.04</span>
+
+<span class="c"># Set non-interactive mode for apt</span>
+<span class="k">ENV</span><span class="s"> DEBIAN_FRONTEND=noninteractive</span>
+
+<span class="c"># Update and install packages</span>
+<span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> <span class="se">\
+</span>    python3 <span class="se">\
+</span>    python3-pip <span class="se">\
+</span>    nginx <span class="se">\
+</span>    vim <span class="se">\
+</span>    curl <span class="se">\
+</span>    <span class="o">&amp;&amp;</span> apt-get clean <span class="se">\
+</span>    <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span>
+
+<span class="c"># Set the working directory</span>
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+
+<span class="c"># Copy application files</span>
+<span class="k">COPY</span><span class="s"> . /app/</span>
+
+<span class="c"># Expose a port</span>
+<span class="k">EXPOSE</span><span class="s"> 80</span>
+
+<span class="c"># Define the command to run when the container starts</span>
+<span class="k">CMD</span><span class="s"> ["nginx", "-g", "daemon off;"]</span>
+</code></pre></div></div> <h3 id="building-the-image">Building the Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build an image from the Dockerfile in the current directory</span>
+docker build <span class="nt">-t</span> my-ubuntu-app <span class="nb">.</span>
+
+<span class="c"># Build with a specific tag</span>
+docker build <span class="nt">-t</span> my-ubuntu-app:1.0 <span class="nb">.</span>
+</code></pre></div></div> <h3 id="running-the-custom-image">Running the Custom Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the custom image</span>
+docker run <span class="nt">-d</span> <span class="nt">-p</span> 8080:80 <span class="nt">--name</span> my-webapp my-ubuntu-app
+</code></pre></div></div> <p>This command:</p> <ul> <li> <code class="language-plaintext highlighter-rouge">-p 8080:80</code>: Maps port 8080 on the host to port 80 in the container</li> <li> <code class="language-plaintext highlighter-rouge">--name my-webapp</code>: Names the container</li> </ul> <h2 id="persistent-data-with-volumes">Persistent Data with Volumes</h2> <p>Docker containers are ephemeral, meaning any data inside them is lost when they’re removed. Volumes solve this problem.</p> <h3 id="creating-and-using-volumes">Creating and Using Volumes</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a named volume</span>
+docker volume create my-data
+
+<span class="c"># Run a container with the volume mounted</span>
+docker run <span class="nt">-it</span> <span class="nt">-v</span> my-data:/data ubuntu:latest bash
+</code></pre></div></div> <p>Inside the container, any data written to <code class="language-plaintext highlighter-rouge">/data</code> will persist in the <code class="language-plaintext highlighter-rouge">my-data</code> volume.</p> <h3 id="bind-mounts">Bind Mounts</h3> <p>You can also mount host directories into containers:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Mount a host directory to a container directory</span>
+docker run <span class="nt">-it</span> <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/host-data:/container-data ubuntu:latest bash
+</code></pre></div></div> <h2 id="docker-compose-for-multi-container-applications">Docker Compose for Multi-Container Applications</h2> <p>Docker Compose simplifies managing multi-container applications.</p> <h3 id="example-docker-compose-file">Example Docker Compose File</h3> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="s">./web</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8080:80"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">web-data:/var/www/html</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">app-network</span>
+
+  <span class="na">db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mysql:8.0</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db-data:/var/lib/mysql</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="na">MYSQL_ROOT_PASSWORD</span><span class="pi">:</span> <span class="s">rootpassword</span>
+      <span class="na">MYSQL_DATABASE</span><span class="pi">:</span> <span class="s">mydb</span>
+      <span class="na">MYSQL_USER</span><span class="pi">:</span> <span class="s">user</span>
+      <span class="na">MYSQL_PASSWORD</span><span class="pi">:</span> <span class="s">password</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">app-network</span>
+
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">app-network</span><span class="pi">:</span>
+
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">web-data</span><span class="pi">:</span>
+  <span class="na">db-data</span><span class="pi">:</span>
+</code></pre></div></div> <h3 id="using-docker-compose">Using Docker Compose</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start all services defined in docker-compose.yml</span>
+docker-compose up
+
+<span class="c"># Run in detached mode</span>
+docker-compose up <span class="nt">-d</span>
+
+<span class="c"># Stop all services</span>
+docker-compose down
+
+<span class="c"># Stop services and remove volumes</span>
+docker-compose down <span class="nt">-v</span>
+</code></pre></div></div> <h2 id="one-line-setup-commands">One-Line Setup Commands</h2> <p>For quick setup, here are one-line commands combining multiple steps:</p> <h3 id="basic-ubuntu-container-setup">Basic Ubuntu Container Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ubuntu:22.04 <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> my-ubuntu <span class="nt">-v</span> my-data:/data ubuntu:22.04 <span class="nb">tail</span> <span class="nt">-f</span> /dev/null <span class="o">&amp;&amp;</span> docker <span class="nb">exec</span> <span class="nt">-it</span> my-ubuntu bash
+</code></pre></div></div> <h3 id="web-server-setup">Web Server Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello from Docker!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span> <span class="o">&gt;</span> index.html <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> nginx-ubuntu <span class="nt">-p</span> 8080:80 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/index.html:/var/www/html/index.html ubuntu:22.04 bash <span class="nt">-c</span> <span class="s2">"apt-get update &amp;&amp; apt-get install -y nginx &amp;&amp; nginx -g 'daemon off;'"</span>
+</code></pre></div></div> <h2 id="conclusion">Conclusion</h2> <p>This guide has covered everything you need to know about using Ubuntu with Docker, from basic container operations to advanced multi-container applications and optimization techniques. Docker provides a powerful way to create consistent, reproducible environments for development, testing, and production, and Ubuntu serves as an excellent base for containerized applications due to its widespread support and compatibility.</p> <p>By following the best practices outlined in this guide, you can create efficient, secure, and maintainable Docker images for your Ubuntu-based applications. As you become more comfortable with Docker, you’ll discover even more ways to leverage containerization to improve your development workflow and application deployment processes.</p> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/posts/how-to-set-up-ROS/">Complete Guide to ROS Installation and Setup</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/posts/simple-langchain/">Complete Guide to LangChain Installation and Setup</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/posts/how-to-set-up-ROS-on-Jetson/">ROS Installation and Setup Guide for NVIDIA Jetson Nano</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/posts/how-to-set-up-a-python-package/">How to Set Up a Python Package</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Sangbeom Park. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. Last updated: April 07, 2025. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script> <script src="/assets/js/no_defer.js?2930004b8d7fcd0a8e00fdcfc8fc9f24"></script> <script defer src="/assets/js/common.js?4a129fbf39254905f505c7246e641eaf"></script> <script defer src="/assets/js/copy_code.js?7254ae07fe9cc5f3a10843e1c0817c9c" type="text/javascript"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
