@@ -14,12 +14,12 @@ profile:
   #   <p>Your City, State 12345</p>
 
 news: false # includes a list of news items
-latest_posts: false # includes a list of the newest posts
+latest_posts: true # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a MS student in AI at [Korea University](https://info.korea.edu/en_info/grad/ai_intro.do), advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi).
+I am an AI research engineer. I received my MS degree in AI from [Korea University](https://info.korea.edu/en_info/grad/ai_intro.do), advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi).
 
 My research goal is to enable AI agents to tackle complex and challenging tasks what humans do daily in a scalable way. To this end, I'm interested in the area of generalizable AI, with a fcous on reinforcement learning and generative models.
 
