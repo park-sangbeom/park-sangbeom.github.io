@@ -12,7 +12,7 @@ tags:
   - langchain
   - installation
   - setup
-  - agent
+  - ai agent
   - '2024'
 description: "A comprehensive guide on installing and configuring LangChain for building LLM-powered applications"
 use_math: true
