@@ -1,4 +1,279 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-04-07T04:08:30+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">Complete Guide to ROS Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/" rel="alternate" type="text/html" title="Complete Guide to ROS Installation and Setup"/><published>2024-01-03T00:00:00+00:00</published><updated>2024-01-03T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Robot Operating System (ROS) is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms. In this guide, we’ll walk through the installation process for both ROS 1 and ROS 2, the two major versions currently in use.</p> <h2 id="ros-1-installation-noetic---for-ubuntu-2004">ROS 1 Installation (Noetic - for Ubuntu 20.04)</h2> <h3 id="setting-up-the-repository">Setting Up the Repository</h3> <p>To begin with, you need to configure your system to accept software from the ROS repositories:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-04-07T04:32:02+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">ROS Installation and Setup Guide for NVIDIA Jetson Nano</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/" rel="alternate" type="text/html" title="ROS Installation and Setup Guide for NVIDIA Jetson Nano"/><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>The NVIDIA Jetson Nano is a powerful embedded system that provides GPU acceleration for AI and robotics projects in a compact form factor. Installing the Robot Operating System (ROS) on this platform enables the development of advanced robotic applications such as computer vision, autonomous navigation, and object recognition. This guide will walk you through installing and optimizing ROS on the Jetson Nano step by step.</p> <h2 id="jetson-nano-hardware-requirements">Jetson Nano Hardware Requirements</h2> <ul> <li>NVIDIA Jetson Nano Developer Kit</li> <li>MicroSD card (64GB or larger, UHS-I or better speed recommended)</li> <li>Power supply (5V/4A barrel jack recommended for maximum performance)</li> <li>Cooling fan (strongly recommended)</li> <li>Optional: Camera module (CSI or USB), sensors, motor controllers</li> </ul> <h2 id="jetson-nano-basic-setup">Jetson Nano Basic Setup</h2> <h3 id="operating-system-installation">Operating System Installation</h3> <ol> <li>Download the Jetson Nano Developer Kit SD Card Image from NVIDIA’s website <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the latest JetPack image from https://developer.nvidia.com/embedded/downloads</span>
+</code></pre></div> </div> </li> <li> <p>Flash the image to your microSD card using SDK Manager or balenaEtcher</p> </li> <li> <p>Insert the microSD card into your Jetson Nano and power it on</p> </li> <li> <p>Complete the initial setup (create user, connect to WiFi, etc.)</p> </li> <li>Update the system: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade <span class="nt">-y</span>
+</code></pre></div> </div> </li> </ol> <h3 id="jetson-nano-performance-optimization">Jetson Nano Performance Optimization</h3> <ol> <li>Set the maximum performance mode: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvpmodel <span class="nt">-m</span> 0  <span class="c"># Sets to 10W mode</span>
+<span class="nb">sudo </span>jetson_clocks  <span class="c"># Maximizes clock frequencies</span>
+</code></pre></div> </div> </li> <li>Install system monitoring tools: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>htop iotop <span class="nt">-y</span>
+htop  <span class="c"># Check CPU and memory usage</span>
+</code></pre></div> </div> </li> <li>Adjust swap space: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a swap file</span>
+<span class="nb">sudo </span>fallocate <span class="nt">-l</span> 8G /var/swapfile
+<span class="nb">sudo chmod </span>600 /var/swapfile
+<span class="nb">sudo </span>mkswap /var/swapfile
+<span class="nb">sudo </span>swapon /var/swapfile
+<span class="c"># Make swap persistent</span>
+<span class="nb">echo</span> <span class="s2">"/var/swapfile swap swap defaults 0 0"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/fstab
+</code></pre></div> </div> </li> <li>Set maximum performance automatically at boot: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'#!/bin/bash
+/usr/bin/nvpmodel -m 0
+/usr/bin/jetson_clocks
+'</span> | <span class="nb">sudo tee</span> /usr/local/bin/jetson_performance
+   
+<span class="nb">sudo chmod</span> +x /usr/local/bin/jetson_performance
+   
+<span class="nb">echo</span> <span class="s1">'[Unit]
+Description=Jetson Performance Mode
+After=multi-user.target
+   
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/jetson_performance
+RemainAfterExit=yes
+   
+[Install]
+WantedBy=multi-user.target
+'</span> | <span class="nb">sudo tee</span> /etc/systemd/system/jetson-performance.service
+   
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>jetson-performance.service
+</code></pre></div> </div> </li> </ol> <h2 id="ros-installation-based-on-jetpack-version">ROS Installation Based on JetPack Version</h2> <p>Different ROS versions can be installed depending on the JetPack version on your Jetson Nano. Here are installation guides for major versions.</p> <h3 id="installing-ros-melodic-on-jetpack-4x">Installing ROS Melodic on JetPack 4.x</h3> <ol> <li>Set up the ROS repository: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>
+</code></pre></div> </div> </li> <li>Add the ROS key: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
+curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add -
+</code></pre></div> </div> </li> <li>Update package lists: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+</code></pre></div> </div> </li> <li>Install ROS Melodic: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-desktop <span class="nt">-y</span>
+</code></pre></div> </div> </li> <li>Set up your environment: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/melodic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div> </div> </li> <li>Install dependencies: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential <span class="nt">-y</span>
+<span class="nb">sudo </span>rosdep init
+rosdep update
+</code></pre></div> </div> </li> </ol> <h3 id="installing-ros-2-foxy-on-jetpack-5x">Installing ROS 2 Foxy on JetPack 5.x</h3> <ol> <li>Set the locale: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>locales <span class="nt">-y</span>
+<span class="nb">sudo </span>locale-gen en_US en_US.UTF-8
+<span class="nb">sudo </span>update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+</code></pre></div> </div> </li> <li>Add the ROS 2 repository: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span>
+<span class="nb">sudo </span>add-apt-repository universe
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
+<span class="nb">sudo </span>curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.key <span class="nt">-o</span> /usr/share/keyrings/ros-archive-keyring.gpg
+<span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="si">)</span><span class="s2"> main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/ros2.list <span class="o">&gt;</span> /dev/null
+</code></pre></div> </div> </li> <li>Install ROS 2 Foxy: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>ros-foxy-ros-base <span class="nt">-y</span>
+</code></pre></div> </div> </li> <li>Set up your environment: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/foxy/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div> </div> </li> </ol> <h2 id="setting-up-a-ros-workspace">Setting Up a ROS Workspace</h2> <h3 id="ros-1-melodic-workspace">ROS 1 (Melodic) Workspace</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
+<span class="nb">cd</span> ~/catkin_ws
+catkin_make
+<span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div></div> <h3 id="ros-2-foxy-workspace">ROS 2 (Foxy) Workspace</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src
+<span class="nb">cd</span> ~/ros2_ws
+colcon build
+<span class="nb">echo</span> <span class="s2">"source ~/ros2_ws/install/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+</code></pre></div></div> <h2 id="installing-cuda-supported-packages-for-jetson-nano">Installing CUDA-Supported Packages for Jetson Nano</h2> <p>JetPack already comes with pre-installed CUDA, cuDNN, and TensorRT. Let’s install additional packages to leverage these capabilities.</p> <h3 id="1-verify-opencv-with-cuda-support">1. Verify OpenCV with CUDA Support</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check the version of OpenCV included with JetPack</span>
+python3 <span class="nt">-c</span> <span class="s2">"import cv2; print(cv2.__version__); print(cv2.getBuildInformation())"</span>
+</code></pre></div></div> <h3 id="2-install-cuda-packages-for-use-with-ros">2. Install CUDA Packages for Use with ROS</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For ROS Melodic</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-perception ros-melodic-vision-opencv <span class="nt">-y</span>
+
+<span class="c"># For ROS 2 Foxy</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>ros-foxy-perception ros-foxy-vision-opencv <span class="nt">-y</span>
+</code></pre></div></div> <h2 id="project-examples-using-jetson-nano-and-ros">Project Examples Using Jetson Nano and ROS</h2> <h3 id="1-gpu-accelerated-image-processing-node">1. GPU-Accelerated Image Processing Node</h3> <h4 id="creating-a-ros-node-using-cuda-enabled-opencv">Creating a ROS Node Using CUDA-enabled OpenCV:</h4> <ol> <li>Create a package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
+catkin_create_pkg jetson_vision roscpp rospy sensor_msgs cv_bridge std_msgs
+<span class="nb">cd </span>jetson_vision
+<span class="nb">mkdir </span>scripts
+</code></pre></div> </div> </li> <li>Create a GPU-accelerated image processing node: <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>   
+<span class="kn">import</span> <span class="n">rospy</span>
+<span class="kn">from</span> <span class="n">sensor_msgs.msg</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="n">cv_bridge</span> <span class="kn">import</span> <span class="n">CvBridge</span>
+<span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">time</span>
+   
+<span class="k">class</span> <span class="nc">JetsonVision</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">bridge</span> <span class="o">=</span> <span class="nc">CvBridge</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">image_sub</span> <span class="o">=</span> <span class="n">rospy</span><span class="p">.</span><span class="nc">Subscriber</span><span class="p">(</span><span class="sh">'</span><span class="s">/camera/image_raw</span><span class="sh">'</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">image_callback</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">image_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="p">.</span><span class="nc">Publisher</span><span class="p">(</span><span class="sh">'</span><span class="s">/jetson_vision/processed</span><span class="sh">'</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">gpu_mat</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cuda_GpuMat</span><span class="p">()</span>
+           
+    <span class="k">def</span> <span class="nf">image_callback</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Convert image to OpenCV format
+</span>            <span class="n">cv_image</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">bridge</span><span class="p">.</span><span class="nf">imgmsg_to_cv2</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="sh">"</span><span class="s">bgr8</span><span class="sh">"</span><span class="p">)</span>
+               
+            <span class="c1"># Start processing time measurement
+</span>            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
+               
+            <span class="c1"># Upload image to GPU
+</span>            <span class="n">self</span><span class="p">.</span><span class="n">gpu_mat</span><span class="p">.</span><span class="nf">upload</span><span class="p">(</span><span class="n">cv_image</span><span class="p">)</span>
+               
+            <span class="c1"># Convert to grayscale on GPU
+</span>            <span class="n">gpu_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">gpu_mat</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+               
+            <span class="c1"># Apply Gaussian blur
+</span>            <span class="n">gpu_blur</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nc">GaussianBlur</span><span class="p">(</span><span class="n">gpu_gray</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+               
+            <span class="c1"># Detect edges using Canny
+</span>            <span class="n">gpu_edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nc">Canny</span><span class="p">(</span><span class="n">gpu_blur</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+               
+            <span class="c1"># Download results to CPU memory
+</span>            <span class="n">edges</span> <span class="o">=</span> <span class="n">gpu_edges</span><span class="p">.</span><span class="nf">download</span><span class="p">()</span>
+               
+            <span class="c1"># Calculate processing time
+</span>            <span class="n">process_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+               
+            <span class="c1"># Add processing time to result image
+</span>            <span class="n">cv2</span><span class="p">.</span><span class="nf">putText</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Process time: </span><span class="si">{</span><span class="n">process_time</span><span class="si">:</span><span class="p">.</span><span class="mi">3</span><span class="n">f</span><span class="si">}</span><span class="s">s</span><span class="sh">"</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+                       <span class="n">cv2</span><span class="p">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+                          
+            <span class="c1"># Publish processed image
+</span>            <span class="n">self</span><span class="p">.</span><span class="n">image_pub</span><span class="p">.</span><span class="nf">publish</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">bridge</span><span class="p">.</span><span class="nf">cv2_to_imgmsg</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="sh">"</span><span class="s">mono8</span><span class="sh">"</span><span class="p">))</span>
+               
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">rospy</span><span class="p">.</span><span class="nf">logerr</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+   
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">rospy</span><span class="p">.</span><span class="nf">init_node</span><span class="p">(</span><span class="sh">'</span><span class="s">jetson_vision</span><span class="sh">'</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">jv</span> <span class="o">=</span> <span class="nc">JetsonVision</span><span class="p">()</span>
+    <span class="n">rospy</span><span class="p">.</span><span class="nf">spin</span><span class="p">()</span>
+</code></pre></div> </div> </li> <li>Set execution permissions: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ~/catkin_ws/src/jetson_vision/scripts/jetson_vision_node.py
+</code></pre></div> </div> </li> <li>Build the package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws
+catkin_make
+</code></pre></div> </div> </li> </ol> <h3 id="2-building-an-object-detection-system-with-jetson-nano">2. Building an Object Detection System with Jetson Nano</h3> <ol> <li>Install required packages: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-vision-msgs <span class="nt">-y</span>
+</code></pre></div> </div> </li> <li>Create an object detection node using TensorRT: <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>   
+<span class="kn">import</span> <span class="n">rospy</span>
+<span class="kn">from</span> <span class="n">sensor_msgs.msg</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="n">vision_msgs.msg</span> <span class="kn">import</span> <span class="n">Detection2DArray</span><span class="p">,</span> <span class="n">Detection2D</span><span class="p">,</span> <span class="n">BoundingBox2D</span>
+<span class="kn">from</span> <span class="n">cv_bridge</span> <span class="kn">import</span> <span class="n">CvBridge</span>
+<span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">tensorrt</span> <span class="k">as</span> <span class="n">trt</span>
+<span class="kn">import</span> <span class="n">pycuda.driver</span> <span class="k">as</span> <span class="n">cuda</span>
+<span class="kn">import</span> <span class="n">pycuda.autoinit</span>
+   
+<span class="c1"># TensorRT model loading and inference code (omitted)
+# This would include code to load and run a TensorRT engine optimized for Jetson Nano
+</span>   
+<span class="k">class</span> <span class="nc">ObjectDetector</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="c1"># Model initialization code (omitted)
+</span>           
+        <span class="n">self</span><span class="p">.</span><span class="n">bridge</span> <span class="o">=</span> <span class="nc">CvBridge</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">image_sub</span> <span class="o">=</span> <span class="n">rospy</span><span class="p">.</span><span class="nc">Subscriber</span><span class="p">(</span><span class="sh">'</span><span class="s">/camera/image_raw</span><span class="sh">'</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">image_callback</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">detection_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="p">.</span><span class="nc">Publisher</span><span class="p">(</span><span class="sh">'</span><span class="s">/object_detections</span><span class="sh">'</span><span class="p">,</span> <span class="n">Detection2DArray</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">image_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="p">.</span><span class="nc">Publisher</span><span class="p">(</span><span class="sh">'</span><span class="s">/detection_visualization</span><span class="sh">'</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+           
+    <span class="k">def</span> <span class="nf">image_callback</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="c1"># Image conversion and object detection code (omitted)
+</span>        <span class="c1"># Publish results
+</span>        <span class="k">pass</span>
+   
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">rospy</span><span class="p">.</span><span class="nf">init_node</span><span class="p">(</span><span class="sh">'</span><span class="s">object_detector</span><span class="sh">'</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">detector</span> <span class="o">=</span> <span class="nc">ObjectDetector</span><span class="p">()</span>
+    <span class="n">rospy</span><span class="p">.</span><span class="nf">spin</span><span class="p">()</span>
+</code></pre></div> </div> </li> </ol> <h3 id="3-jetson-based-autonomous-navigation-robot">3. Jetson-Based Autonomous Navigation Robot</h3> <ol> <li>Install required packages: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-navigation ros-melodic-gmapping ros-melodic-move-base <span class="nt">-y</span>
+</code></pre></div> </div> </li> <li>Configure robot navigation: <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- jetson_robot_nav.launch --&gt;</span>
+<span class="nt">&lt;launch&gt;</span>
+  <span class="c">&lt;!-- Robot model and transformation setup --&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"robot_description"</span> <span class="na">textfile=</span><span class="s">"$(find jetson_robot)/urdf/robot.urdf"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">"robot_state_publisher"</span> <span class="na">pkg=</span><span class="s">"robot_state_publisher"</span> <span class="na">type=</span><span class="s">"robot_state_publisher"</span> <span class="nt">/&gt;</span>
+     
+  <span class="c">&lt;!-- LIDAR sensor setup --&gt;</span>
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">"rplidar"</span> <span class="na">pkg=</span><span class="s">"rplidar_ros"</span> <span class="na">type=</span><span class="s">"rplidarNode"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"serial_port"</span> <span class="na">value=</span><span class="s">"/dev/ttyUSB0"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"frame_id"</span> <span class="na">value=</span><span class="s">"laser"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/node&gt;</span>
+     
+  <span class="c">&lt;!-- SLAM mapping --&gt;</span>
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">"gmapping"</span> <span class="na">pkg=</span><span class="s">"gmapping"</span> <span class="na">type=</span><span class="s">"slam_gmapping"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"base_frame"</span> <span class="na">value=</span><span class="s">"base_link"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"odom_frame"</span> <span class="na">value=</span><span class="s">"odom"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"map_update_interval"</span> <span class="na">value=</span><span class="s">"5.0"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/node&gt;</span>
+     
+  <span class="c">&lt;!-- Navigation stack --&gt;</span>
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">"move_base"</span> <span class="na">pkg=</span><span class="s">"move_base"</span> <span class="na">type=</span><span class="s">"move_base"</span> <span class="na">output=</span><span class="s">"screen"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rosparam</span> <span class="na">file=</span><span class="s">"$(find jetson_robot)/config/costmap_common_params.yaml"</span> <span class="na">command=</span><span class="s">"load"</span> <span class="na">ns=</span><span class="s">"global_costmap"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;rosparam</span> <span class="na">file=</span><span class="s">"$(find jetson_robot)/config/costmap_common_params.yaml"</span> <span class="na">command=</span><span class="s">"load"</span> <span class="na">ns=</span><span class="s">"local_costmap"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;rosparam</span> <span class="na">file=</span><span class="s">"$(find jetson_robot)/config/local_costmap_params.yaml"</span> <span class="na">command=</span><span class="s">"load"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;rosparam</span> <span class="na">file=</span><span class="s">"$(find jetson_robot)/config/global_costmap_params.yaml"</span> <span class="na">command=</span><span class="s">"load"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;rosparam</span> <span class="na">file=</span><span class="s">"$(find jetson_robot)/config/base_local_planner_params.yaml"</span> <span class="na">command=</span><span class="s">"load"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/node&gt;</span>
+<span class="nt">&lt;/launch&gt;</span>
+</code></pre></div> </div> </li> </ol> <h2 id="optimizing-deep-learning-models-for-jetson-nano">Optimizing Deep Learning Models for Jetson Nano</h2> <p>You can optimize deep learning models for Jetson Nano using TensorRT.</p> <h3 id="converting-tensorflow-models-to-tensorrt">Converting TensorFlow Models to TensorRT</h3> <ol> <li>Install required packages: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip
+pip3 <span class="nb">install</span> <span class="nt">--upgrade</span> pip
+pip3 <span class="nb">install </span>numpy tensorflow
+</code></pre></div> </div> </li> <li>Convert TensorFlow models to UFF or ONNX and apply TensorRT optimization: <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">import</span> <span class="n">tensorrt</span> <span class="k">as</span> <span class="n">trt</span>
+<span class="kn">import</span> <span class="n">uff</span>
+   
+<span class="c1"># Load a model saved from TensorFlow
+# model = tf.saved_model.load("path_to_saved_model")
+</span>   
+<span class="c1"># Convert to UFF
+# uff_model = uff.from_tensorflow(graphdef, output_nodes=["output"])
+</span>   
+<span class="c1"># Create TensorRT engine
+# TRT_LOGGER = trt.Logger(trt.Logger.INFO)
+# builder = trt.Builder(TRT_LOGGER)
+# ...
+</span></code></pre></div> </div> </li> </ol> <h2 id="monitoring-and-analyzing-gpu-on-jetson-nano">Monitoring and Analyzing GPU on Jetson Nano</h2> <ol> <li>Using Tegrastats: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tegrastats
+</code></pre></div> </div> </li> <li>Installing and using Jetson-stats: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-H</span> pip <span class="nb">install</span> <span class="nt">-U</span> jetson-stats
+jtop
+</code></pre></div> </div> </li> </ol> <h2 id="one-line-installation-script-for-jetson-nano--ros">One-Line Installation Script for Jetson Nano + ROS</h2> <p>Here’s a one-line script to install and optimize ROS Melodic on Jetson Nano:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># ROS Melodic installation script for Jetson Nano</span>
+
+<span class="c"># Update system</span>
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> 
+<span class="c"># Set up ROS repositories</span>
+<span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span> <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> 
+curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> 
+<span class="c"># Install ROS Melodic</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-desktop <span class="nt">-y</span> <span class="o">&amp;&amp;</span> 
+<span class="c"># Set up environment</span>
+<span class="nb">echo</span> <span class="s2">"source /opt/ros/melodic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> 
+<span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> 
+<span class="c"># Install dependencies</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential <span class="nt">-y</span> <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo </span>rosdep init <span class="o">&amp;&amp;</span> 
+rosdep update <span class="o">&amp;&amp;</span> 
+<span class="c"># Create workspace</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src <span class="o">&amp;&amp;</span> 
+<span class="nb">cd</span> ~/catkin_ws <span class="o">&amp;&amp;</span> 
+catkin_make <span class="o">&amp;&amp;</span> 
+<span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> 
+<span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> 
+<span class="c"># Optimize Jetson Nano</span>
+<span class="nb">sudo </span>nvpmodel <span class="nt">-m</span> 0 <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo </span>jetson_clocks <span class="o">&amp;&amp;</span> 
+<span class="c"># Create startup service for maximum performance</span>
+<span class="nb">echo</span> <span class="s1">'#!/bin/bash
+/usr/bin/nvpmodel -m 0
+/usr/bin/jetson_clocks
+'</span> | <span class="nb">sudo tee</span> /usr/local/bin/jetson_performance <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo chmod</span> +x /usr/local/bin/jetson_performance <span class="o">&amp;&amp;</span> 
+<span class="nb">echo</span> <span class="s1">'[Unit]
+Description=Jetson Performance Mode
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/jetson_performance
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+'</span> | <span class="nb">sudo tee</span> /etc/systemd/system/jetson-performance.service <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>jetson-performance.service <span class="o">&amp;&amp;</span> 
+<span class="c"># Add swap space</span>
+<span class="nb">sudo </span>fallocate <span class="nt">-l</span> 8G /var/swapfile <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo chmod </span>600 /var/swapfile <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo </span>mkswap /var/swapfile <span class="o">&amp;&amp;</span> 
+<span class="nb">sudo </span>swapon /var/swapfile <span class="o">&amp;&amp;</span> 
+<span class="nb">echo</span> <span class="s2">"/var/swapfile swap swap defaults 0 0"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/fstab <span class="o">&amp;&amp;</span> 
+<span class="nb">echo</span> <span class="s2">"ROS Melodic installation and optimization complete!"</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="robotics"/><category term="ros"/><category term="jetson nano"/><category term="nvidia"/><category term="embedded"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide for installing and configuring ROS on NVIDIA Jetson Nano]]></summary></entry><entry><title type="html">Complete Guide to ROS Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/" rel="alternate" type="text/html" title="Complete Guide to ROS Installation and Setup"/><published>2024-01-03T00:00:00+00:00</published><updated>2024-01-03T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Robot Operating System (ROS) is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms. In this guide, we’ll walk through the installation process for both ROS 1 and ROS 2, the two major versions currently in use.</p> <h2 id="ros-1-installation-noetic---for-ubuntu-2004">ROS 1 Installation (Noetic - for Ubuntu 20.04)</h2> <h3 id="setting-up-the-repository">Setting Up the Repository</h3> <p>To begin with, you need to configure your system to accept software from the ROS repositories:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>
 </code></pre></div></div> <h3 id="setting-up-keys">Setting Up Keys</h3> <p>Next, you need to set up the necessary keys:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
 curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add -
 </code></pre></div></div> <h3 id="updating-and-installing-ros">Updating and Installing ROS</h3> <p>Now, update your package lists and install ROS:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
@@ -84,9 +359,9 @@ rosdep update
 </code></pre></div></div> <p>Make the scripts executable:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ros1.sh ros2.sh
 </code></pre></div></div> <p>Use them by sourcing:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/ros1.sh  <span class="c"># Activate ROS 1</span>
 <span class="nb">source</span> ~/ros2.sh  <span class="c"># Activate ROS 2</span>
-</code></pre></div></div> <h2 id="additional-resources">Additional Resources</h2> <ul> <li><a href="http://wiki.ros.org/">ROS 1 Official Documentation</a></li> <li><a href="https://docs.ros.org/">ROS 2 Official Documentation</a></li> <li><a href="https://answers.ros.org/">ROS Answers (Q&amp;A Site)</a></li> <li><a href="https://discourse.ros.org/">ROS Discourse Forum</a></li> </ul> <h2 id="conclusion">Conclusion</h2> <p>In this guide, you’ve learned how to install and set up ROS 1 or ROS 2, create a development workspace, and build your first package. While ROS has a learning curve, mastering these basic steps opens the door to the powerful world of robot programming. The modular nature of ROS allows you to focus on developing the specific functionality you need while leveraging the extensive ecosystem of existing packages and tools.</p> <h2 id="one-line-installation-commands-for-quick-setup">One-line Installation Commands for Quick Setup</h2> <p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p> <h3 id="ros-1-noetic-complete-setup">ROS 1 (Noetic) Complete Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-noetic-desktop-full <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>rosdep init <span class="o">&amp;&amp;</span> rosdep update <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/catkin_ws <span class="o">&amp;&amp;</span> catkin_make <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
+</code></pre></div></div> <h2 id="additional-resources">Additional Resources</h2> <ul> <li><a href="http://wiki.ros.org/">ROS 1 Official Documentation</a></li> <li><a href="https://docs.ros.org/">ROS 2 Official Documentation</a></li> <li><a href="https://answers.ros.org/">ROS Answers (Q&amp;A Site)</a></li> <li><a href="https://discourse.ros.org/">ROS Discourse Forum</a></li> </ul> <h2 id="one-line-installation-commands-for-quick-setup">One-line Installation Commands for Quick Setup</h2> <p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p> <h3 id="ros-1-noetic-complete-setup">ROS 1 (Noetic) Complete Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-noetic-desktop-full <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>rosdep init <span class="o">&amp;&amp;</span> rosdep update <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/catkin_ws <span class="o">&amp;&amp;</span> catkin_make <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
 </code></pre></div></div> <h3 id="ros-2-humble-complete-setup">ROS 2 (Humble) Complete Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>locales <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>locale-gen en_US en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>add-apt-repository universe <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.key <span class="nt">-o</span> /usr/share/keyrings/ros-archive-keyring.gpg <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="si">)</span><span class="s2"> main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/ros2.list <span class="o">&gt;</span> /dev/null <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-humble-desktop <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-dev-tools <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source /opt/ros/humble/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/ros2_ws <span class="o">&amp;&amp;</span> colcon build <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source ~/ros2_ws/install/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <p>These commands are particularly useful for scripting or setting up new development environments quickly.</p>]]></content><author><name></name></author><category term="robotics"/><category term="ros"/><category term="installation"/><category term="setup"/><category term="ubuntu"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide on installing and configuring ROS (Robot Operating System) on Ubuntu]]></summary></entry><entry><title type="html">How to Set Up a Python Package</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/" rel="alternate" type="text/html" title="How to Set Up a Python Package"/><published>2024-01-01T00:00:00+00:00</published><updated>2024-01-01T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Creating a Python package is an essential skill for any Python developer. It allows you to organize your code, make it reusable, and share it with others. In this post, we’ll go through the process of setting up a Python package step by step.</p> <h2 id="setting-up-the-package-structure">Setting Up the Package Structure</h2> <ol> <li>Create a new directory for your package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>my_package
+</code></pre></div></div> <p>These commands are particularly useful for scripting or setting up new development environments quickly.</p>]]></content><author><name></name></author><category term="robotics"/><category term="ros"/><category term="setup"/><category term="ubuntu"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide on installing and configuring ROS (Robot Operating System) on Ubuntu]]></summary></entry><entry><title type="html">How to Set Up a Python Package</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/" rel="alternate" type="text/html" title="How to Set Up a Python Package"/><published>2024-01-01T00:00:00+00:00</published><updated>2024-01-01T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Creating a Python package is an essential skill for any Python developer. It allows you to organize your code, make it reusable, and share it with others. In this post, we’ll go through the process of setting up a Python package step by step.</p> <h2 id="setting-up-the-package-structure">Setting Up the Package Structure</h2> <ol> <li>Create a new directory for your package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>my_package
 <span class="nb">cd </span>my_package
 </code></pre></div> </div> </li> <li>Create the following file structure: <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
 ├── my_package/
