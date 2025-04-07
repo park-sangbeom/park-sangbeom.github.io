@@ -122,17 +122,19 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-# blog_name: Research Logs # blog_name will be displayed in your blog page
-# blog_description: Weekly review of related research papers and programming projects
+blog_name: Dev Logs # blog_name will be displayed in your blog page
+blog_description: Thoughts, projects, and learnings in what I love
+permalink: /posts/:title/
+
 # permalink: /blog/:year/:title/
 
-# # Pagination
-# pagination:
-#   enabled: true
+# Pagination
+pagination:
+  enabled: true
 
-# related_blog_posts:
-#   enabled: true
-#   max_related: 5
+related_blog_posts:
+  enabled: true
+  max_related: 5
 
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
@@ -263,7 +265,7 @@ jekyll-archives:
     year: "/blog/:year/"
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
-
+display_tags: ["Agent", "Reinforcement Learning", "Code"]
 # display_tags: ["Manipulation", "LLMs", "PBL", "Navigation", "Code"] # these tags will be displayed on the front page of your blog
 # display_categories: ["blockquotes"] # these categories will be displayed on the front page of your blog
 

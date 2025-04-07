@@ -263,9 +263,3 @@ twine upload dist/*
 ```
 
 Remember to never commit the `.pypirc` file to your version control system, as it contains sensitive information.
-And finally you can see the installed package like below image.
-
-<div align="center">
-  <img src="/assets/python_package/terminal_result.png" width="95%">
-  <p>Installed package</p>
-</div>
