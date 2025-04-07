@@ -9,7 +9,6 @@ categories:
   - robotics
 tags:
   - ros
-  - installation
   - setup
   - ubuntu
   - '2024'
@@ -369,10 +368,6 @@ source ~/ros2.sh  # Activate ROS 2
 - [ROS 2 Official Documentation](https://docs.ros.org/)
 - [ROS Answers (Q&A Site)](https://answers.ros.org/)
 - [ROS Discourse Forum](https://discourse.ros.org/)
-
-## Conclusion
-
-In this guide, you've learned how to install and set up ROS 1 or ROS 2, create a development workspace, and build your first package. While ROS has a learning curve, mastering these basic steps opens the door to the powerful world of robot programming. The modular nature of ROS allows you to focus on developing the specific functionality you need while leveraging the extensive ecosystem of existing packages and tools.
 
 ## One-line Installation Commands for Quick Setup
 
