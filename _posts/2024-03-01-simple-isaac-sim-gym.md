@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NVIDIA Isaac Sim and Isaac Gym Installation Guide for Ubuntu"
-date: 2024-04-07
+date: 2024-03-01
 categories:
   - robotics
 tags:
@@ -10,7 +10,7 @@ tags:
   - isaac gym
   - ubuntu
   - installation
-description: "A simplified guide for installing NVIDIA Isaac Sim and Isaac Gym on Ubuntu systems"
+description: "A simplified guide for installing NVIDIA Isaac Sim and Isaac Gym on Ubuntu"
 ---
 
 ## System Requirements
