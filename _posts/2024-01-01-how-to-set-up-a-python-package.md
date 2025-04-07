@@ -14,7 +14,6 @@ categories:
 tags:
   - python
   - setup
-  - package
   - '2024'
 description: "A comprehensive guide on creating and managing a Python package"
 use_math: true

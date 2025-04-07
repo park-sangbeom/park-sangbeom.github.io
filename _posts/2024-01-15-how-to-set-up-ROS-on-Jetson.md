@@ -10,8 +10,8 @@ categories:
 tags:
   - ros
   - jetson nano
-  - nvidia
   - embedded
+  - setup
   - '2024'
 description: "A comprehensive guide for installing and configuring ROS on NVIDIA Jetson Nano"
 use_math: true

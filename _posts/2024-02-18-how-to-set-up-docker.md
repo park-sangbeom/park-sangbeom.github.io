@@ -11,6 +11,7 @@ categories:
 tags:
   - docker
   - ubuntu
+  - setup
   - '2024'
 description: "A comprehensive guide on setting up and using Ubuntu with Docker"
 classes: wide
