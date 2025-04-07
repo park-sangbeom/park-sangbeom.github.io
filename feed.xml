@@ -1,1 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-24T04:56:45+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-04-07T00:56:08+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">How to Set Up a Python Package</title><link href="https://park-sangbeom.github.io//python/2024/01/01/python-package.html" rel="alternate" type="text/html" title="How to Set Up a Python Package"/><published>2024-01-01T00:00:00+00:00</published><updated>2024-01-01T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//python/2024/01/01/python-package</id><content type="html" xml:base="https://park-sangbeom.github.io//python/2024/01/01/python-package.html"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Creating a Python package is an essential skill for any Python developer. It allows you to organize your code, make it reusable, and share it with others. In this post, we’ll go through the process of setting up a Python package step by step.</p> <h2 id="setting-up-the-package-structure">Setting Up the Package Structure</h2> <ol> <li>Create a new directory for your package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>my_package
+<span class="nb">cd </span>my_package
+</code></pre></div> </div> </li> <li>Create the following file structure: <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
+├── my_package/
+│   ├── __init__.py
+│   └── main.py
+├── tests/
+│   └── test_main.py
+├── README.md
+├── LICENSE
+└── setup.py
+</code></pre></div> </div> </li> </ol> <h2 id="writing-setuppy">Writing setup.py</h2> <p>The <code class="language-plaintext highlighter-rouge">setup.py</code> file is crucial for packaging your project. Here’s a basic example:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+<span class="nf">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="sh">"</span><span class="s">my_package</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="sh">"</span><span class="s">0.1.0</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="nf">find_packages</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">tests</span><span class="sh">"</span><span class="p">]),</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+        <span class="sh">"</span><span class="s">dependency1</span><span class="sh">"</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">dependency2</span><span class="sh">"</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">author</span><span class="o">=</span><span class="sh">"</span><span class="s">Your Name</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="sh">"</span><span class="s">your.email@example.com</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">A short description of your package</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">long_description</span><span class="o">=</span><span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">README.md</span><span class="sh">"</span><span class="p">).</span><span class="nf">read</span><span class="p">(),</span>
+    <span class="n">long_description_content_type</span><span class="o">=</span><span class="sh">"</span><span class="s">text/markdown</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="sh">"</span><span class="s">https://github.com/yourusername/my_package</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+        <span class="sh">"</span><span class="s">Programming Language :: Python :: 3</span><span class="sh">"</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">License :: OSI Approved :: MIT License</span><span class="sh">"</span><span class="p">,</span>
+        <span class="sh">"</span><span class="s">Operating System :: OS Independent</span><span class="sh">"</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">python_requires</span><span class="o">=</span><span class="sh">"</span><span class="s">&gt;=3.7</span><span class="sh">"</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div> <h2 id="managing-dependencies">Managing Dependencies</h2> <p>List your package dependencies in the <code class="language-plaintext highlighter-rouge">install_requires</code> parameter of <code class="language-plaintext highlighter-rouge">setup()</code>. For development dependencies, you can create a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file: In <code class="language-plaintext highlighter-rouge">requirements.txt</code>, you can write like below.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Image processing and visualization
+opencv-python # or opencv-python-headless
+matplotlib
+
+# LangChain and related libraries
+langchain
+langchain-core
+langchain_openai
+langchain_anthropic
+redis
+python-dotenv
+
+# Database
+mysql-connector-python
+
+# Additional requirements
+numpy
+# torch # (Need to check the Jetpack version if on Jetson)
+openai
+anyio
+pydantic
+scipy
+</code></pre></div></div> <h2 id="version-control-with-git">Version Control with Git</h2> <ol> <li>Initialize a Git repository: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div> </div> </li> <li>Create a <code class="language-plaintext highlighter-rouge">.gitignore</code> file: <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+</code></pre></div> </div> </li> <li>Make your first commit: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+</code></pre></div> </div> </li> </ol> <h2 id="building-and-publishing">Building and Publishing</h2> <ol> <li>Install build tools: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>build twine
+</code></pre></div> </div> </li> <li>Build your package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> build
+</code></pre></div> </div> </li> <li>Upload to PyPI (ensure you have an account): <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/<span class="k">*</span>
+</code></pre></div> </div> </li> </ol> <h2 id="installing-your-package">Installing Your Package</h2> <p>Once published, you can install your package using pip:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>my_package
+</code></pre></div></div> <p>For development or to install from GitHub:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>git+https://github.com/yourusername/my_package.git
+</code></pre></div></div> <h2 id="updating-your-package">Updating Your Package</h2> <ol> <li>Update your code and increment the version number in <code class="language-plaintext highlighter-rouge">setup.py</code>.</li> <li>Rebuild and republish: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> build
+twine upload dist/<span class="k">*</span>
+</code></pre></div> </div> </li> </ol> <p>To update an installed package:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> my_package
+</code></pre></div></div> <p>Or for a GitHub-installed package:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> <span class="nt">--force-reinstall</span> git+https://github.com/yourusername/my_package.git
+</code></pre></div></div> <h2 id="automating-package-publishing-with-github-actions">Automating Package Publishing with GitHub Actions</h2> <p>To automate the process of publishing your package to PyPI whenever you push a new release, you can use GitHub Actions. Here’s how to set it up:</p> <ol> <li>Create a <code class="language-plaintext highlighter-rouge">.github/workflows/publish.yml</code> file in your repository:</li> </ol> <pre><code class="language-yaml:.github/workflows/publish.yml">name: Publish Python Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+    - name: Build and publish
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: $
+      run: |
+        python -m build
+        twine upload dist/*
+</code></pre> <p>This workflow will trigger whenever you create a new release on GitHub. It sets up Python, installs the necessary dependencies, builds your package, and uploads it to PyPI using the credentials stored in GitHub Secrets.</p> <ol> <li>Store your PyPI API token as a secret in your GitHub repository: <ul> <li>Go to your repository on GitHub</li> <li>Click on “Settings” &gt; “Secrets” &gt; “New repository secret”</li> <li>Name the secret <code class="language-plaintext highlighter-rouge">PYPI_API_TOKEN</code> and paste your PyPI API token as the value</li> </ul> </li> </ol> <h2 id="managing-pypi-credentials-with-pypirc">Managing PyPI Credentials with .pypirc</h2> <p>For local development and manual uploads, you can use a <code class="language-plaintext highlighter-rouge">.pypirc</code> file to store your PyPI credentials securely. Here’s how to set it up:</p> <ol> <li>Create a <code class="language-plaintext highlighter-rouge">.pypirc</code> file in your home directory:</li> </ol> <pre><code class="language-ini:.pypirc">[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+username = __token__
+password = your_pypi_api_token
+
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = __token__
+password = your_testpypi_api_token
+</code></pre> <p>Replace <code class="language-plaintext highlighter-rouge">your_pypi_api_token</code> and <code class="language-plaintext highlighter-rouge">your_testpypi_api_token</code> with your actual API tokens for PyPI and TestPyPI respectively.</p> <ol> <li>Set appropriate permissions for the <code class="language-plaintext highlighter-rouge">.pypirc</code> file:</li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 ~/.pypirc
+</code></pre></div></div> <p>This ensures that only you can read or write to the file.</p> <p>With this setup, you can easily publish your package using <code class="language-plaintext highlighter-rouge">twine</code> without having to enter your credentials each time. For example:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/<span class="k">*</span>
+</code></pre></div></div> <p>Remember to never commit the <code class="language-plaintext highlighter-rouge">.pypirc</code> file to your version control system, as it contains sensitive information. And finally you can see the installed package like below image.</p> <div align="center"> <img src="/assets/python_package/terminal_result.png" width="95%"/> <p>Installed package</p> </div>]]></content><author><name></name></author><category term="python"/><category term="python"/><category term="setup"/><category term="package"/><category term="2024"/><summary type="html"><![CDATA[A comprehensive guide on creating and managing a Python package]]></summary></entry></feed>
