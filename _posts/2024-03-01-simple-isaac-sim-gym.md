@@ -26,7 +26,7 @@ description: "A simplified guide for installing NVIDIA Isaac Sim and Isaac Gym o
 # Isaac Sim Installation
 <br>
 
-## Installation Method 1: Using Omniverse Launcher
+## Method 1: Using Omniverse Launcher
 ### Step 1: Create NVIDIA Account & Download Launcher
 ```bash
 # Download the Omniverse Launcher AppImage
@@ -57,10 +57,8 @@ chmod +x omniverse-launcher-linux.AppImage
 1. In the Omniverse Launcher, go to the "Library" tab
 2. Find Isaac Sim and click "Launch"
 <br>
-
-## Installation Method 2: Using Docker Container
 <br>
-
+## Method 2: Using Docker Container
 ### Step 1: Install Docker and NVIDIA Container Toolkit
 ```bash
 # Install Docker
@@ -133,7 +131,7 @@ sudo apt-get install -y \
 2. Sign in with your NVIDIA account
 3. Download the Isaac Gym Preview package for Linux
 <br>
-
+<br>
 ### Step 2: Extract and Install
 ```bash
 # Extract the downloaded package (replace with actual filename)
@@ -259,7 +257,7 @@ echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc  # for ROS 2 Humble
 
 source ~/.bashrc
 ```
-
+<br>
 # One-Line Installation Commands
 <br>
 ## Complete Omniverse Launcher Setup
