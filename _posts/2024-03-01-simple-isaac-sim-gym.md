@@ -27,10 +27,7 @@ description: "A simplified guide for installing NVIDIA Isaac Sim and Isaac Gym o
 <br>
 
 ## Installation Method 1: Using Omniverse Launcher
-<br>
-
 ### Step 1: Create NVIDIA Account & Download Launcher
-<br>
 ```bash
 # Download the Omniverse Launcher AppImage
 wget -O omniverse-launcher-linux.AppImage https://install.launcher.omniverse.nvidia.com/installers/omniverse-launcher-linux.AppImage
@@ -41,7 +38,6 @@ chmod +x omniverse-launcher-linux.AppImage
 <br>
 
 ### Step 2: Install Isaac Sim
-<br>
 1. Run the launcher:
    ```bash
    ./omniverse-launcher-linux.AppImage
@@ -58,7 +54,6 @@ chmod +x omniverse-launcher-linux.AppImage
 <br>
 
 ### Step 3: Launch Isaac Sim
-<br>
 1. In the Omniverse Launcher, go to the "Library" tab
 2. Find Isaac Sim and click "Launch"
 <br>
@@ -67,7 +62,6 @@ chmod +x omniverse-launcher-linux.AppImage
 <br>
 
 ### Step 1: Install Docker and NVIDIA Container Toolkit
-<br>
 ```bash
 # Install Docker
 sudo apt-get update
@@ -92,7 +86,6 @@ sudo systemctl restart docker
 <br>
 
 ### Step 2: Pull and Run Isaac Sim Container
-<br>
 ```bash
 # Log in to NGC (you'll need an NVIDIA account and API key)
 docker login nvcr.io
@@ -116,7 +109,6 @@ docker run --name isaac-sim -it --gpus all -e "ACCEPT_EULA=Y" --rm \
 <br>
 
 ## Prerequisites for Isaac Gym
-<br>
 ```bash
 # Install required system packages
 sudo apt-get update
@@ -137,14 +129,12 @@ sudo apt-get install -y \
 <br>
 
 ### Step 1: Download the Isaac Gym package
-<br>
 1. Go to the NVIDIA Isaac Gym page: https://developer.nvidia.com/isaac-gym
 2. Sign in with your NVIDIA account
 3. Download the Isaac Gym Preview package for Linux
 <br>
 
 ### Step 2: Extract and Install
-<br>
 ```bash
 # Extract the downloaded package (replace with actual filename)
 tar -xvf isaacgym_preview_x_package.tar.gz
@@ -165,7 +155,6 @@ pip install -r requirements.txt
 <br>
 
 ### Step 3: Verify Installation
-<br>
 ```bash
 # Go to the examples directory
 cd examples
@@ -176,9 +165,6 @@ python3 1080_balls_of_solitude.py
 <br>
 
 ## Method 2: Install IsaacGymEnvs
-<br>
-IsaacGymEnvs provides reference RL examples using Isaac Gym.
-<br>
 ```bash
 # Clone the repository
 git clone https://github.com/NVIDIA-Omniverse/IsaacGymEnvs.git
@@ -197,7 +183,6 @@ pip install -e .
 <br>
 
 ### Running IsaacGymEnvs Examples
-<br>
 ```bash
 # Test with the Cartpole example
 python isaacgymenvs/train.py task=Cartpole
@@ -211,7 +196,6 @@ python isaacgymenvs/train.py task=Ant
 <br>
 
 ### Python/CUDA Issues
-<br>
 ```bash
 # If you encounter CUDA initialization errors
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
@@ -222,7 +206,6 @@ pip install -r requirements.txt --upgrade
 <br>
 
 ### Display Issues
-<br>
 ```bash
 # If you get "cannot open display" errors
 export DISPLAY=:0
@@ -237,7 +220,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
 <br>
 
 ## GPU Driver Issues
-<br>
 ```bash
 # Check installed driver version
 nvidia-smi
@@ -250,23 +232,12 @@ sudo reboot
 <br>
 
 ## Display/Graphics Issues
-<br>
 ```bash
 # Fix common X server issues
 xhost +local:docker
 
 # If getting "Cannot open display" error
 export DISPLAY=:0
-```
-<br>
-
-## Container Access Issues
-<br>
-```bash
-# If you can't access NGC
-# Go to https://ngc.nvidia.com
-# Generate an API key in your account settings
-# Use that key as password when running "docker login nvcr.io"
 ```
 <br>
 
@@ -288,29 +259,22 @@ echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc  # for ROS 2 Humble
 
 source ~/.bashrc
 ```
-<br>
-Inside Isaac Sim, install the Isaac ROS Bridge extension from the Extensions window.
-<br>
 
 # One-Line Installation Commands
 <br>
-
 ## Complete Omniverse Launcher Setup
-<br>
 ```bash
 wget -O omniverse-launcher-linux.AppImage https://install.launcher.omniverse.nvidia.com/installers/omniverse-launcher-linux.AppImage && chmod +x omniverse-launcher-linux.AppImage && ./omniverse-launcher-linux.AppImage
 ```
 <br>
 
 ## Complete Docker Setup
-<br>
 ```bash
 sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io && sudo usermod -aG docker $USER && distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list && sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit && sudo systemctl restart docker
 ```
 <br>
 
 ## Isaac Gym Dependencies Setup
-<br>
 ```bash
 sudo apt-get update && sudo apt-get install -y git python3-dev python3-pip libopenmpi-dev libosmesa6-dev libgl1-mesa-glx libglfw3-dev libglew-dev patchelf && python3 -m venv isaacgym_env && source isaacgym_env/bin/activate && pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
 ```
