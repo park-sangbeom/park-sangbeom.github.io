@@ -22,9 +22,10 @@ description: "A simplified guide for installing NVIDIA Isaac Sim and Isaac Gym o
 - **Storage**: 50GB available SSD space
 - **CPU**: Intel Core i7/AMD Ryzen 7 or better
 
+
 # Isaac Sim Installation
 
-## Installation Method 1: Using Omniverse Launcher (Recommended)
+## Installation Method 1: Using Omniverse Launcher
 
 ### Step 1: Create NVIDIA Account & Download Launcher
 
@@ -56,6 +57,7 @@ chmod +x omniverse-launcher-linux.AppImage
 
 1. In the Omniverse Launcher, go to the "Library" tab
 2. Find Isaac Sim and click "Launch"
+
 
 ## Installation Method 2: Using Docker Container
 
@@ -103,6 +105,7 @@ docker run --name isaac-sim -it --gpus all -e "ACCEPT_EULA=Y" --rm \
   nvcr.io/nvidia/isaac-sim:latest
 ```
 
+
 # Isaac Gym Installation
 
 ## Prerequisites for Isaac Gym
@@ -121,6 +124,7 @@ sudo apt-get install -y \
   libglew-dev \
   patchelf
 ```
+
 
 ## Method 1: Install Isaac Gym Preview
 
@@ -160,6 +164,7 @@ cd examples
 python3 1080_balls_of_solitude.py
 ```
 
+
 ## Method 2: Install IsaacGymEnvs
 
 IsaacGymEnvs provides reference RL examples using Isaac Gym.
@@ -189,6 +194,7 @@ python isaacgymenvs/train.py task=Cartpole
 # Test with the Ant example
 python isaacgymenvs/train.py task=Ant
 ```
+
 
 ## Troubleshooting Isaac Gym
 
@@ -245,6 +251,7 @@ export DISPLAY=:0
 # Generate an API key in your account settings
 # Use that key as password when running "docker login nvcr.io"
 ```
+
 
 # Quick ROS Integration (Optional)
 
