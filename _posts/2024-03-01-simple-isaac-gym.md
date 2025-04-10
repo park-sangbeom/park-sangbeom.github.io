@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NVIDIA Isaac Gym Installation Guide for Ubuntu"
+title: "Isaac Gym Installation Guide for Ubuntu"
 date: 2024-03-01
 categories:
   - robotics
