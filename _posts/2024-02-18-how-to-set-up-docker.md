@@ -12,7 +12,7 @@ tags:
   - docker
   - setup
   - ubuntu
-description: "A comprehensive guide on setting up and using Ubuntu with Docker"
+description: "A guide on setting up and using Ubuntu with Docker"
 classes: wide
 giscus_comments: false
 related_posts: true

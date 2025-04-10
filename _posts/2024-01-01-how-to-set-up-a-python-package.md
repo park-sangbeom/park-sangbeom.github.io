@@ -14,7 +14,7 @@ categories:
 tags:
   - python
   - setup
-description: "A comprehensive guide on creating and managing a Python package"
+description: "A guide on creating and managing a Python package"
 use_math: true
 classes: wide
 giscus_comments: false

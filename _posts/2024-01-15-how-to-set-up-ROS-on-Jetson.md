@@ -13,7 +13,7 @@ tags:
   - embedded
   - setup
   - robotics
-description: "A comprehensive guide for installing and configuring ROS on NVIDIA Jetson Nano"
+description: "A guide for installing and configuring ROS on NVIDIA Jetson Nano"
 use_math: true
 classes: wide
 giscus_comments: false

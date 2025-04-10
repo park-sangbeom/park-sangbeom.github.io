@@ -12,7 +12,7 @@ tags:
   - setup
   - ubuntu
   - robotics
-description: "A comprehensive guide on installing and configuring ROS (Robot Operating System) on Ubuntu"
+description: "A simplified guide on installing and configuring ROS (Robot Operating System) on Ubuntu"
 use_math: true
 classes: wide
 giscus_comments: false
