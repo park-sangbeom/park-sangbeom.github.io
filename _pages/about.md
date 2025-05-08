@@ -23,6 +23,6 @@ I am an AI research engineer at [ATLO](https://atlo.ai), where I lead the develo
 
 My research goal is to enable AI agents to tackle complex and challenging tasks that humans perform daily in a scalable way. To this end, I'm interested in generalizable AI, with a focus on reinforcement learning and generative models.
 
-I completed my M.S. in AI at [Korea University](https://info.korea.edu/en_info/grad/ai_intro.do), where I was advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi), and my B.S. in Electronic and Electrical Engineering with a minor in Intelligent Robot Engineering at [Dongguk University](https://www.dongguk.edu/).
+I completed my M.S. in AI at [Korea University](https://www.korea.edu/sites/en/index.do), where I was advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi), and my B.S. in Electronic and Electrical Engineering with a minor in Intelligent Robot Engineering at [Dongguk University](https://www.dongguk.edu/).
 
 My professional experience includes internships at [NAVER LABS](https://www.naverlabs.com/) and [NAVER CLOUD](https://www.ncloud.com/). At NAVER LABS, I worked on safe skill learning for legged robots and large vision-language models for robotics applications. At NAVER CLOUD, I implemented AI NewsBot, a news curation system powered by [HyperCLOVA X](https://clova.ai/hyperclova).
