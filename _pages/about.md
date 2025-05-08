@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am an AI research engineer at [ATLO](https://atlo.ai), where I lead the development of [ATTO](https://atlo.site), our AI digital companion robot, as Head of Software.
+I am an AI research engineer at [ATLO](https://atlo.ai), where I lead the development of [ATTO](https://atlo.site) and [DITTO](http://bit.ly/44WzWOi), our AI digital companion robots, as Head of Software.
 
 My research goal is to enable AI agents to tackle complex and challenging tasks that humans perform daily in a scalable way. To this end, I'm interested in generalizable AI, with a focus on reinforcement learning and generative models.
 
