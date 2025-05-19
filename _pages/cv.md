@@ -4,5 +4,5 @@ permalink: /cv/
 title: "cv"
 nav: true
 nav_order: 3
-redirect_to: "/assets/pdf/CV_v2_SangbeomPark0517.pdf"
+redirect_to: "/assets/pdf/CV_v2_SangbeomPark0519.pdf"
 ---
