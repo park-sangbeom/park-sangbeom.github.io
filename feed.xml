@@ -1,10 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-06-08T11:01:15+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University </subtitle><entry><title type="html">Isaac Sim Installation Guide for Ubuntu</title><link href="https://park-sangbeom.github.io//posts/simple-isaac-sim/" rel="alternate" type="text/html" title="Isaac Sim Installation Guide for Ubuntu"/><published>2024-03-19T00:00:00+00:00</published><updated>2024-03-19T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-isaac-sim</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-isaac-sim/"><![CDATA[<h2 id="system-requirements">System Requirements</h2> <ul> <li><strong>Operating System</strong>: Ubuntu 20.04 or 22.04 LTS (64-bit)</li> <li><strong>GPU</strong>: NVIDIA RTX/GeForce/Quadro with 8GB+ VRAM (RTX series recommended)</li> <li><strong>Driver</strong>: NVIDIA Driver R525 or newer</li> <li><strong>RAM</strong>: 32GB minimum (64GB recommended)</li> <li><strong>Storage</strong>: 50GB available SSD space</li> <li><strong>CPU</strong>: Intel Core i7/AMD Ryzen 7 or better</li> </ul> <h1 id="isaac-sim-installation">Isaac Sim Installation</h1> <h2 id="method-1-using-omniverse-launcher-recommended">Method 1: Using Omniverse Launcher (Recommended)</h2> <h3 id="step-1-create-nvidia-account--download-launcher">Step 1: Create NVIDIA Account &amp; Download Launcher</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the Omniverse Launcher AppImage</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://park-sangbeom.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://park-sangbeom.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2025-08-19T03:50:37+00:00</updated><id>https://park-sangbeom.github.io//feed.xml</id><title type="html">Sangbeom Park</title><subtitle>Robotics&amp;AI Student at Korea University
+</subtitle><entry><title type="html">Isaac Sim Installation Guide for Ubuntu</title><link href="https://park-sangbeom.github.io//posts/simple-isaac-sim/" rel="alternate" type="text/html" title="Isaac Sim Installation Guide for Ubuntu" /><published>2024-03-19T00:00:00+00:00</published><updated>2024-03-19T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-isaac-sim</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-isaac-sim/"><![CDATA[<h2 id="system-requirements">System Requirements</h2>
+
+<ul>
+  <li><strong>Operating System</strong>: Ubuntu 20.04 or 22.04 LTS (64-bit)</li>
+  <li><strong>GPU</strong>: NVIDIA RTX/GeForce/Quadro with 8GB+ VRAM (RTX series recommended)</li>
+  <li><strong>Driver</strong>: NVIDIA Driver R525 or newer</li>
+  <li><strong>RAM</strong>: 32GB minimum (64GB recommended)</li>
+  <li><strong>Storage</strong>: 50GB available SSD space</li>
+  <li><strong>CPU</strong>: Intel Core i7/AMD Ryzen 7 or better</li>
+</ul>
+
+<h1 id="isaac-sim-installation">Isaac Sim Installation</h1>
+
+<h2 id="method-1-using-omniverse-launcher-recommended">Method 1: Using Omniverse Launcher (Recommended)</h2>
+
+<h3 id="step-1-create-nvidia-account--download-launcher">Step 1: Create NVIDIA Account &amp; Download Launcher</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the Omniverse Launcher AppImage</span>
 wget <span class="nt">-O</span> omniverse-launcher-linux.AppImage https://install.launcher.omniverse.nvidia.com/installers/omniverse-launcher-linux.AppImage
 
 <span class="c"># Make it executable</span>
 <span class="nb">chmod</span> +x omniverse-launcher-linux.AppImage
-</code></pre></div></div> <h3 id="step-2-install-isaac-sim">Step 2: Install Isaac Sim</h3> <ol> <li>Run the launcher: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./omniverse-launcher-linux.AppImage
-</code></pre></div> </div> </li> <li> <p>Sign in with your NVIDIA account (create one if needed)</p> </li> <li>In the Launcher: <ul> <li>Go to the “Exchange” tab</li> <li>Search for “Isaac Sim”</li> <li>Click “Install”</li> <li>Choose your installation location</li> <li>Wait for installation to complete</li> </ul> </li> </ol> <h2 id="method-2-using-docker-container">Method 2: Using Docker Container</h2> <h3 id="step-1-install-docker-and-nvidia-container-toolkit">Step 1: Install Docker and NVIDIA Container Toolkit</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install Docker</span>
+</code></pre></div></div>
+
+<h3 id="step-2-install-isaac-sim">Step 2: Install Isaac Sim</h3>
+
+<ol>
+  <li>Run the launcher:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./omniverse-launcher-linux.AppImage
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Sign in with your NVIDIA account (create one if needed)</p>
+  </li>
+  <li>In the Launcher:
+    <ul>
+      <li>Go to the “Exchange” tab</li>
+      <li>Search for “Isaac Sim”</li>
+      <li>Click “Install”</li>
+      <li>Choose your installation location</li>
+      <li>Wait for installation to complete</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="method-2-using-docker-container">Method 2: Using Docker Container</h2>
+
+<h3 id="step-1-install-docker-and-nvidia-container-toolkit">Step 1: Install Docker and NVIDIA Container Toolkit</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install Docker</span>
 <span class="nb">sudo </span>apt-get update
 <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> apt-transport-https ca-certificates curl software-properties-common
 curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>apt-key add -
@@ -23,7 +67,11 @@ curl <span class="nt">-s</span> <span class="nt">-L</span> https://nvidia.github
 <span class="nb">sudo </span>apt-get update
 <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> nvidia-container-toolkit
 <span class="nb">sudo </span>systemctl restart docker
-</code></pre></div></div> <h3 id="step-2-pull-and-run-isaac-sim-container">Step 2: Pull and Run Isaac Sim Container</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Log in to NGC (you'll need an NVIDIA account and API key)</span>
+</code></pre></div></div>
+
+<h3 id="step-2-pull-and-run-isaac-sim-container">Step 2: Pull and Run Isaac Sim Container</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Log in to NGC (you'll need an NVIDIA account and API key)</span>
 docker login nvcr.io
 
 <span class="c"># Pull the container</span>
@@ -38,21 +86,56 @@ docker run <span class="nt">--name</span> isaac-sim <span class="nt">-it</span> 
   <span class="nt">-v</span> ~/isaac-sim-workspace:/workspace <span class="se">\</span>
   <span class="nt">-e</span> <span class="nv">DISPLAY</span><span class="o">=</span><span class="nv">$DISPLAY</span> <span class="se">\</span>
   nvcr.io/nvidia/isaac-sim:latest
-</code></pre></div></div> <h1 id="troubleshooting">Troubleshooting</h1> <h2 id="gpu-driver-issues">GPU Driver Issues</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check installed driver version</span>
+</code></pre></div></div>
+
+<h1 id="troubleshooting">Troubleshooting</h1>
+
+<h2 id="gpu-driver-issues">GPU Driver Issues</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check installed driver version</span>
 nvidia-smi
 
 <span class="c"># Install latest driver if needed</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>nvidia-driver-535  <span class="c"># or newest available version</span>
 <span class="nb">sudo </span>reboot
-</code></pre></div></div> <h2 id="displaygraphics-issues">Display/Graphics Issues</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Fix common X server issues</span>
+</code></pre></div></div>
+
+<h2 id="displaygraphics-issues">Display/Graphics Issues</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Fix common X server issues</span>
 xhost +local:docker
 
 <span class="c"># If getting "Cannot open display" error</span>
 <span class="nb">export </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
-</code></pre></div></div> <h1 id="one-line-installation-commands">One-Line Installation Commands</h1> <h2 id="complete-omniverse-launcher-setup">Complete Omniverse Launcher Setup</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-O</span> omniverse-launcher-linux.AppImage https://install.launcher.omniverse.nvidia.com/installers/omniverse-launcher-linux.AppImage <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x omniverse-launcher-linux.AppImage <span class="o">&amp;&amp;</span> ./omniverse-launcher-linux.AppImage
-</code></pre></div></div> <h2 id="complete-docker-setup">Complete Docker Setup</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> apt-transport-https ca-certificates curl software-properties-common <span class="o">&amp;&amp;</span> curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> stable"</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> docker-ce docker-ce-cli containerd.io <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span> <span class="o">&amp;&amp;</span> <span class="nv">distribution</span><span class="o">=</span><span class="si">$(</span><span class="nb">.</span> /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="si">)</span> <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> <span class="nt">-L</span> https://nvidia.github.io/nvidia-docker/gpgkey | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> <span class="nt">-L</span> https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/nvidia-docker.list <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> nvidia-container-toolkit <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>systemctl restart docker
-</code></pre></div></div>]]></content><author><name></name></author><category term="robotics"/><category term="isaac sim"/><category term="setup"/><category term="ubuntu"/><category term="robotics"/><summary type="html"><![CDATA[A simplified guide for installing NVIDIA Isaac Sim on Ubuntu]]></summary></entry><entry><title type="html">Isaac Gym Installation Guide for Ubuntu</title><link href="https://park-sangbeom.github.io//posts/simple-isaac-gym/" rel="alternate" type="text/html" title="Isaac Gym Installation Guide for Ubuntu"/><published>2024-03-01T00:00:00+00:00</published><updated>2024-03-01T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-isaac-gym</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-isaac-gym/"><![CDATA[<h2 id="system-requirements">System Requirements</h2> <ul> <li><strong>Operating System</strong>: Ubuntu 20.04 or 22.04 LTS (64-bit)</li> <li><strong>GPU</strong>: NVIDIA RTX/GeForce/Quadro with 8GB+ VRAM (RTX series recommended)</li> <li><strong>Driver</strong>: NVIDIA Driver R525 or newer</li> <li><strong>RAM</strong>: 32GB minimum (64GB recommended)</li> <li><strong>Storage</strong>: 20GB available SSD space</li> <li><strong>CPU</strong>: Intel Core i7/AMD Ryzen 7 or better</li> </ul> <h1 id="isaac-gym-installation">Isaac Gym Installation</h1> <h2 id="prerequisites-for-isaac-gym">Prerequisites for Isaac Gym</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install required system packages</span>
+</code></pre></div></div>
+
+<h1 id="one-line-installation-commands">One-Line Installation Commands</h1>
+
+<h2 id="complete-omniverse-launcher-setup">Complete Omniverse Launcher Setup</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-O</span> omniverse-launcher-linux.AppImage https://install.launcher.omniverse.nvidia.com/installers/omniverse-launcher-linux.AppImage <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x omniverse-launcher-linux.AppImage <span class="o">&amp;&amp;</span> ./omniverse-launcher-linux.AppImage
+</code></pre></div></div>
+
+<h2 id="complete-docker-setup">Complete Docker Setup</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> apt-transport-https ca-certificates curl software-properties-common <span class="o">&amp;&amp;</span> curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> stable"</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> docker-ce docker-ce-cli containerd.io <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span> <span class="o">&amp;&amp;</span> <span class="nv">distribution</span><span class="o">=</span><span class="si">$(</span><span class="nb">.</span> /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="si">)</span> <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> <span class="nt">-L</span> https://nvidia.github.io/nvidia-docker/gpgkey | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> <span class="nt">-L</span> https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/nvidia-docker.list <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> nvidia-container-toolkit <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>systemctl restart docker
+</code></pre></div></div>]]></content><author><name></name></author><category term="robotics" /><category term="isaac sim" /><category term="setup" /><category term="ubuntu" /><category term="robotics" /><summary type="html"><![CDATA[A simplified guide for installing NVIDIA Isaac Sim on Ubuntu]]></summary></entry><entry><title type="html">Isaac Gym Installation Guide for Ubuntu</title><link href="https://park-sangbeom.github.io//posts/simple-isaac-gym/" rel="alternate" type="text/html" title="Isaac Gym Installation Guide for Ubuntu" /><published>2024-03-01T00:00:00+00:00</published><updated>2024-03-01T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-isaac-gym</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-isaac-gym/"><![CDATA[<h2 id="system-requirements">System Requirements</h2>
+
+<ul>
+  <li><strong>Operating System</strong>: Ubuntu 20.04 or 22.04 LTS (64-bit)</li>
+  <li><strong>GPU</strong>: NVIDIA RTX/GeForce/Quadro with 8GB+ VRAM (RTX series recommended)</li>
+  <li><strong>Driver</strong>: NVIDIA Driver R525 or newer</li>
+  <li><strong>RAM</strong>: 32GB minimum (64GB recommended)</li>
+  <li><strong>Storage</strong>: 20GB available SSD space</li>
+  <li><strong>CPU</strong>: Intel Core i7/AMD Ryzen 7 or better</li>
+</ul>
+
+<h1 id="isaac-gym-installation">Isaac Gym Installation</h1>
+
+<h2 id="prerequisites-for-isaac-gym">Prerequisites for Isaac Gym</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install required system packages</span>
 <span class="nb">sudo </span>apt-get update
 <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> <span class="se">\</span>
   git <span class="se">\</span>
@@ -64,7 +147,21 @@ xhost +local:docker
   libglfw3-dev <span class="se">\</span>
   libglew-dev <span class="se">\</span>
   patchelf
-</code></pre></div></div> <h2 id="method-1-install-isaac-gym-preview">Method 1: Install Isaac Gym Preview</h2> <h3 id="step-1-download-the-isaac-gym-package">Step 1: Download the Isaac Gym package</h3> <ol> <li>Go to the NVIDIA Isaac Gym page: https://developer.nvidia.com/isaac-gym</li> <li>Sign in with your NVIDIA account</li> <li>Download the Isaac Gym Preview package for Linux</li> </ol> <h3 id="step-2-extract-and-install">Step 2: Extract and Install</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Extract the downloaded package (replace with actual filename)</span>
+</code></pre></div></div>
+
+<h2 id="method-1-install-isaac-gym-preview">Method 1: Install Isaac Gym Preview</h2>
+
+<h3 id="step-1-download-the-isaac-gym-package">Step 1: Download the Isaac Gym package</h3>
+
+<ol>
+  <li>Go to the NVIDIA Isaac Gym page: https://developer.nvidia.com/isaac-gym</li>
+  <li>Sign in with your NVIDIA account</li>
+  <li>Download the Isaac Gym Preview package for Linux</li>
+</ol>
+
+<h3 id="step-2-extract-and-install">Step 2: Extract and Install</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Extract the downloaded package (replace with actual filename)</span>
 <span class="nb">tar</span> <span class="nt">-xvf</span> isaacgym_preview_x_package.tar.gz
 
 <span class="c"># Navigate to the extracted directory</span>
@@ -79,12 +176,22 @@ pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">
 
 <span class="c"># Install additional dependencies</span>
 pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
-</code></pre></div></div> <h3 id="step-3-verify-installation">Step 3: Verify Installation</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Go to the examples directory</span>
+</code></pre></div></div>
+
+<h3 id="step-3-verify-installation">Step 3: Verify Installation</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Go to the examples directory</span>
 <span class="nb">cd </span>examples
 
 <span class="c"># Run a sample environment</span>
 python3 1080_balls_of_solitude.py
-</code></pre></div></div> <h2 id="method-2-install-isaacgymenvs">Method 2: Install IsaacGymEnvs</h2> <p>IsaacGymEnvs provides reference RL examples using Isaac Gym.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone the repository</span>
+</code></pre></div></div>
+
+<h2 id="method-2-install-isaacgymenvs">Method 2: Install IsaacGymEnvs</h2>
+
+<p>IsaacGymEnvs provides reference RL examples using Isaac Gym.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone the repository</span>
 git clone https://github.com/NVIDIA-Omniverse/IsaacGymEnvs.git
 <span class="nb">cd </span>IsaacGymEnvs
 
@@ -97,36 +204,76 @@ pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
 
 <span class="c"># Install the package</span>
 pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
-</code></pre></div></div> <h3 id="running-isaacgymenvs-examples">Running IsaacGymEnvs Examples</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test with the Cartpole example</span>
+</code></pre></div></div>
+
+<h3 id="running-isaacgymenvs-examples">Running IsaacGymEnvs Examples</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test with the Cartpole example</span>
 python isaacgymenvs/train.py <span class="nv">task</span><span class="o">=</span>Cartpole
 
 <span class="c"># Test with the Ant example</span>
 python isaacgymenvs/train.py <span class="nv">task</span><span class="o">=</span>Ant
-</code></pre></div></div> <h2 id="troubleshooting-isaac-gym">Troubleshooting Isaac Gym</h2> <h3 id="pythoncuda-issues">Python/CUDA Issues</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If you encounter CUDA initialization errors</span>
+</code></pre></div></div>
+
+<h2 id="troubleshooting-isaac-gym">Troubleshooting Isaac Gym</h2>
+
+<h3 id="pythoncuda-issues">Python/CUDA Issues</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If you encounter CUDA initialization errors</span>
 pip <span class="nb">install </span><span class="nv">torch</span><span class="o">==</span>1.13.1+cu116 <span class="nv">torchvision</span><span class="o">==</span>0.14.1+cu116 <span class="nv">torchaudio</span><span class="o">==</span>0.13.1 <span class="nt">--extra-index-url</span> https://download.pytorch.org/whl/cu116
 
 <span class="c"># For other Python dependency issues</span>
 pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt <span class="nt">--upgrade</span>
-</code></pre></div></div> <h3 id="display-issues">Display Issues</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If you get "cannot open display" errors</span>
+</code></pre></div></div>
+
+<h3 id="display-issues">Display Issues</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># If you get "cannot open display" errors</span>
 <span class="nb">export </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
 xhost +local:
 
 <span class="c"># If you have rendering issues</span>
 <span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:/usr/lib/x86_64-linux-gnu
-</code></pre></div></div> <h1 id="common-troubleshooting">Common Troubleshooting</h1> <h2 id="gpu-driver-issues">GPU Driver Issues</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check installed driver version</span>
+</code></pre></div></div>
+
+<h1 id="common-troubleshooting">Common Troubleshooting</h1>
+
+<h2 id="gpu-driver-issues">GPU Driver Issues</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check installed driver version</span>
 nvidia-smi
 
 <span class="c"># Install latest driver if needed</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>nvidia-driver-535  <span class="c"># or newest available version</span>
 <span class="nb">sudo </span>reboot
-</code></pre></div></div> <h2 id="displaygraphics-issues">Display/Graphics Issues</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Fix common X server issues</span>
+</code></pre></div></div>
+
+<h2 id="displaygraphics-issues">Display/Graphics Issues</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Fix common X server issues</span>
 xhost +local:docker
 
 <span class="c"># If getting "Cannot open display" error</span>
 <span class="nb">export </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
-</code></pre></div></div> <h1 id="one-line-installation-command">One-Line Installation Command</h1> <h2 id="isaac-gym-dependencies-setup">Isaac Gym Dependencies Setup</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> git python3-dev python3-pip libopenmpi-dev libosmesa6-dev libgl1-mesa-glx libglfw3-dev libglew-dev patchelf <span class="o">&amp;&amp;</span> python3 <span class="nt">-m</span> venv isaacgym_env <span class="o">&amp;&amp;</span> <span class="nb">source </span>isaacgym_env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span><span class="nv">torch</span><span class="o">==</span>1.13.1+cu116 <span class="nv">torchvision</span><span class="o">==</span>0.14.1+cu116 <span class="nt">--extra-index-url</span> https://download.pytorch.org/whl/cu116
-</code></pre></div></div>]]></content><author><name></name></author><category term="robotics"/><category term="isaac gym"/><category term="setup"/><category term="ubuntu"/><category term="robotics"/><summary type="html"><![CDATA[A simplified guide for installing NVIDIA Isaac Gym on Ubuntu]]></summary></entry><entry><title type="html">Docker Ubuntu Setup Guide</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-docker/" rel="alternate" type="text/html" title="Docker Ubuntu Setup Guide"/><published>2024-02-18T00:00:00+00:00</published><updated>2024-02-18T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-docker</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-docker/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Docker has revolutionized how we develop, package, and deploy applications by enabling consistent environments across different systems. This guide will walk you through setting up an Ubuntu-based Docker environment, from installation to advanced usage patterns. Whether you’re new to Docker or looking to optimize your containerized Ubuntu workflow, this guide has you covered.</p> <h2 id="installing-docker">Installing Docker</h2> <p>Before you can start working with Ubuntu containers, you need to install Docker on your system.</p> <h3 id="installing-docker-on-ubuntu-host">Installing Docker on Ubuntu Host</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update your package index</span>
+</code></pre></div></div>
+
+<h1 id="one-line-installation-command">One-Line Installation Command</h1>
+
+<h2 id="isaac-gym-dependencies-setup">Isaac Gym Dependencies Setup</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> git python3-dev python3-pip libopenmpi-dev libosmesa6-dev libgl1-mesa-glx libglfw3-dev libglew-dev patchelf <span class="o">&amp;&amp;</span> python3 <span class="nt">-m</span> venv isaacgym_env <span class="o">&amp;&amp;</span> <span class="nb">source </span>isaacgym_env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span><span class="nv">torch</span><span class="o">==</span>1.13.1+cu116 <span class="nv">torchvision</span><span class="o">==</span>0.14.1+cu116 <span class="nt">--extra-index-url</span> https://download.pytorch.org/whl/cu116
+</code></pre></div></div>]]></content><author><name></name></author><category term="robotics" /><category term="isaac gym" /><category term="setup" /><category term="ubuntu" /><category term="robotics" /><summary type="html"><![CDATA[A simplified guide for installing NVIDIA Isaac Gym on Ubuntu]]></summary></entry><entry><title type="html">Docker Ubuntu Setup Guide</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-docker/" rel="alternate" type="text/html" title="Docker Ubuntu Setup Guide" /><published>2024-02-18T00:00:00+00:00</published><updated>2024-02-18T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-docker</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-docker/"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>Docker has revolutionized how we develop, package, and deploy applications by enabling consistent environments across different systems. This guide will walk you through setting up an Ubuntu-based Docker environment, from installation to advanced usage patterns. Whether you’re new to Docker or looking to optimize your containerized Ubuntu workflow, this guide has you covered.</p>
+
+<h2 id="installing-docker">Installing Docker</h2>
+
+<p>Before you can start working with Ubuntu containers, you need to install Docker on your system.</p>
+
+<h3 id="installing-docker-on-ubuntu-host">Installing Docker on Ubuntu Host</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Update your package index</span>
 <span class="nb">sudo </span>apt update
 
 <span class="c"># Install prerequisites</span>
@@ -149,16 +296,52 @@ curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg 
 
 <span class="c"># Apply the new group membership</span>
 newgrp docker
-</code></pre></div></div> <h3 id="installing-docker-on-macos">Installing Docker on macOS</h3> <ol> <li>Download and install Docker Desktop from the <a href="https://www.docker.com/products/docker-desktop">official website</a></li> <li>Open Docker Desktop and follow the setup wizard</li> </ol> <h2 id="basic-ubuntu-container-usage">Basic Ubuntu Container Usage</h2> <p>Once Docker is installed, you can start working with Ubuntu containers.</p> <h3 id="pulling-an-ubuntu-image">Pulling an Ubuntu Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull the latest Ubuntu image</span>
+</code></pre></div></div>
+
+<h3 id="installing-docker-on-macos">Installing Docker on macOS</h3>
+
+<ol>
+  <li>Download and install Docker Desktop from the <a href="https://www.docker.com/products/docker-desktop">official website</a></li>
+  <li>Open Docker Desktop and follow the setup wizard</li>
+</ol>
+
+<h2 id="basic-ubuntu-container-usage">Basic Ubuntu Container Usage</h2>
+
+<p>Once Docker is installed, you can start working with Ubuntu containers.</p>
+
+<h3 id="pulling-an-ubuntu-image">Pulling an Ubuntu Image</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pull the latest Ubuntu image</span>
 docker pull ubuntu:latest
 
 <span class="c"># Pull a specific version (e.g., Ubuntu 22.04 LTS)</span>
 docker pull ubuntu:22.04
-</code></pre></div></div> <h3 id="running-an-ubuntu-container">Running an Ubuntu Container</h3> <h4 id="interactive-mode">Interactive Mode</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run a container interactively with a bash shell</span>
+</code></pre></div></div>
+
+<h3 id="running-an-ubuntu-container">Running an Ubuntu Container</h3>
+
+<h4 id="interactive-mode">Interactive Mode</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run a container interactively with a bash shell</span>
 docker run <span class="nt">-it</span> ubuntu:latest bash
-</code></pre></div></div> <p>This command:</p> <ul> <li><code class="language-plaintext highlighter-rouge">-i</code>: Keeps STDIN open</li> <li><code class="language-plaintext highlighter-rouge">-t</code>: Allocates a pseudo-TTY</li> <li><code class="language-plaintext highlighter-rouge">bash</code>: Runs the bash shell inside the container</li> </ul> <h4 id="accessing-a-running-container">Accessing a Running Container</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Access a running container with bash</span>
+</code></pre></div></div>
+
+<p>This command:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-i</code>: Keeps STDIN open</li>
+  <li><code class="language-plaintext highlighter-rouge">-t</code>: Allocates a pseudo-TTY</li>
+  <li><code class="language-plaintext highlighter-rouge">bash</code>: Runs the bash shell inside the container</li>
+</ul>
+
+<h4 id="accessing-a-running-container">Accessing a Running Container</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Access a running container with bash</span>
 docker <span class="nb">exec</span> <span class="nt">-it</span> my-ubuntu bash
-</code></pre></div></div> <h4 id="stopping-and-removing-containers">Stopping and Removing Containers</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Stop a running container</span>
+</code></pre></div></div>
+
+<h4 id="stopping-and-removing-containers">Stopping and Removing Containers</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Stop a running container</span>
 docker stop my-ubuntu
 
 <span class="c"># Remove a container</span>
@@ -166,7 +349,15 @@ docker <span class="nb">rm </span>my-ubuntu
 
 <span class="c"># Force remove a running container</span>
 docker <span class="nb">rm</span> <span class="nt">-f</span> my-ubuntu
-</code></pre></div></div> <h2 id="creating-custom-ubuntu-images">Creating Custom Ubuntu Images</h2> <p>Creating custom Ubuntu images allows you to package your applications and dependencies for easier deployment.</p> <h3 id="basic-dockerfile-example">Basic Dockerfile Example</h3> <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use Ubuntu 22.04 as the base image</span>
+</code></pre></div></div>
+
+<h2 id="creating-custom-ubuntu-images">Creating Custom Ubuntu Images</h2>
+
+<p>Creating custom Ubuntu images allows you to package your applications and dependencies for easier deployment.</p>
+
+<h3 id="basic-dockerfile-example">Basic Dockerfile Example</h3>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use Ubuntu 22.04 as the base image</span>
 <span class="k">FROM</span><span class="s"> ubuntu:22.04</span>
 
 <span class="c"># Set non-interactive mode for apt</span>
@@ -193,21 +384,59 @@ docker <span class="nb">rm</span> <span class="nt">-f</span> my-ubuntu
 
 <span class="c"># Define the command to run when the container starts</span>
 <span class="k">CMD</span><span class="s"> ["nginx", "-g", "daemon off;"]</span>
-</code></pre></div></div> <h3 id="building-the-image">Building the Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build an image from the Dockerfile in the current directory</span>
+</code></pre></div></div>
+
+<h3 id="building-the-image">Building the Image</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build an image from the Dockerfile in the current directory</span>
 docker build <span class="nt">-t</span> my-ubuntu-app <span class="nb">.</span>
 
 <span class="c"># Build with a specific tag</span>
 docker build <span class="nt">-t</span> my-ubuntu-app:1.0 <span class="nb">.</span>
-</code></pre></div></div> <h3 id="running-the-custom-image">Running the Custom Image</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the custom image</span>
+</code></pre></div></div>
+
+<h3 id="running-the-custom-image">Running the Custom Image</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the custom image</span>
 docker run <span class="nt">-d</span> <span class="nt">-p</span> 8080:80 <span class="nt">--name</span> my-webapp my-ubuntu-app
-</code></pre></div></div> <p>This command:</p> <ul> <li><code class="language-plaintext highlighter-rouge">-p 8080:80</code>: Maps port 8080 on the host to port 80 in the container</li> <li><code class="language-plaintext highlighter-rouge">--name my-webapp</code>: Names the container</li> </ul> <h2 id="persistent-data-with-volumes">Persistent Data with Volumes</h2> <p>Docker containers are ephemeral, meaning any data inside them is lost when they’re removed. Volumes solve this problem.</p> <h3 id="creating-and-using-volumes">Creating and Using Volumes</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a named volume</span>
+</code></pre></div></div>
+
+<p>This command:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-p 8080:80</code>: Maps port 8080 on the host to port 80 in the container</li>
+  <li><code class="language-plaintext highlighter-rouge">--name my-webapp</code>: Names the container</li>
+</ul>
+
+<h2 id="persistent-data-with-volumes">Persistent Data with Volumes</h2>
+
+<p>Docker containers are ephemeral, meaning any data inside them is lost when they’re removed. Volumes solve this problem.</p>
+
+<h3 id="creating-and-using-volumes">Creating and Using Volumes</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a named volume</span>
 docker volume create my-data
 
 <span class="c"># Run a container with the volume mounted</span>
 docker run <span class="nt">-it</span> <span class="nt">-v</span> my-data:/data ubuntu:latest bash
-</code></pre></div></div> <p>Inside the container, any data written to <code class="language-plaintext highlighter-rouge">/data</code> will persist in the <code class="language-plaintext highlighter-rouge">my-data</code> volume.</p> <h3 id="bind-mounts">Bind Mounts</h3> <p>You can also mount host directories into containers:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Mount a host directory to a container directory</span>
+</code></pre></div></div>
+
+<p>Inside the container, any data written to <code class="language-plaintext highlighter-rouge">/data</code> will persist in the <code class="language-plaintext highlighter-rouge">my-data</code> volume.</p>
+
+<h3 id="bind-mounts">Bind Mounts</h3>
+
+<p>You can also mount host directories into containers:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Mount a host directory to a container directory</span>
 docker run <span class="nt">-it</span> <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/host-data:/container-data ubuntu:latest bash
-</code></pre></div></div> <h2 id="docker-compose-for-multi-container-applications">Docker Compose for Multi-Container Applications</h2> <p>Docker Compose simplifies managing multi-container applications.</p> <h3 id="example-docker-compose-file">Example Docker Compose File</h3> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
+</code></pre></div></div>
+
+<h2 id="docker-compose-for-multi-container-applications">Docker Compose for Multi-Container Applications</h2>
+
+<p>Docker Compose simplifies managing multi-container applications.</p>
+
+<h3 id="example-docker-compose-file">Example Docker Compose File</h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
 
 <span class="na">services</span><span class="pi">:</span>
@@ -240,7 +469,11 @@ docker run <span class="nt">-it</span> <span class="nt">-v</span> <span class="s
 <span class="na">volumes</span><span class="pi">:</span>
   <span class="na">web-data</span><span class="pi">:</span>
   <span class="na">db-data</span><span class="pi">:</span>
-</code></pre></div></div> <h3 id="using-docker-compose">Using Docker Compose</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start all services defined in docker-compose.yml</span>
+</code></pre></div></div>
+
+<h3 id="using-docker-compose">Using Docker Compose</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start all services defined in docker-compose.yml</span>
 docker-compose up
 
 <span class="c"># Run in detached mode</span>
@@ -251,9 +484,40 @@ docker-compose down
 
 <span class="c"># Stop services and remove volumes</span>
 docker-compose down <span class="nt">-v</span>
-</code></pre></div></div> <h2 id="one-line-setup-commands">One-Line Setup Commands</h2> <p>For quick setup, here are one-line commands combining multiple steps:</p> <h3 id="basic-ubuntu-container-setup">Basic Ubuntu Container Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ubuntu:22.04 <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> my-ubuntu <span class="nt">-v</span> my-data:/data ubuntu:22.04 <span class="nb">tail</span> <span class="nt">-f</span> /dev/null <span class="o">&amp;&amp;</span> docker <span class="nb">exec</span> <span class="nt">-it</span> my-ubuntu bash
-</code></pre></div></div> <h3 id="web-server-setup">Web Server Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello from Docker!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span> <span class="o">&gt;</span> index.html <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> nginx-ubuntu <span class="nt">-p</span> 8080:80 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/index.html:/var/www/html/index.html ubuntu:22.04 bash <span class="nt">-c</span> <span class="s2">"apt-get update &amp;&amp; apt-get install -y nginx &amp;&amp; nginx -g 'daemon off;'"</span>
-</code></pre></div></div>]]></content><author><name></name></author><category term="docker"/><category term="ubuntu"/><category term="docker"/><category term="setup"/><category term="ubuntu"/><summary type="html"><![CDATA[A guide on setting up and using Ubuntu with Docker]]></summary></entry><entry><title type="html">Complete Guide to LangChain Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/simple-langchain/" rel="alternate" type="text/html" title="Complete Guide to LangChain Installation and Setup"/><published>2024-02-05T00:00:00+00:00</published><updated>2024-02-05T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-langchain</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-langchain/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>LangChain is a powerful framework designed to simplify the development of applications using large language models (LLMs). It provides a standardized interface for chains, integrations with other tools, and end-to-end chains for common applications. In this guide, we’ll walk through the installation process and basic setup of LangChain, enabling you to start building sophisticated LLM-powered applications.</p> <h2 id="prerequisites">Prerequisites</h2> <p>Before installing LangChain, ensure you have the following prerequisites:</p> <ul> <li>Python 3.8.1 or later</li> <li>pip (Python package installer)</li> <li>A virtual environment (recommended)</li> <li>API keys for LLM providers (e.g., OpenAI, Anthropic, etc.)</li> </ul> <h2 id="setting-up-a-virtual-environment">Setting Up a Virtual Environment</h2> <p>It’s always a good practice to create a dedicated virtual environment for your projects to avoid dependency conflicts.</p> <h3 id="using-venv-pythons-built-in-module">Using venv (Python’s built-in module)</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new virtual environment</span>
+</code></pre></div></div>
+
+<h2 id="one-line-setup-commands">One-Line Setup Commands</h2>
+
+<p>For quick setup, here are one-line commands combining multiple steps:</p>
+
+<h3 id="basic-ubuntu-container-setup">Basic Ubuntu Container Setup</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ubuntu:22.04 <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> my-ubuntu <span class="nt">-v</span> my-data:/data ubuntu:22.04 <span class="nb">tail</span> <span class="nt">-f</span> /dev/null <span class="o">&amp;&amp;</span> docker <span class="nb">exec</span> <span class="nt">-it</span> my-ubuntu bash
+</code></pre></div></div>
+
+<h3 id="web-server-setup">Web Server Setup</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello from Docker!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span> <span class="o">&gt;</span> index.html <span class="o">&amp;&amp;</span> docker run <span class="nt">-d</span> <span class="nt">--name</span> nginx-ubuntu <span class="nt">-p</span> 8080:80 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/index.html:/var/www/html/index.html ubuntu:22.04 bash <span class="nt">-c</span> <span class="s2">"apt-get update &amp;&amp; apt-get install -y nginx &amp;&amp; nginx -g 'daemon off;'"</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="docker" /><category term="ubuntu" /><category term="docker" /><category term="setup" /><category term="ubuntu" /><summary type="html"><![CDATA[A guide on setting up and using Ubuntu with Docker]]></summary></entry><entry><title type="html">Complete Guide to LangChain Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/simple-langchain/" rel="alternate" type="text/html" title="Complete Guide to LangChain Installation and Setup" /><published>2024-02-05T00:00:00+00:00</published><updated>2024-02-05T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/simple-langchain</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/simple-langchain/"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>LangChain is a powerful framework designed to simplify the development of applications using large language models (LLMs). It provides a standardized interface for chains, integrations with other tools, and end-to-end chains for common applications. In this guide, we’ll walk through the installation process and basic setup of LangChain, enabling you to start building sophisticated LLM-powered applications.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before installing LangChain, ensure you have the following prerequisites:</p>
+
+<ul>
+  <li>Python 3.8.1 or later</li>
+  <li>pip (Python package installer)</li>
+  <li>A virtual environment (recommended)</li>
+  <li>API keys for LLM providers (e.g., OpenAI, Anthropic, etc.)</li>
+</ul>
+
+<h2 id="setting-up-a-virtual-environment">Setting Up a Virtual Environment</h2>
+
+<p>It’s always a good practice to create a dedicated virtual environment for your projects to avoid dependency conflicts.</p>
+
+<h3 id="using-venv-pythons-built-in-module">Using venv (Python’s built-in module)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new virtual environment</span>
 python <span class="nt">-m</span> venv langchain-env
 
 <span class="c"># Activate the virtual environment</span>
@@ -261,14 +525,40 @@ python <span class="nt">-m</span> venv langchain-env
 langchain-env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 <span class="c"># On macOS/Linux</span>
 <span class="nb">source </span>langchain-env/bin/activate
-</code></pre></div></div> <h3 id="using-conda">Using conda</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new conda environment</span>
+</code></pre></div></div>
+
+<h3 id="using-conda">Using conda</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new conda environment</span>
 conda create <span class="nt">-n</span> langchain-env <span class="nv">python</span><span class="o">=</span>3.10
 
 <span class="c"># Activate the conda environment</span>
 conda activate langchain-env
-</code></pre></div></div> <h2 id="installing-langchain">Installing LangChain</h2> <p>LangChain can be installed using pip. There are different installation options depending on your needs:</p> <h3 id="basic-installation">Basic Installation</h3> <p>For a minimal installation with core functionality:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain
-</code></pre></div></div> <h3 id="full-installation">Full Installation</h3> <p>For the complete package with all integrations:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-all
-</code></pre></div></div> <h3 id="specific-integrations">Specific Integrations</h3> <p>You can also install specific integrations based on your requirements:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># OpenAI integration</span>
+</code></pre></div></div>
+
+<h2 id="installing-langchain">Installing LangChain</h2>
+
+<p>LangChain can be installed using pip. There are different installation options depending on your needs:</p>
+
+<h3 id="basic-installation">Basic Installation</h3>
+
+<p>For a minimal installation with core functionality:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain
+</code></pre></div></div>
+
+<h3 id="full-installation">Full Installation</h3>
+
+<p>For the complete package with all integrations:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-all
+</code></pre></div></div>
+
+<h3 id="specific-integrations">Specific Integrations</h3>
+
+<p>You can also install specific integrations based on your requirements:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># OpenAI integration</span>
 pip <span class="nb">install </span>langchain-openai
 
 <span class="c"># Anthropic integration</span>
@@ -279,12 +569,32 @@ pip <span class="nb">install </span>langchain-community
 
 <span class="c"># HuggingFace integration</span>
 pip <span class="nb">install </span>langchain-huggingface
-</code></pre></div></div> <h2 id="setting-up-api-keys">Setting Up API Keys</h2> <p>Most LLM providers require API keys for authentication. Here’s how to set them up:</p> <h3 id="environment-variables">Environment Variables</h3> <p>Create a <code class="language-plaintext highlighter-rouge">.env</code> file in your project root directory:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .env file
+</code></pre></div></div>
+
+<h2 id="setting-up-api-keys">Setting Up API Keys</h2>
+
+<p>Most LLM providers require API keys for authentication. Here’s how to set them up:</p>
+
+<h3 id="environment-variables">Environment Variables</h3>
+
+<p>Create a <code class="language-plaintext highlighter-rouge">.env</code> file in your project root directory:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .env file
 OPENAI_API_KEY=your_openai_api_key
 ANTHROPIC_API_KEY=your_anthropic_api_key
 HUGGINGFACEHUB_API_TOKEN=your_huggingface_token
-</code></pre></div></div> <p>Then, install the python-dotenv package to load these variables:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>python-dotenv
-</code></pre></div></div> <h2 id="creating-a-simple-langchain-application">Creating a Simple LangChain Application</h2> <p>Let’s create a simple application using LangChain to ensure everything is set up correctly:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
+</code></pre></div></div>
+
+<p>Then, install the python-dotenv package to load these variables:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>python-dotenv
+</code></pre></div></div>
+
+<h2 id="creating-a-simple-langchain-application">Creating a Simple LangChain Application</h2>
+
+<p>Let’s create a simple application using LangChain to ensure everything is set up correctly:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app.py
 </span><span class="kn">from</span> <span class="n">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
 <span class="kn">from</span> <span class="n">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
@@ -305,9 +615,27 @@ HUGGINGFACEHUB_API_TOKEN=your_huggingface_token
 <span class="c1"># Execute the chain
 </span><span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="p">.</span><span class="nf">invoke</span><span class="p">({</span><span class="sh">"</span><span class="s">topic</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">programming</span><span class="sh">"</span><span class="p">})</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-</code></pre></div></div> <p>Run the application:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
-</code></pre></div></div> <h2 id="setting-up-persistent-storage">Setting Up Persistent Storage</h2> <p>LangChain can use various databases for storing data like conversation histories, vector embeddings, etc.</p> <h3 id="using-a-vector-database-for-embeddings">Using a Vector Database for Embeddings</h3> <p>Here’s how to set up Chroma, a popular vector database:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-chroma
-</code></pre></div></div> <p>Example usage:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
+</code></pre></div></div>
+
+<p>Run the application:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python app.py
+</code></pre></div></div>
+
+<h2 id="setting-up-persistent-storage">Setting Up Persistent Storage</h2>
+
+<p>LangChain can use various databases for storing data like conversation histories, vector embeddings, etc.</p>
+
+<h3 id="using-a-vector-database-for-embeddings">Using a Vector Database for Embeddings</h3>
+
+<p>Here’s how to set up Chroma, a popular vector database:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-chroma
+</code></pre></div></div>
+
+<p>Example usage:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
 <span class="kn">from</span> <span class="n">langchain_chroma</span> <span class="kn">import</span> <span class="n">Chroma</span>
 
 <span class="c1"># Initialize the embedding model
@@ -329,8 +657,16 @@ HUGGINGFACEHUB_API_TOKEN=your_huggingface_token
 <span class="c1"># Search for similar documents
 </span><span class="n">results</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">similarity_search</span><span class="p">(</span><span class="sh">"</span><span class="s">What is LangChain?</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-</code></pre></div></div> <h2 id="creating-a-document-question-answering-system">Creating a Document Question-Answering System</h2> <p>Let’s build a simple question-answering system using LangChain:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-openai langchain-community pypdf
-</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># qa_system.py
+</code></pre></div></div>
+
+<h2 id="creating-a-document-question-answering-system">Creating a Document Question-Answering System</h2>
+
+<p>Let’s build a simple question-answering system using LangChain:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-openai langchain-community pypdf
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># qa_system.py
 </span><span class="kn">from</span> <span class="n">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span><span class="p">,</span> <span class="n">ChatOpenAI</span>
 <span class="kn">from</span> <span class="n">langchain_community.document_loaders</span> <span class="kn">import</span> <span class="n">PyPDFLoader</span>
@@ -377,8 +713,18 @@ Question: {question}
 <span class="c1"># Query the system
 </span><span class="n">response</span> <span class="o">=</span> <span class="n">retrieval_chain</span><span class="p">.</span><span class="nf">invoke</span><span class="p">({</span><span class="sh">"</span><span class="s">question</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">What is the main topic of this document?</span><span class="sh">"</span><span class="p">})</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="sh">"</span><span class="s">answer</span><span class="sh">"</span><span class="p">])</span>
-</code></pre></div></div> <h2 id="using-langchain-with-streamlit">Using LangChain with Streamlit</h2> <p>You can create interactive web applications with LangChain using Streamlit:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>streamlit
-</code></pre></div></div> <p>Create a simple Streamlit app (<code class="language-plaintext highlighter-rouge">app.py</code>):</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">streamlit</span> <span class="k">as</span> <span class="n">st</span>
+</code></pre></div></div>
+
+<h2 id="using-langchain-with-streamlit">Using LangChain with Streamlit</h2>
+
+<p>You can create interactive web applications with LangChain using Streamlit:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>streamlit
+</code></pre></div></div>
+
+<p>Create a simple Streamlit app (<code class="language-plaintext highlighter-rouge">app.py</code>):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">streamlit</span> <span class="k">as</span> <span class="n">st</span>
 <span class="kn">from</span> <span class="n">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
 <span class="kn">from</span> <span class="n">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
@@ -422,9 +768,25 @@ Question: {question}
     
     <span class="c1"># Add AI response to chat history
 </span>    <span class="n">st</span><span class="p">.</span><span class="n">session_state</span><span class="p">.</span><span class="n">messages</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">assistant</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="n">response</span><span class="p">})</span>
-</code></pre></div></div> <p>Run the Streamlit app:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>streamlit run app.py
-</code></pre></div></div> <h2 id="integration-with-other-services">Integration with Other Services</h2> <h3 id="langchain-with-llamaindex">LangChain with LlamaIndex</h3> <p>LlamaIndex is a data framework for LLM-based applications:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>llama-index
-</code></pre></div></div> <p>Example integration:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">llama_index</span> <span class="kn">import</span> <span class="n">VectorStoreIndex</span><span class="p">,</span> <span class="n">SimpleDirectoryReader</span>
+</code></pre></div></div>
+
+<p>Run the Streamlit app:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>streamlit run app.py
+</code></pre></div></div>
+
+<h2 id="integration-with-other-services">Integration with Other Services</h2>
+
+<h3 id="langchain-with-llamaindex">LangChain with LlamaIndex</h3>
+
+<p>LlamaIndex is a data framework for LLM-based applications:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>llama-index
+</code></pre></div></div>
+
+<p>Example integration:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">llama_index</span> <span class="kn">import</span> <span class="n">VectorStoreIndex</span><span class="p">,</span> <span class="n">SimpleDirectoryReader</span>
 <span class="kn">from</span> <span class="n">llama_index.indices.query.query_transform</span> <span class="kn">import</span> <span class="n">LangchainQueryTransform</span>
 <span class="kn">from</span> <span class="n">langchain.chains</span> <span class="kn">import</span> <span class="n">LLMChain</span>
 <span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
@@ -449,8 +811,18 @@ Question: {question}
 </span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="p">.</span><span class="nf">as_query_engine</span><span class="p">(</span><span class="n">query_transform</span><span class="o">=</span><span class="n">query_transform</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="sh">"</span><span class="s">What are the main concepts?</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-</code></pre></div></div> <h3 id="langchain-with-pinecone">LangChain with Pinecone</h3> <p>Pinecone is a vector database for storing and searching embeddings:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-pinecone
-</code></pre></div></div> <p>Example usage:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+</code></pre></div></div>
+
+<h3 id="langchain-with-pinecone">LangChain with Pinecone</h3>
+
+<p>Pinecone is a vector database for storing and searching embeddings:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>langchain-pinecone
+</code></pre></div></div>
+
+<p>Example usage:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
 <span class="kn">import</span> <span class="n">pinecone</span>
 <span class="kn">from</span> <span class="n">langchain_pinecone</span> <span class="kn">import</span> <span class="n">PineconeVectorStore</span>
 <span class="kn">from</span> <span class="n">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
@@ -490,7 +862,13 @@ Question: {question}
 <span class="c1"># Search
 </span><span class="n">results</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="p">.</span><span class="nf">similarity_search</span><span class="p">(</span><span class="sh">"</span><span class="s">What is LangChain?</span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-</code></pre></div></div> <h2 id="automated-dependency-management">Automated Dependency Management</h2> <p>For proper dependency management, you can create a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># requirements.txt
+</code></pre></div></div>
+
+<h2 id="automated-dependency-management">Automated Dependency Management</h2>
+
+<p>For proper dependency management, you can create a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># requirements.txt
 langchain==0.1.0
 langchain-openai==0.0.5
 langchain-anthropic==0.0.5
@@ -500,8 +878,18 @@ streamlit==1.29.0
 chroma-hnswlib==0.7.3
 chromadb==0.4.22
 pypdf==3.17.1
-</code></pre></div></div> <p>Install all dependencies at once:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
-</code></pre></div></div> <h2 id="project-structure">Project Structure</h2> <p>A well-organized LangChain project might have the following structure:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>langchain-project/
+</code></pre></div></div>
+
+<p>Install all dependencies at once:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<h2 id="project-structure">Project Structure</h2>
+
+<p>A well-organized LangChain project might have the following structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>langchain-project/
 ├── .env                  # Environment variables
 ├── requirements.txt      # Dependencies
 ├── app.py                # Main application
@@ -517,24 +905,58 @@ pypdf==3.17.1
 ├── data/                 # Data files
 │   └── documents/
 └── chroma_db/            # Vector store data
-</code></pre></div></div> <h2 id="advanced-installation-and-configuration">Advanced Installation and Configuration</h2> <h3 id="installing-from-source">Installing from Source</h3> <p>For the latest features or contributing to LangChain:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/langchain-ai/langchain.git
+</code></pre></div></div>
+
+<h2 id="advanced-installation-and-configuration">Advanced Installation and Configuration</h2>
+
+<h3 id="installing-from-source">Installing from Source</h3>
+
+<p>For the latest features or contributing to LangChain:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/langchain-ai/langchain.git
 <span class="nb">cd </span>langchain
 pip <span class="nb">install</span> <span class="nt">-e</span> <span class="nb">.</span>
-</code></pre></div></div> <h3 id="gpu-acceleration">GPU Acceleration</h3> <p>To utilize GPU acceleration for local models:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For CUDA support</span>
+</code></pre></div></div>
+
+<h3 id="gpu-acceleration">GPU Acceleration</h3>
+
+<p>To utilize GPU acceleration for local models:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For CUDA support</span>
 pip <span class="nb">install </span>torch torchvision torchaudio <span class="nt">--index-url</span> https://download.pytorch.org/whl/cu118
 
 <span class="c"># For MPS support on Apple Silicon</span>
 pip <span class="nb">install </span>torch torchvision torchaudio
-</code></pre></div></div> <h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2> <h3 id="api-key-issues">API Key Issues</h3> <p>If you encounter API key errors:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Verify your API key is correctly set
+</code></pre></div></div>
+
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+
+<h3 id="api-key-issues">API Key Issues</h3>
+
+<p>If you encounter API key errors:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Verify your API key is correctly set
 </span><span class="kn">import</span> <span class="n">os</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">getenv</span><span class="p">(</span><span class="sh">"</span><span class="s">OPENAI_API_KEY</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Should print your API key, not None
-</span></code></pre></div></div> <h3 id="dependency-conflicts">Dependency Conflicts</h3> <p>If you have dependency conflicts:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a fresh virtual environment</span>
+</span></code></pre></div></div>
+
+<h3 id="dependency-conflicts">Dependency Conflicts</h3>
+
+<p>If you have dependency conflicts:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a fresh virtual environment</span>
 python <span class="nt">-m</span> venv new_env
 <span class="nb">source </span>new_env/bin/activate
 
 <span class="c"># Install specific versions</span>
 pip <span class="nb">install </span><span class="nv">langchain</span><span class="o">==</span>0.1.0 langchain-openai<span class="o">==</span>0.0.5
-</code></pre></div></div> <h3 id="memory-issues">Memory Issues</h3> <p>If you encounter memory issues with large embeddings:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Process documents in batches
+</code></pre></div></div>
+
+<h3 id="memory-issues">Memory Issues</h3>
+
+<p>If you encounter memory issues with large embeddings:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Process documents in batches
 </span><span class="kn">from</span> <span class="n">langchain_text_splitters</span> <span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
 
 <span class="n">text_splitter</span> <span class="o">=</span> <span class="nc">RecursiveCharacterTextSplitter</span><span class="p">(</span>
@@ -548,23 +970,82 @@ pip <span class="nb">install </span><span class="nv">langchain</span><span class
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">splits</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">):</span>
     <span class="n">batch</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">batch_size</span><span class="p">]</span>
     <span class="n">vectorstore</span><span class="p">.</span><span class="nf">add_documents</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-</code></pre></div></div> <h2 id="one-line-installation-commands">One-Line Installation Commands</h2> <p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p> <h3 id="basic-development-setup">Basic Development Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain langchain-openai langchain-community python-dotenv <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env
-</code></pre></div></div> <h3 id="complete-development-environment">Complete Development Environment</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain-all python-dotenv streamlit pypdf langchain-chroma <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> chains prompts utils data chroma_db <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"from dotenv import load_dotenv</span><span class="se">\n</span><span class="s2">load_dotenv()</span><span class="se">\n\n</span><span class="s2"># Your code here"</span> <span class="o">&gt;</span> app.py
-</code></pre></div></div>]]></content><author><name></name></author><category term="python"/><category term="llm"/><category term="langchain"/><category term="installation"/><category term="setup"/><category term="ai agent"/><summary type="html"><![CDATA[A comprehensive guide on installing and configuring LangChain for building LLM-powered applications]]></summary></entry><entry><title type="html">ROS Installation and Setup Guide for NVIDIA Jetson Nano</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/" rel="alternate" type="text/html" title="ROS Installation and Setup Guide for NVIDIA Jetson Nano"/><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>The NVIDIA Jetson Nano is a powerful embedded system that provides GPU acceleration for AI and robotics projects in a compact form factor. Installing the Robot Operating System (ROS) on this platform enables the development of advanced robotic applications such as computer vision, autonomous navigation, and object recognition. This guide will walk you through installing and optimizing ROS on the Jetson Nano step by step.</p> <h2 id="jetson-nano-hardware-requirements">Jetson Nano Hardware Requirements</h2> <ul> <li>NVIDIA Jetson Nano Developer Kit</li> <li>MicroSD card (64GB or larger, UHS-I or better speed recommended)</li> <li>Power supply (5V/4A barrel jack recommended for maximum performance)</li> <li>Cooling fan (strongly recommended)</li> <li>Optional: Camera module (CSI or USB), sensors, motor controllers</li> </ul> <h2 id="jetson-nano-basic-setup">Jetson Nano Basic Setup</h2> <h3 id="operating-system-installation">Operating System Installation</h3> <ol> <li>Download the Jetson Nano Developer Kit SD Card Image from NVIDIA’s website <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the latest JetPack image from https://developer.nvidia.com/embedded/downloads</span>
-</code></pre></div> </div> </li> <li> <p>Flash the image to your microSD card using SDK Manager or balenaEtcher</p> </li> <li> <p>Insert the microSD card into your Jetson Nano and power it on</p> </li> <li> <p>Complete the initial setup (create user, connect to WiFi, etc.)</p> </li> <li>Update the system: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+</code></pre></div></div>
+
+<h2 id="one-line-installation-commands">One-Line Installation Commands</h2>
+
+<p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p>
+
+<h3 id="basic-development-setup">Basic Development Setup</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain langchain-openai langchain-community python-dotenv <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env
+</code></pre></div></div>
+
+<h3 id="complete-development-environment">Complete Development Environment</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv langchain-env <span class="o">&amp;&amp;</span> <span class="nb">source </span>langchain-env/bin/activate <span class="o">&amp;&amp;</span> pip <span class="nb">install </span>langchain-all python-dotenv streamlit pypdf langchain-chroma <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> chains prompts utils data chroma_db <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"OPENAI_API_KEY=your_key_here"</span> <span class="o">&gt;</span> .env <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"from dotenv import load_dotenv</span><span class="se">\n</span><span class="s2">load_dotenv()</span><span class="se">\n\n</span><span class="s2"># Your code here"</span> <span class="o">&gt;</span> app.py
+</code></pre></div></div>]]></content><author><name></name></author><category term="python" /><category term="llm" /><category term="langchain" /><category term="installation" /><category term="setup" /><category term="ai agent" /><summary type="html"><![CDATA[A comprehensive guide on installing and configuring LangChain for building LLM-powered applications]]></summary></entry><entry><title type="html">ROS Installation and Setup Guide for NVIDIA Jetson Nano</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/" rel="alternate" type="text/html" title="ROS Installation and Setup Guide for NVIDIA Jetson Nano" /><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS-on-Jetson/"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>The NVIDIA Jetson Nano is a powerful embedded system that provides GPU acceleration for AI and robotics projects in a compact form factor. Installing the Robot Operating System (ROS) on this platform enables the development of advanced robotic applications such as computer vision, autonomous navigation, and object recognition. This guide will walk you through installing and optimizing ROS on the Jetson Nano step by step.</p>
+
+<h2 id="jetson-nano-hardware-requirements">Jetson Nano Hardware Requirements</h2>
+
+<ul>
+  <li>NVIDIA Jetson Nano Developer Kit</li>
+  <li>MicroSD card (64GB or larger, UHS-I or better speed recommended)</li>
+  <li>Power supply (5V/4A barrel jack recommended for maximum performance)</li>
+  <li>Cooling fan (strongly recommended)</li>
+  <li>Optional: Camera module (CSI or USB), sensors, motor controllers</li>
+</ul>
+
+<h2 id="jetson-nano-basic-setup">Jetson Nano Basic Setup</h2>
+
+<h3 id="operating-system-installation">Operating System Installation</h3>
+
+<ol>
+  <li>Download the Jetson Nano Developer Kit SD Card Image from NVIDIA’s website
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download the latest JetPack image from https://developer.nvidia.com/embedded/downloads</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Flash the image to your microSD card using SDK Manager or balenaEtcher</p>
+  </li>
+  <li>
+    <p>Insert the microSD card into your Jetson Nano and power it on</p>
+  </li>
+  <li>
+    <p>Complete the initial setup (create user, connect to WiFi, etc.)</p>
+  </li>
+  <li>Update the system:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt upgrade <span class="nt">-y</span>
-</code></pre></div> </div> </li> </ol> <h3 id="jetson-nano-performance-optimization">Jetson Nano Performance Optimization</h3> <ol> <li>Set the maximum performance mode: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvpmodel <span class="nt">-m</span> 0  <span class="c"># Sets to 10W mode</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="jetson-nano-performance-optimization">Jetson Nano Performance Optimization</h3>
+
+<ol>
+  <li>Set the maximum performance mode:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvpmodel <span class="nt">-m</span> 0  <span class="c"># Sets to 10W mode</span>
 <span class="nb">sudo </span>jetson_clocks  <span class="c"># Maximizes clock frequencies</span>
-</code></pre></div> </div> </li> <li>Install system monitoring tools: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>htop iotop <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Install system monitoring tools:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>htop iotop <span class="nt">-y</span>
 htop  <span class="c"># Check CPU and memory usage</span>
-</code></pre></div> </div> </li> <li>Adjust swap space: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a swap file</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Adjust swap space:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a swap file</span>
 <span class="nb">sudo </span>fallocate <span class="nt">-l</span> 8G /var/swapfile
 <span class="nb">sudo chmod </span>600 /var/swapfile
 <span class="nb">sudo </span>mkswap /var/swapfile
 <span class="nb">sudo </span>swapon /var/swapfile
 <span class="c"># Make swap persistent</span>
 <span class="nb">echo</span> <span class="s2">"/var/swapfile swap swap defaults 0 0"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/fstab
-</code></pre></div> </div> </li> <li>Set maximum performance automatically at boot: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'#!/bin/bash
+</code></pre></div>    </div>
+  </li>
+  <li>Set maximum performance automatically at boot:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'#!/bin/bash
 /usr/bin/nvpmodel -m 0
 /usr/bin/jetson_clocks
 '</span> | <span class="nb">sudo tee</span> /usr/local/bin/jetson_performance
@@ -585,51 +1066,132 @@ WantedBy=multi-user.target
 '</span> | <span class="nb">sudo tee</span> /etc/systemd/system/jetson-performance.service
    
 <span class="nb">sudo </span>systemctl <span class="nb">enable </span>jetson-performance.service
-</code></pre></div> </div> </li> </ol> <h2 id="ros-installation-based-on-jetpack-version">ROS Installation Based on JetPack Version</h2> <p>Different ROS versions can be installed depending on the JetPack version on your Jetson Nano. Here are installation guides for major versions.</p> <h3 id="installing-ros-melodic-on-jetpack-4x">Installing ROS Melodic on JetPack 4.x</h3> <ol> <li>Set up the ROS repository: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>
-</code></pre></div> </div> </li> <li>Add the ROS key: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="ros-installation-based-on-jetpack-version">ROS Installation Based on JetPack Version</h2>
+
+<p>Different ROS versions can be installed depending on the JetPack version on your Jetson Nano. Here are installation guides for major versions.</p>
+
+<h3 id="installing-ros-melodic-on-jetpack-4x">Installing ROS Melodic on JetPack 4.x</h3>
+
+<ol>
+  <li>Set up the ROS repository:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Add the ROS key:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
 curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add -
-</code></pre></div> </div> </li> <li>Update package lists: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
-</code></pre></div> </div> </li> <li>Install ROS Melodic: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-desktop <span class="nt">-y</span>
-</code></pre></div> </div> </li> <li>Set up your environment: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/melodic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+</code></pre></div>    </div>
+  </li>
+  <li>Update package lists:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+</code></pre></div>    </div>
+  </li>
+  <li>Install ROS Melodic:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-desktop <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Set up your environment:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/melodic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div> </div> </li> <li>Install dependencies: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Install dependencies:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential <span class="nt">-y</span>
 <span class="nb">sudo </span>rosdep init
 rosdep update
-</code></pre></div> </div> </li> </ol> <h3 id="installing-ros-2-foxy-on-jetpack-5x">Installing ROS 2 Foxy on JetPack 5.x</h3> <ol> <li>Set the locale: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>locales <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="installing-ros-2-foxy-on-jetpack-5x">Installing ROS 2 Foxy on JetPack 5.x</h3>
+
+<ol>
+  <li>Set the locale:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>locales <span class="nt">-y</span>
 <span class="nb">sudo </span>locale-gen en_US en_US.UTF-8
 <span class="nb">sudo </span>update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
 <span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
-</code></pre></div> </div> </li> <li>Add the ROS 2 repository: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Add the ROS 2 repository:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span>
 <span class="nb">sudo </span>add-apt-repository universe
 <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
 <span class="nb">sudo </span>curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.key <span class="nt">-o</span> /usr/share/keyrings/ros-archive-keyring.gpg
 <span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="si">)</span><span class="s2"> main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/ros2.list <span class="o">&gt;</span> /dev/null
-</code></pre></div> </div> </li> <li>Install ROS 2 Foxy: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+</code></pre></div>    </div>
+  </li>
+  <li>Install ROS 2 Foxy:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>ros-foxy-ros-base <span class="nt">-y</span>
-</code></pre></div> </div> </li> <li>Set up your environment: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/foxy/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+</code></pre></div>    </div>
+  </li>
+  <li>Set up your environment:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/foxy/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div> </div> </li> </ol> <h2 id="setting-up-a-ros-workspace">Setting Up a ROS Workspace</h2> <h3 id="ros-1-melodic-workspace">ROS 1 (Melodic) Workspace</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="setting-up-a-ros-workspace">Setting Up a ROS Workspace</h2>
+
+<h3 id="ros-1-melodic-workspace">ROS 1 (Melodic) Workspace</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
 <span class="nb">cd</span> ~/catkin_ws
 catkin_make
 <span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <h3 id="ros-2-foxy-workspace">ROS 2 (Foxy) Workspace</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src
+</code></pre></div></div>
+
+<h3 id="ros-2-foxy-workspace">ROS 2 (Foxy) Workspace</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src
 <span class="nb">cd</span> ~/ros2_ws
 colcon build
 <span class="nb">echo</span> <span class="s2">"source ~/ros2_ws/install/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <h2 id="installing-cuda-supported-packages-for-jetson-nano">Installing CUDA-Supported Packages for Jetson Nano</h2> <p>JetPack already comes with pre-installed CUDA, cuDNN, and TensorRT. Let’s install additional packages to leverage these capabilities.</p> <h3 id="1-verify-opencv-with-cuda-support">1. Verify OpenCV with CUDA Support</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check the version of OpenCV included with JetPack</span>
+</code></pre></div></div>
+
+<h2 id="installing-cuda-supported-packages-for-jetson-nano">Installing CUDA-Supported Packages for Jetson Nano</h2>
+
+<p>JetPack already comes with pre-installed CUDA, cuDNN, and TensorRT. Let’s install additional packages to leverage these capabilities.</p>
+
+<h3 id="1-verify-opencv-with-cuda-support">1. Verify OpenCV with CUDA Support</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check the version of OpenCV included with JetPack</span>
 python3 <span class="nt">-c</span> <span class="s2">"import cv2; print(cv2.__version__); print(cv2.getBuildInformation())"</span>
-</code></pre></div></div> <h3 id="2-install-cuda-packages-for-use-with-ros">2. Install CUDA Packages for Use with ROS</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For ROS Melodic</span>
+</code></pre></div></div>
+
+<h3 id="2-install-cuda-packages-for-use-with-ros">2. Install CUDA Packages for Use with ROS</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For ROS Melodic</span>
 <span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-perception ros-melodic-vision-opencv <span class="nt">-y</span>
 
 <span class="c"># For ROS 2 Foxy</span>
 <span class="nb">sudo </span>apt <span class="nb">install </span>ros-foxy-perception ros-foxy-vision-opencv <span class="nt">-y</span>
-</code></pre></div></div> <h2 id="project-examples-using-jetson-nano-and-ros">Project Examples Using Jetson Nano and ROS</h2> <h3 id="1-gpu-accelerated-image-processing-node">1. GPU-Accelerated Image Processing Node</h3> <h4 id="creating-a-ros-node-using-cuda-enabled-opencv">Creating a ROS Node Using CUDA-enabled OpenCV:</h4> <ol> <li>Create a package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
+</code></pre></div></div>
+
+<h2 id="project-examples-using-jetson-nano-and-ros">Project Examples Using Jetson Nano and ROS</h2>
+
+<h3 id="1-gpu-accelerated-image-processing-node">1. GPU-Accelerated Image Processing Node</h3>
+
+<h4 id="creating-a-ros-node-using-cuda-enabled-opencv">Creating a ROS Node Using CUDA-enabled OpenCV:</h4>
+
+<ol>
+  <li>Create a package:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
 catkin_create_pkg jetson_vision roscpp rospy sensor_msgs cv_bridge std_msgs
 <span class="nb">cd </span>jetson_vision
 <span class="nb">mkdir </span>scripts
-</code></pre></div> </div> </li> <li>Create a GPU-accelerated image processing node: <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</code></pre></div>    </div>
+  </li>
+  <li>Create a GPU-accelerated image processing node:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
 </span>   
 <span class="kn">import</span> <span class="n">rospy</span>
 <span class="kn">from</span> <span class="n">sensor_msgs.msg</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -685,11 +1247,28 @@ catkin_create_pkg jetson_vision roscpp rospy sensor_msgs cv_bridge std_msgs
     <span class="n">rospy</span><span class="p">.</span><span class="nf">init_node</span><span class="p">(</span><span class="sh">'</span><span class="s">jetson_vision</span><span class="sh">'</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">jv</span> <span class="o">=</span> <span class="nc">JetsonVision</span><span class="p">()</span>
     <span class="n">rospy</span><span class="p">.</span><span class="nf">spin</span><span class="p">()</span>
-</code></pre></div> </div> </li> <li>Set execution permissions: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ~/catkin_ws/src/jetson_vision/scripts/jetson_vision_node.py
-</code></pre></div> </div> </li> <li>Build the package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws
+</code></pre></div>    </div>
+  </li>
+  <li>Set execution permissions:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ~/catkin_ws/src/jetson_vision/scripts/jetson_vision_node.py
+</code></pre></div>    </div>
+  </li>
+  <li>Build the package:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws
 catkin_make
-</code></pre></div> </div> </li> </ol> <h3 id="2-building-an-object-detection-system-with-jetson-nano">2. Building an Object Detection System with Jetson Nano</h3> <ol> <li>Install required packages: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-vision-msgs <span class="nt">-y</span>
-</code></pre></div> </div> </li> <li>Create an object detection node using TensorRT: <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="2-building-an-object-detection-system-with-jetson-nano">2. Building an Object Detection System with Jetson Nano</h3>
+
+<ol>
+  <li>Install required packages:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-vision-msgs <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Create an object detection node using TensorRT:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
 </span>   
 <span class="kn">import</span> <span class="n">rospy</span>
 <span class="kn">from</span> <span class="n">sensor_msgs.msg</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -722,8 +1301,19 @@ catkin_make
     <span class="n">rospy</span><span class="p">.</span><span class="nf">init_node</span><span class="p">(</span><span class="sh">'</span><span class="s">object_detector</span><span class="sh">'</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">detector</span> <span class="o">=</span> <span class="nc">ObjectDetector</span><span class="p">()</span>
     <span class="n">rospy</span><span class="p">.</span><span class="nf">spin</span><span class="p">()</span>
-</code></pre></div> </div> </li> </ol> <h3 id="3-jetson-based-autonomous-navigation-robot">3. Jetson-Based Autonomous Navigation Robot</h3> <ol> <li>Install required packages: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-navigation ros-melodic-gmapping ros-melodic-move-base <span class="nt">-y</span>
-</code></pre></div> </div> </li> <li>Configure robot navigation: <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- jetson_robot_nav.launch --&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="3-jetson-based-autonomous-navigation-robot">3. Jetson-Based Autonomous Navigation Robot</h3>
+
+<ol>
+  <li>Install required packages:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-melodic-navigation ros-melodic-gmapping ros-melodic-move-base <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Configure robot navigation:
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- jetson_robot_nav.launch --&gt;</span>
 <span class="nt">&lt;launch&gt;</span>
   <span class="c">&lt;!-- Robot model and transformation setup --&gt;</span>
   <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"robot_description"</span> <span class="na">textfile=</span><span class="s">"$(find jetson_robot)/urdf/robot.urdf"</span> <span class="nt">/&gt;</span>
@@ -751,10 +1341,25 @@ catkin_make
     <span class="nt">&lt;rosparam</span> <span class="na">file=</span><span class="s">"$(find jetson_robot)/config/base_local_planner_params.yaml"</span> <span class="na">command=</span><span class="s">"load"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/node&gt;</span>
 <span class="nt">&lt;/launch&gt;</span>
-</code></pre></div> </div> </li> </ol> <h2 id="optimizing-deep-learning-models-for-jetson-nano">Optimizing Deep Learning Models for Jetson Nano</h2> <p>You can optimize deep learning models for Jetson Nano using TensorRT.</p> <h3 id="converting-tensorflow-models-to-tensorrt">Converting TensorFlow Models to TensorRT</h3> <ol> <li>Install required packages: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="optimizing-deep-learning-models-for-jetson-nano">Optimizing Deep Learning Models for Jetson Nano</h2>
+
+<p>You can optimize deep learning models for Jetson Nano using TensorRT.</p>
+
+<h3 id="converting-tensorflow-models-to-tensorrt">Converting TensorFlow Models to TensorRT</h3>
+
+<ol>
+  <li>Install required packages:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip
 pip3 <span class="nb">install</span> <span class="nt">--upgrade</span> pip
 pip3 <span class="nb">install </span>numpy tensorflow
-</code></pre></div> </div> </li> <li>Convert TensorFlow models to UFF or ONNX and apply TensorRT optimization: <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Convert TensorFlow models to UFF or ONNX and apply TensorRT optimization:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
 <span class="kn">import</span> <span class="n">tensorrt</span> <span class="k">as</span> <span class="n">trt</span>
 <span class="kn">import</span> <span class="n">uff</span>
    
@@ -768,10 +1373,29 @@ pip3 <span class="nb">install </span>numpy tensorflow
 # TRT_LOGGER = trt.Logger(trt.Logger.INFO)
 # builder = trt.Builder(TRT_LOGGER)
 # ...
-</span></code></pre></div> </div> </li> </ol> <h2 id="monitoring-and-analyzing-gpu-on-jetson-nano">Monitoring and Analyzing GPU on Jetson Nano</h2> <ol> <li>Using Tegrastats: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tegrastats
-</code></pre></div> </div> </li> <li>Installing and using Jetson-stats: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-H</span> pip <span class="nb">install</span> <span class="nt">-U</span> jetson-stats
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="monitoring-and-analyzing-gpu-on-jetson-nano">Monitoring and Analyzing GPU on Jetson Nano</h2>
+
+<ol>
+  <li>Using Tegrastats:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tegrastats
+</code></pre></div>    </div>
+  </li>
+  <li>Installing and using Jetson-stats:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-H</span> pip <span class="nb">install</span> <span class="nt">-U</span> jetson-stats
 jtop
-</code></pre></div> </div> </li> </ol> <h2 id="one-line-installation-script-for-jetson-nano--ros">One-Line Installation Script for Jetson Nano + ROS</h2> <p>Here’s a one-line script to install and optimize ROS Melodic on Jetson Nano:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="one-line-installation-script-for-jetson-nano--ros">One-Line Installation Script for Jetson Nano + ROS</h2>
+
+<p>Here’s a one-line script to install and optimize ROS Melodic on Jetson Nano:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
 <span class="c"># ROS Melodic installation script for Jetson Nano</span>
 
 <span class="c"># Update system</span>
@@ -825,97 +1449,347 @@ WantedBy=multi-user.target
 <span class="nb">sudo </span>swapon /var/swapfile <span class="o">&amp;&amp;</span> 
 <span class="nb">echo</span> <span class="s2">"/var/swapfile swap swap defaults 0 0"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/fstab <span class="o">&amp;&amp;</span> 
 <span class="nb">echo</span> <span class="s2">"ROS Melodic installation and optimization complete!"</span>
-</code></pre></div></div>]]></content><author><name></name></author><category term="robotics"/><category term="ros"/><category term="jetson nano"/><category term="embedded"/><category term="setup"/><category term="robotics"/><summary type="html"><![CDATA[A guide for installing and configuring ROS on NVIDIA Jetson Nano]]></summary></entry><entry><title type="html">Complete Guide to ROS Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/" rel="alternate" type="text/html" title="Complete Guide to ROS Installation and Setup"/><published>2024-01-03T00:00:00+00:00</published><updated>2024-01-03T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Robot Operating System (ROS) is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms. In this guide, we’ll walk through the installation process for both ROS 1 and ROS 2, the two major versions currently in use.</p> <h2 id="ros-1-installation-noetic---for-ubuntu-2004">ROS 1 Installation (Noetic - for Ubuntu 20.04)</h2> <h3 id="setting-up-the-repository">Setting Up the Repository</h3> <p>To begin with, you need to configure your system to accept software from the ROS repositories:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>
-</code></pre></div></div> <h3 id="setting-up-keys">Setting Up Keys</h3> <p>Next, you need to set up the necessary keys:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="robotics" /><category term="ros" /><category term="jetson nano" /><category term="embedded" /><category term="setup" /><category term="robotics" /><summary type="html"><![CDATA[A guide for installing and configuring ROS on NVIDIA Jetson Nano]]></summary></entry><entry><title type="html">Complete Guide to ROS Installation and Setup</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/" rel="alternate" type="text/html" title="Complete Guide to ROS Installation and Setup" /><published>2024-01-03T00:00:00+00:00</published><updated>2024-01-03T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-ROS</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-ROS/"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>Robot Operating System (ROS) is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms. In this guide, we’ll walk through the installation process for both ROS 1 and ROS 2, the two major versions currently in use.</p>
+
+<h2 id="ros-1-installation-noetic---for-ubuntu-2004">ROS 1 Installation (Noetic - for Ubuntu 20.04)</h2>
+
+<h3 id="setting-up-the-repository">Setting Up the Repository</h3>
+
+<p>To begin with, you need to configure your system to accept software from the ROS repositories:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span>
+</code></pre></div></div>
+
+<h3 id="setting-up-keys">Setting Up Keys</h3>
+
+<p>Next, you need to set up the necessary keys:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
 curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add -
-</code></pre></div></div> <h3 id="updating-and-installing-ros">Updating and Installing ROS</h3> <p>Now, update your package lists and install ROS:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+</code></pre></div></div>
+
+<h3 id="updating-and-installing-ros">Updating and Installing ROS</h3>
+
+<p>Now, update your package lists and install ROS:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>ros-noetic-desktop-full <span class="nt">-y</span>
-</code></pre></div></div> <p>If you prefer a smaller installation, you can choose from these options:</p> <ul> <li><code class="language-plaintext highlighter-rouge">ros-noetic-desktop</code>: GUI tools without simulation</li> <li><code class="language-plaintext highlighter-rouge">ros-noetic-ros-base</code>: Base packages only, no GUI tools</li> </ul> <h3 id="environment-setup">Environment Setup</h3> <p>For the changes to take effect in your current terminal and all future terminal sessions, add the following to your shell configuration:</p> <p>For Bash users:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+</code></pre></div></div>
+
+<p>If you prefer a smaller installation, you can choose from these options:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ros-noetic-desktop</code>: GUI tools without simulation</li>
+  <li><code class="language-plaintext highlighter-rouge">ros-noetic-ros-base</code>: Base packages only, no GUI tools</li>
+</ul>
+
+<h3 id="environment-setup">Environment Setup</h3>
+
+<p>For the changes to take effect in your current terminal and all future terminal sessions, add the following to your shell configuration:</p>
+
+<p>For Bash users:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <p>For Zsh users:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.zsh"</span> <span class="o">&gt;&gt;</span> ~/.zshrc
+</code></pre></div></div>
+
+<p>For Zsh users:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.zsh"</span> <span class="o">&gt;&gt;</span> ~/.zshrc
 <span class="nb">source</span> ~/.zshrc
-</code></pre></div></div> <h3 id="installing-dependencies-for-building-packages">Installing Dependencies for Building Packages</h3> <p>Install the necessary build tools and dependencies:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential <span class="nt">-y</span>
-</code></pre></div></div> <h3 id="initializing-rosdep">Initializing rosdep</h3> <p>Initialize rosdep, which is used for installing system dependencies:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>rosdep init
+</code></pre></div></div>
+
+<h3 id="installing-dependencies-for-building-packages">Installing Dependencies for Building Packages</h3>
+
+<p>Install the necessary build tools and dependencies:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="initializing-rosdep">Initializing rosdep</h3>
+
+<p>Initialize rosdep, which is used for installing system dependencies:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>rosdep init
 rosdep update
-</code></pre></div></div> <h2 id="ros-2-installation-humble---for-ubuntu-2204">ROS 2 Installation (Humble - for Ubuntu 22.04)</h2> <h3 id="locale-configuration">Locale Configuration</h3> <p>ROS 2 requires a UTF-8 locale. Set this up with:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locale  <span class="c"># Check current settings</span>
+</code></pre></div></div>
+
+<h2 id="ros-2-installation-humble---for-ubuntu-2204">ROS 2 Installation (Humble - for Ubuntu 22.04)</h2>
+
+<h3 id="locale-configuration">Locale Configuration</h3>
+
+<p>ROS 2 requires a UTF-8 locale. Set this up with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locale  <span class="c"># Check current settings</span>
 <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>locales <span class="nt">-y</span>
 <span class="nb">sudo </span>locale-gen en_US en_US.UTF-8
 <span class="nb">sudo </span>update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
 <span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
-</code></pre></div></div> <h3 id="setting-up-sources">Setting Up Sources</h3> <p>Add the Universe repository:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="setting-up-sources">Setting Up Sources</h3>
+
+<p>Add the Universe repository:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span>
 <span class="nb">sudo </span>add-apt-repository universe
-</code></pre></div></div> <h3 id="adding-the-ros-2-gpg-key">Adding the ROS 2 GPG Key</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="adding-the-ros-2-gpg-key">Adding the ROS 2 GPG Key</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span>
 <span class="nb">sudo </span>curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.key <span class="nt">-o</span> /usr/share/keyrings/ros-archive-keyring.gpg
-</code></pre></div></div> <h3 id="adding-the-repository-to-your-sources-list">Adding the Repository to Your Sources List</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="si">)</span><span class="s2"> main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/ros2.list <span class="o">&gt;</span> /dev/null
-</code></pre></div></div> <h3 id="installing-ros-2">Installing ROS 2</h3> <p>Update your package lists and install ROS 2:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+</code></pre></div></div>
+
+<h3 id="adding-the-repository-to-your-sources-list">Adding the Repository to Your Sources List</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="si">)</span><span class="s2"> main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/ros2.list <span class="o">&gt;</span> /dev/null
+</code></pre></div></div>
+
+<h3 id="installing-ros-2">Installing ROS 2</h3>
+
+<p>Update your package lists and install ROS 2:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>ros-humble-desktop <span class="nt">-y</span>
-</code></pre></div></div> <p>For a minimal installation (CLI tools only):</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-humble-ros-base <span class="nt">-y</span>
-</code></pre></div></div> <p>Install development tools:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-dev-tools <span class="nt">-y</span>
-</code></pre></div></div> <h3 id="environment-setup-1">Environment Setup</h3> <p>For Bash users:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/humble/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+</code></pre></div></div>
+
+<p>For a minimal installation (CLI tools only):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-humble-ros-base <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p>Install development tools:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>ros-dev-tools <span class="nt">-y</span>
+</code></pre></div></div>
+
+<h3 id="environment-setup-1">Environment Setup</h3>
+
+<p>For Bash users:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/humble/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <p>For Zsh users:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/humble/setup.zsh"</span> <span class="o">&gt;&gt;</span> ~/.zshrc
+</code></pre></div></div>
+
+<p>For Zsh users:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"source /opt/ros/humble/setup.zsh"</span> <span class="o">&gt;&gt;</span> ~/.zshrc
 <span class="nb">source</span> ~/.zshrc
-</code></pre></div></div> <h2 id="creating-a-workspace">Creating a Workspace</h2> <h3 id="ros-1-workspace">ROS 1 Workspace</h3> <p>Create a catkin workspace, which is a directory where you’ll develop and build your ROS packages:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
+</code></pre></div></div>
+
+<h2 id="creating-a-workspace">Creating a Workspace</h2>
+
+<h3 id="ros-1-workspace">ROS 1 Workspace</h3>
+
+<p>Create a catkin workspace, which is a directory where you’ll develop and build your ROS packages:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src
 <span class="nb">cd</span> ~/catkin_ws
 catkin_make
 <span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <h3 id="ros-2-workspace">ROS 2 Workspace</h3> <p>Create a workspace using colcon:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src
+</code></pre></div></div>
+
+<h3 id="ros-2-workspace">ROS 2 Workspace</h3>
+
+<p>Create a workspace using colcon:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src
 <span class="nb">cd</span> ~/ros2_ws
 colcon build
 <span class="nb">echo</span> <span class="s2">"source ~/ros2_ws/install/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <h2 id="creating-your-first-package">Creating Your First Package</h2> <h3 id="ros-1-package-creation">ROS 1 Package Creation</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
+</code></pre></div></div>
+
+<h2 id="creating-your-first-package">Creating Your First Package</h2>
+
+<h3 id="ros-1-package-creation">ROS 1 Package Creation</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/catkin_ws/src
 catkin_create_pkg my_package std_msgs rospy roscpp
 <span class="nb">cd</span> ~/catkin_ws
 catkin_make
-</code></pre></div></div> <h3 id="ros-2-package-creation">ROS 2 Package Creation</h3> <p>For a Python package:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/ros2_ws/src
+</code></pre></div></div>
+
+<h3 id="ros-2-package-creation">ROS 2 Package Creation</h3>
+
+<p>For a Python package:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/ros2_ws/src
 ros2 pkg create <span class="nt">--build-type</span> ament_python my_package
-</code></pre></div></div> <p>For a C++ package:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/ros2_ws/src
+</code></pre></div></div>
+
+<p>For a C++ package:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/ros2_ws/src
 ros2 pkg create <span class="nt">--build-type</span> ament_cmake my_package
-</code></pre></div></div> <p>Build the package:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/ros2_ws
+</code></pre></div></div>
+
+<p>Build the package:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/ros2_ws
 colcon build <span class="nt">--packages-select</span> my_package
-</code></pre></div></div> <h2 id="testing-ros-commands">Testing ROS Commands</h2> <h3 id="basic-ros-1-commands">Basic ROS 1 Commands</h3> <p>Start the ROS master:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roscore
-</code></pre></div></div> <p>In a new terminal, run a simple publisher node:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rospy_tutorials talker
-</code></pre></div></div> <p>In another terminal, run a subscriber node:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rospy_tutorials listener
-</code></pre></div></div> <p>Check the list of running nodes:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosnode list
-</code></pre></div></div> <p>Check the list of active topics:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic list
-</code></pre></div></div> <h3 id="basic-ros-2-commands">Basic ROS 2 Commands</h3> <p>Run a publisher node (no separate master needed):</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run demo_nodes_cpp talker
-</code></pre></div></div> <p>In a new terminal, run a subscriber node:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run demo_nodes_cpp listener
-</code></pre></div></div> <p>List active nodes:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 node list
-</code></pre></div></div> <p>List active topics:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 topic list
-</code></pre></div></div> <h2 id="useful-tools">Useful Tools</h2> <h3 id="rviz-visualization-tool">RViz (Visualization Tool)</h3> <p>ROS 1:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rviz rviz
-</code></pre></div></div> <p>ROS 2:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run rviz2 rviz2
-</code></pre></div></div> <h3 id="rqt-gui-tools-collection">rqt (GUI Tools Collection)</h3> <p>ROS 1:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rqt
-</code></pre></div></div> <p>ROS 2:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run rqt rqt
-</code></pre></div></div> <h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2> <h3 id="ros-1-common-issues">ROS 1 Common Issues</h3> <ol> <li><strong>‘roscore not found’ error</strong>: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /opt/ros/noetic/setup.bash
-</code></pre></div> </div> </li> <li><strong>Package not found errors</strong>: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
-</code></pre></div> </div> </li> <li><strong>rosdep errors</strong>: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>rosdep init
+</code></pre></div></div>
+
+<h2 id="testing-ros-commands">Testing ROS Commands</h2>
+
+<h3 id="basic-ros-1-commands">Basic ROS 1 Commands</h3>
+
+<p>Start the ROS master:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roscore
+</code></pre></div></div>
+
+<p>In a new terminal, run a simple publisher node:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rospy_tutorials talker
+</code></pre></div></div>
+
+<p>In another terminal, run a subscriber node:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rospy_tutorials listener
+</code></pre></div></div>
+
+<p>Check the list of running nodes:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosnode list
+</code></pre></div></div>
+
+<p>Check the list of active topics:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic list
+</code></pre></div></div>
+
+<h3 id="basic-ros-2-commands">Basic ROS 2 Commands</h3>
+
+<p>Run a publisher node (no separate master needed):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run demo_nodes_cpp talker
+</code></pre></div></div>
+
+<p>In a new terminal, run a subscriber node:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run demo_nodes_cpp listener
+</code></pre></div></div>
+
+<p>List active nodes:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 node list
+</code></pre></div></div>
+
+<p>List active topics:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 topic list
+</code></pre></div></div>
+
+<h2 id="useful-tools">Useful Tools</h2>
+
+<h3 id="rviz-visualization-tool">RViz (Visualization Tool)</h3>
+
+<p>ROS 1:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosrun rviz rviz
+</code></pre></div></div>
+
+<p>ROS 2:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run rviz2 rviz2
+</code></pre></div></div>
+
+<h3 id="rqt-gui-tools-collection">rqt (GUI Tools Collection)</h3>
+
+<p>ROS 1:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rqt
+</code></pre></div></div>
+
+<p>ROS 2:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ros2 run rqt rqt
+</code></pre></div></div>
+
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+
+<h3 id="ros-1-common-issues">ROS 1 Common Issues</h3>
+
+<ol>
+  <li><strong>‘roscore not found’ error</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /opt/ros/noetic/setup.bash
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Package not found errors</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
+</code></pre></div>    </div>
+  </li>
+  <li><strong>rosdep errors</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>rosdep init
 rosdep update
-</code></pre></div> </div> </li> </ol> <h3 id="ros-2-common-issues">ROS 2 Common Issues</h3> <ol> <li><strong>Environment issues</strong>: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /opt/ros/humble/setup.bash
-</code></pre></div> </div> </li> <li><strong>colcon build errors</strong>: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-colcon-common-extensions
-</code></pre></div> </div> </li> <li><strong>Package dependency errors</strong>: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosdep <span class="nb">install</span> <span class="nt">--from-paths</span> src <span class="nt">--ignore-src</span> <span class="nt">-r</span> <span class="nt">-y</span>
-</code></pre></div> </div> </li> </ol> <h2 id="managing-multiple-ros-versions">Managing Multiple ROS Versions</h2> <p>If you have multiple ROS versions installed on the same system, you can create switching scripts:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ros1.sh</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="ros-2-common-issues">ROS 2 Common Issues</h3>
+
+<ol>
+  <li><strong>Environment issues</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /opt/ros/humble/setup.bash
+</code></pre></div>    </div>
+  </li>
+  <li><strong>colcon build errors</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3-colcon-common-extensions
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Package dependency errors</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosdep <span class="nb">install</span> <span class="nt">--from-paths</span> src <span class="nt">--ignore-src</span> <span class="nt">-r</span> <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="managing-multiple-ros-versions">Managing Multiple ROS Versions</h2>
+
+<p>If you have multiple ROS versions installed on the same system, you can create switching scripts:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ros1.sh</span>
 <span class="c">#!/bin/bash</span>
 <span class="nb">source</span> /opt/ros/noetic/setup.bash
 <span class="nb">source</span> ~/catkin_ws/devel/setup.bash
 <span class="nb">export </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://localhost:11311
 <span class="nb">export </span><span class="nv">ROS_VERSION</span><span class="o">=</span>1
 <span class="nb">echo</span> <span class="s2">"ROS 1 Activated"</span>
-</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ros2.sh</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ros2.sh</span>
 <span class="c">#!/bin/bash</span>
 <span class="nb">source</span> /opt/ros/humble/setup.bash
 <span class="nb">source</span> ~/ros2_ws/install/setup.bash
 <span class="nb">export </span><span class="nv">ROS_VERSION</span><span class="o">=</span>2
 <span class="nb">echo</span> <span class="s2">"ROS 2 Activated"</span>
-</code></pre></div></div> <p>Make the scripts executable:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ros1.sh ros2.sh
-</code></pre></div></div> <p>Use them by sourcing:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/ros1.sh  <span class="c"># Activate ROS 1</span>
+</code></pre></div></div>
+
+<p>Make the scripts executable:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x ros1.sh ros2.sh
+</code></pre></div></div>
+
+<p>Use them by sourcing:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/ros1.sh  <span class="c"># Activate ROS 1</span>
 <span class="nb">source</span> ~/ros2.sh  <span class="c"># Activate ROS 2</span>
-</code></pre></div></div> <h2 id="additional-resources">Additional Resources</h2> <ul> <li><a href="http://wiki.ros.org/">ROS 1 Official Documentation</a></li> <li><a href="https://docs.ros.org/">ROS 2 Official Documentation</a></li> <li><a href="https://answers.ros.org/">ROS Answers (Q&amp;A Site)</a></li> <li><a href="https://discourse.ros.org/">ROS Discourse Forum</a></li> </ul> <h2 id="one-line-installation-commands-for-quick-setup">One-line Installation Commands for Quick Setup</h2> <p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p> <h3 id="ros-1-noetic-complete-setup">ROS 1 (Noetic) Complete Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-noetic-desktop-full <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>rosdep init <span class="o">&amp;&amp;</span> rosdep update <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/catkin_ws <span class="o">&amp;&amp;</span> catkin_make <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <h3 id="ros-2-humble-complete-setup">ROS 2 (Humble) Complete Setup</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>locales <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>locale-gen en_US en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>add-apt-repository universe <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.key <span class="nt">-o</span> /usr/share/keyrings/ros-archive-keyring.gpg <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="si">)</span><span class="s2"> main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/ros2.list <span class="o">&gt;</span> /dev/null <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-humble-desktop <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-dev-tools <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source /opt/ros/humble/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/ros2_ws <span class="o">&amp;&amp;</span> colcon build <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source ~/ros2_ws/install/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
-</code></pre></div></div> <p>These commands are particularly useful for scripting or setting up new development environments quickly.</p>]]></content><author><name></name></author><category term="robotics"/><category term="ros"/><category term="setup"/><category term="ubuntu"/><category term="robotics"/><summary type="html"><![CDATA[A simplified guide on installing and configuring ROS (Robot Operating System) on Ubuntu]]></summary></entry><entry><title type="html">How to Set Up a Python Package</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/" rel="alternate" type="text/html" title="How to Set Up a Python Package"/><published>2024-01-01T00:00:00+00:00</published><updated>2024-01-01T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Creating a Python package is an essential skill for any Python developer. It allows you to organize your code, make it reusable, and share it with others. In this post, we’ll go through the process of setting up a Python package step by step.</p> <h2 id="setting-up-the-package-structure">Setting Up the Package Structure</h2> <ol> <li>Create a new directory for your package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>my_package
+</code></pre></div></div>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+  <li><a href="http://wiki.ros.org/">ROS 1 Official Documentation</a></li>
+  <li><a href="https://docs.ros.org/">ROS 2 Official Documentation</a></li>
+  <li><a href="https://answers.ros.org/">ROS Answers (Q&amp;A Site)</a></li>
+  <li><a href="https://discourse.ros.org/">ROS Discourse Forum</a></li>
+</ul>
+
+<h2 id="one-line-installation-commands-for-quick-setup">One-line Installation Commands for Quick Setup</h2>
+
+<p>For those who want a quick setup, here are one-line commands that combine multiple installation steps:</p>
+
+<h3 id="ros-1-noetic-complete-setup">ROS 1 (Noetic) Complete Setup</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> curl <span class="nt">-s</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | <span class="nb">sudo </span>apt-key add - <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-noetic-desktop-full <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source /opt/ros/noetic/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>rosdep init <span class="o">&amp;&amp;</span> rosdep update <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> ~/catkin_ws/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/catkin_ws <span class="o">&amp;&amp;</span> catkin_make <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source ~/catkin_ws/devel/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<h3 id="ros-2-humble-complete-setup">ROS 2 (Humble) Complete Setup</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>locales <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>locale-gen en_US en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>add-apt-repository universe <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>curl <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/ros/rosdistro/master/ros.key <span class="nt">-o</span> /usr/share/keyrings/ros-archive-keyring.gpg <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="si">$(</span><span class="nb">.</span> /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="si">)</span><span class="s2"> main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/ros2.list <span class="o">&gt;</span> /dev/null <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-humble-desktop <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>ros-dev-tools <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source /opt/ros/humble/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> <span class="nt">-p</span> ~/ros2_ws/src <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/ros2_ws <span class="o">&amp;&amp;</span> colcon build <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"source ~/ros2_ws/install/setup.bash"</span> <span class="o">&gt;&gt;</span> ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<p>These commands are particularly useful for scripting or setting up new development environments quickly.</p>]]></content><author><name></name></author><category term="robotics" /><category term="ros" /><category term="setup" /><category term="ubuntu" /><category term="robotics" /><summary type="html"><![CDATA[A simplified guide on installing and configuring ROS (Robot Operating System) on Ubuntu]]></summary></entry><entry><title type="html">How to Set Up a Python Package</title><link href="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/" rel="alternate" type="text/html" title="How to Set Up a Python Package" /><published>2024-01-01T00:00:00+00:00</published><updated>2024-01-01T00:00:00+00:00</updated><id>https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package</id><content type="html" xml:base="https://park-sangbeom.github.io//posts/how-to-set-up-a-python-package/"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>Creating a Python package is an essential skill for any Python developer. It allows you to organize your code, make it reusable, and share it with others. In this post, we’ll go through the process of setting up a Python package step by step.</p>
+
+<h2 id="setting-up-the-package-structure">Setting Up the Package Structure</h2>
+
+<ol>
+  <li>Create a new directory for your package:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>my_package
 <span class="nb">cd </span>my_package
-</code></pre></div> </div> </li> <li>Create the following file structure: <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
+</code></pre></div>    </div>
+  </li>
+  <li>Create the following file structure:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
 ├── my_package/
 │   ├── __init__.py
 │   └── main.py
@@ -924,7 +1798,14 @@ rosdep update
 ├── README.md
 ├── LICENSE
 └── setup.py
-</code></pre></div> </div> </li> </ol> <h2 id="writing-setuppy">Writing setup.py</h2> <p>The <code class="language-plaintext highlighter-rouge">setup.py</code> file is crucial for packaging your project. Here’s a basic example:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="writing-setuppy">Writing setup.py</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">setup.py</code> file is crucial for packaging your project. Here’s a basic example:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
 
 <span class="nf">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="sh">"</span><span class="s">my_package</span><span class="sh">"</span><span class="p">,</span>
@@ -947,7 +1828,14 @@ rosdep update
     <span class="p">],</span>
     <span class="n">python_requires</span><span class="o">=</span><span class="sh">"</span><span class="s">&gt;=3.7</span><span class="sh">"</span><span class="p">,</span>
 <span class="p">)</span>
-</code></pre></div></div> <h2 id="managing-dependencies">Managing Dependencies</h2> <p>List your package dependencies in the <code class="language-plaintext highlighter-rouge">install_requires</code> parameter of <code class="language-plaintext highlighter-rouge">setup()</code>. For development dependencies, you can create a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file: In <code class="language-plaintext highlighter-rouge">requirements.txt</code>, you can write like below.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Image processing and visualization
+</code></pre></div></div>
+
+<h2 id="managing-dependencies">Managing Dependencies</h2>
+
+<p>List your package dependencies in the <code class="language-plaintext highlighter-rouge">install_requires</code> parameter of <code class="language-plaintext highlighter-rouge">setup()</code>. For development dependencies, you can create a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file:
+In <code class="language-plaintext highlighter-rouge">requirements.txt</code>, you can write like below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Image processing and visualization
 opencv-python # or opencv-python-headless
 matplotlib
 
@@ -969,25 +1857,88 @@ openai
 anyio
 pydantic
 scipy
-</code></pre></div></div> <h2 id="version-control-with-git">Version Control with Git</h2> <ol> <li>Initialize a Git repository: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
-</code></pre></div> </div> </li> <li>Create a <code class="language-plaintext highlighter-rouge">.gitignore</code> file: <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>__pycache__/
+</code></pre></div></div>
+
+<h2 id="version-control-with-git">Version Control with Git</h2>
+
+<ol>
+  <li>Initialize a Git repository:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div>    </div>
+  </li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">.gitignore</code> file:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>__pycache__/
 *.pyc
 *.egg-info/
 dist/
 build/
 .pytest_cache/
-</code></pre></div> </div> </li> <li>Make your first commit: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Make your first commit:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
 git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
-</code></pre></div> </div> </li> </ol> <h2 id="building-and-publishing">Building and Publishing</h2> <ol> <li>Install build tools: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>build twine
-</code></pre></div> </div> </li> <li>Build your package: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> build
-</code></pre></div> </div> </li> <li>Upload to PyPI (ensure you have an account): <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/<span class="k">*</span>
-</code></pre></div> </div> </li> </ol> <h2 id="installing-your-package">Installing Your Package</h2> <p>Once published, you can install your package using pip:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>my_package
-</code></pre></div></div> <p>For development or to install from GitHub:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>git+https://github.com/yourusername/my_package.git
-</code></pre></div></div> <h2 id="updating-your-package">Updating Your Package</h2> <ol> <li>Update your code and increment the version number in <code class="language-plaintext highlighter-rouge">setup.py</code>.</li> <li>Rebuild and republish: <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> build
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="building-and-publishing">Building and Publishing</h2>
+
+<ol>
+  <li>Install build tools:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>build twine
+</code></pre></div>    </div>
+  </li>
+  <li>Build your package:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> build
+</code></pre></div>    </div>
+  </li>
+  <li>Upload to PyPI (ensure you have an account):
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/<span class="k">*</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="installing-your-package">Installing Your Package</h2>
+
+<p>Once published, you can install your package using pip:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>my_package
+</code></pre></div></div>
+
+<p>For development or to install from GitHub:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>git+https://github.com/yourusername/my_package.git
+</code></pre></div></div>
+
+<h2 id="updating-your-package">Updating Your Package</h2>
+
+<ol>
+  <li>Update your code and increment the version number in <code class="language-plaintext highlighter-rouge">setup.py</code>.</li>
+  <li>Rebuild and republish:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> build
 twine upload dist/<span class="k">*</span>
-</code></pre></div> </div> </li> </ol> <p>To update an installed package:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> my_package
-</code></pre></div></div> <p>Or for a GitHub-installed package:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> <span class="nt">--force-reinstall</span> git+https://github.com/yourusername/my_package.git
-</code></pre></div></div> <h2 id="automating-package-publishing-with-github-actions">Automating Package Publishing with GitHub Actions</h2> <p>To automate the process of publishing your package to PyPI whenever you push a new release, you can use GitHub Actions. Here’s how to set it up:</p> <ol> <li>Create a <code class="language-plaintext highlighter-rouge">.github/workflows/publish.yml</code> file in your repository:</li> </ol> <pre><code class="language-yaml:.github/workflows/publish.yml">name: Publish Python Package
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>To update an installed package:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> my_package
+</code></pre></div></div>
+
+<p>Or for a GitHub-installed package:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--upgrade</span> <span class="nt">--force-reinstall</span> git+https://github.com/yourusername/my_package.git
+</code></pre></div></div>
+
+<h2 id="automating-package-publishing-with-github-actions">Automating Package Publishing with GitHub Actions</h2>
+
+<p>To automate the process of publishing your package to PyPI whenever you push a new release, you can use GitHub Actions. Here’s how to set it up:</p>
+
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">.github/workflows/publish.yml</code> file in your repository:</li>
+</ol>
+
+<pre><code class="language-yaml:.github/workflows/publish.yml">name: Publish Python Package
 
 on:
   release:
@@ -1013,7 +1964,29 @@ jobs:
       run: |
         python -m build
         twine upload dist/*
-</code></pre> <p>This workflow will trigger whenever you create a new release on GitHub. It sets up Python, installs the necessary dependencies, builds your package, and uploads it to PyPI using the credentials stored in GitHub Secrets.</p> <ol> <li>Store your PyPI API token as a secret in your GitHub repository: <ul> <li>Go to your repository on GitHub</li> <li>Click on “Settings” &gt; “Secrets” &gt; “New repository secret”</li> <li>Name the secret <code class="language-plaintext highlighter-rouge">PYPI_API_TOKEN</code> and paste your PyPI API token as the value</li> </ul> </li> </ol> <h2 id="managing-pypi-credentials-with-pypirc">Managing PyPI Credentials with .pypirc</h2> <p>For local development and manual uploads, you can use a <code class="language-plaintext highlighter-rouge">.pypirc</code> file to store your PyPI credentials securely. Here’s how to set it up:</p> <ol> <li>Create a <code class="language-plaintext highlighter-rouge">.pypirc</code> file in your home directory:</li> </ol> <pre><code class="language-ini:.pypirc">[distutils]
+</code></pre>
+
+<p>This workflow will trigger whenever you create a new release on GitHub. It sets up Python, installs the necessary dependencies, builds your package, and uploads it to PyPI using the credentials stored in GitHub Secrets.</p>
+
+<ol>
+  <li>Store your PyPI API token as a secret in your GitHub repository:
+    <ul>
+      <li>Go to your repository on GitHub</li>
+      <li>Click on “Settings” &gt; “Secrets” &gt; “New repository secret”</li>
+      <li>Name the secret <code class="language-plaintext highlighter-rouge">PYPI_API_TOKEN</code> and paste your PyPI API token as the value</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="managing-pypi-credentials-with-pypirc">Managing PyPI Credentials with .pypirc</h2>
+
+<p>For local development and manual uploads, you can use a <code class="language-plaintext highlighter-rouge">.pypirc</code> file to store your PyPI credentials securely. Here’s how to set it up:</p>
+
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">.pypirc</code> file in your home directory:</li>
+</ol>
+
+<pre><code class="language-ini:.pypirc">[distutils]
 index-servers =
     pypi
     testpypi
@@ -1026,6 +1999,22 @@ password = your_pypi_api_token
 repository = https://test.pypi.org/legacy/
 username = __token__
 password = your_testpypi_api_token
-</code></pre> <p>Replace <code class="language-plaintext highlighter-rouge">your_pypi_api_token</code> and <code class="language-plaintext highlighter-rouge">your_testpypi_api_token</code> with your actual API tokens for PyPI and TestPyPI respectively.</p> <ol> <li>Set appropriate permissions for the <code class="language-plaintext highlighter-rouge">.pypirc</code> file:</li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 ~/.pypirc
-</code></pre></div></div> <p>This ensures that only you can read or write to the file.</p> <p>With this setup, you can easily publish your package using <code class="language-plaintext highlighter-rouge">twine</code> without having to enter your credentials each time. For example:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/<span class="k">*</span>
-</code></pre></div></div> <p>Remember to never commit the <code class="language-plaintext highlighter-rouge">.pypirc</code> file to your version control system, as it contains sensitive information.</p>]]></content><author><name></name></author><category term="python"/><category term="python"/><category term="setup"/><summary type="html"><![CDATA[A guide on creating and managing a Python package]]></summary></entry></feed>
+</code></pre>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">your_pypi_api_token</code> and <code class="language-plaintext highlighter-rouge">your_testpypi_api_token</code> with your actual API tokens for PyPI and TestPyPI respectively.</p>
+
+<ol>
+  <li>Set appropriate permissions for the <code class="language-plaintext highlighter-rouge">.pypirc</code> file:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 ~/.pypirc
+</code></pre></div></div>
+
+<p>This ensures that only you can read or write to the file.</p>
+
+<p>With this setup, you can easily publish your package using <code class="language-plaintext highlighter-rouge">twine</code> without having to enter your credentials each time. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>twine upload dist/<span class="k">*</span>
+</code></pre></div></div>
+
+<p>Remember to never commit the <code class="language-plaintext highlighter-rouge">.pypirc</code> file to your version control system, as it contains sensitive information.</p>]]></content><author><name></name></author><category term="python" /><category term="python" /><category term="setup" /><summary type="html"><![CDATA[A guide on creating and managing a Python package]]></summary></entry></feed>
