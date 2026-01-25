@@ -18,8 +18,7 @@ latest_posts: true # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
-My current work focuses on developing controllers for humanoid robots using reinforcement learning at [UROBOTICS](https://urobotics.ai/).
-I work on enabling humanoid robots to perform complex and dynamic behaviors in the real world by learning robust and generalizable control policies.
+I am currently developing controllers for humanoid robots using reinforcement learning at [UROBOTICS](https://urobotics.ai/), focusing on learning robust and generalizable control policies for complex and dynamic behaviors.
 
 I completed my M.S. in AI at [Korea University](https://www.korea.edu/sites/en/index.do), where I was advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi), and my B.S. in Electronic and Electrical Engineering with a minor in Intelligent Robot Engineering.
 
