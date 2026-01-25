@@ -275,9 +275,8 @@ display_tags: ["AI Agent", "Robotics", "Setup"]
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
-
+  last_name: [Park]
+  first_name: [Sangbeom]
   style: apa
   locale: en
 
