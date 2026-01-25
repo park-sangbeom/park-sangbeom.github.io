@@ -20,7 +20,7 @@ social: true # includes social icons at the bottom of the page
 ---
 I am currently developing controllers for humanoid robots using reinforcement learning at [UROBOTICS](https://urobotics.ai/), focusing on learning robust and generalizable control policies for complex and dynamic behaviors.
 
-I completed my M.S. in AI at [Korea University](https://www.korea.edu/sites/en/index.do), where I was advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi), and my B.S. in Electronic and Electrical Engineering with a minor in Intelligent Robot Engineering.
+I completed M.S. in AI at [Korea University](https://www.korea.edu/sites/en/index.do), where I was advised by [Prof. Sungjoon Choi](https://sites.google.com/view/sungjoon-choi), and my B.S. in Electronic and Electrical Engineering with a minor in Intelligent Robot Engineering.
 
 My professional experience includes work at [LG EnergySolution](https://www.lgensol.com/en/index), where I researched learning–based controllers for quadrupedal robots such as [SPOT](https://bostondynamics.com/products/spot/) in industrial environments to enable autonomous patrol tasks.
 Also I was a Co-Founder and Head of Software at [ATLO](https://atlo.ai), where I led the development of AI agents, including ATTO and [DITTO](http://bit.ly/44WzWOi).
